@@ -13,8 +13,8 @@
 static const int shipSize = 10;
 static const int screenHeight = 480;
 static const int screenWidth = 640;
-//static const int = ;
-//static const int = ;
+static const sf::Color shipColor = sf::Color::Yellow;
+static const double shipSpeed = 0.2;
 
 
 
