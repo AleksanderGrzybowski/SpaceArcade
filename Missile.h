@@ -8,7 +8,7 @@ public:
 
 	Missile(double xpos, double ypos);
 
-	void moveIterate(sf::Time& t);
+	void moveIterate(const sf::Time& t);
 
 	sf::Shape& getShape() { return r; }
 	sf::Vector2f getPosition() { return r.getPosition(); }

@@ -1,16 +1,17 @@
 #ifndef SHIP_H_
 #define SHIP_H_
 
-using namespace std; // niezalecane, trudno
 #include "config.h"
+#include "Direction.h"
+
 
 class Ship {
 public:
 	sf::CircleShape shape; // potem sprite
-public:
+
 	Ship();
-	void move(bool b, sf::Time& t); // przez zegar, zmienić na enum
-	void setPosition(double x, double y);
+	void move(Direction d, const sf::Time& t);
+	const sf::Vector2f& getPosition() { return shape.getPosition(); }
 	sf::Shape& getShape() { return shape; }
 
 };

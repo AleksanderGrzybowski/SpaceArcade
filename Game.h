@@ -1,14 +1,14 @@
-
 #ifndef GAME_H_
 #define GAME_H_
 
-using namespace std; // niezalecane, trudno
 #include <SFML/Graphics.hpp>
+#include <iostream>
 #include <vector>
 #include "Ship.h"
 #include "config.h"
 #include "Missile.h"
 #include "Enemy.h"
+#include "Direction.h"
 
 class Game {
 public:
@@ -18,8 +18,8 @@ public:
 	sf::Clock clock;
 	sf::Clock missileLimitClock;
 
-	vector<Missile*> missiles;
-	vector<Enemy*> enemies;
+	std::vector<Missile*> missiles;
+	std::vector<Enemy*> enemies;
 
 	Game();
 	void loop();

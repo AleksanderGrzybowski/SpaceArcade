@@ -8,7 +8,8 @@ Game::Game() : window(sf::VideoMode(screenWidth, screenHeight, 32), "Hello world
 
 void Game::addMissile() {
 	// znajdź pozycję statku
-	sf::Vector2f shipPos = ship.getShape().getPosition();
+	sf::Vector2f shipPos = ship.getPosition();
+	//sf::Vector2f shipPos = ship.getShape().getPosition();
 	missiles.push_back(new Missile(shipPos.x, shipPos.y));
 }
 
@@ -19,7 +20,22 @@ void Game::addEnemy() {
 	enemies.push_back(new Enemy(xpos, ypos));
 }
 
-void Game::recalc() { // sprawdzanie kolizji
+void Game::recalc() {
+	// pociski poza ekranem
+
+	for (auto m = missiles.begin(); m != missiles.end(); ++m) {
+		sf::Vector2f mpos = (*m)->getPosition();
+		if (mpos.y <= 0) {
+			std::cout << "Usuwam pocisk " << mpos.x << std::endl;
+			missiles.erase(m);
+			recalc(); // !!!
+			return;
+		}
+	}
+
+
+
+	// sprawdzanie kolizji
 	for (auto m = missiles.begin(); m != missiles.end(); ++m) {
 		for (auto e = enemies.begin(); e != enemies.end(); ++e) { // elementy są wskaźnikami
 			sf::Vector2f mpos = (*m)->getPosition();
@@ -27,7 +43,7 @@ void Game::recalc() { // sprawdzanie kolizji
 			if ( (abs(mpos.x - epos.x) < 50) && (abs(mpos.y - epos.y) < 50) ) {
 				missiles.erase(m);
 				enemies.erase(e);
-				recalc();
+				recalc(); // !!!
 				return;
 			}
 		}
@@ -43,12 +59,13 @@ void Game::loop() {
 		}
 	}
 
+
 	sf::Time t = clock.restart();
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-		ship.move(false, t);
+		ship.move(Left, t);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-		ship.move(true, t);
+		ship.move(Right, t);
 	}
 
 

@@ -1,9 +1,3 @@
-/*
- * config.h
- *
- *  Created on: 14-03-2014
- *      Author: kelog
- */
 
 #ifndef CONFIG_H_
 #define CONFIG_H_
