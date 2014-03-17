@@ -1,10 +1,11 @@
 #ifndef MISSILE_H_
 #define MISSILE_H_
 #include <SFML/Graphics.hpp>
+#include "config.h"
 
 class Missile { // z niej można by wywodzić pozostałe
 public:
-	sf::RectangleShape r;
+	sf::CircleShape r;
 
 	Missile(double xpos, double ypos);
 

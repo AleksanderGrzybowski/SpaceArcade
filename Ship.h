@@ -3,7 +3,7 @@
 
 #include "config.h"
 #include "Direction.h"
-
+#include <iostream>
 
 class Ship {
 public:

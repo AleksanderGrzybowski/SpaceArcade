@@ -1,7 +1,7 @@
 
 #include "Game.h"
 
-Game::Game() : window(sf::VideoMode(screenWidth, screenHeight, 32), "Hello world!") {
+Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), "Hello world!") {
 	window.setFramerateLimit(60);
 
 }
@@ -9,14 +9,13 @@ Game::Game() : window(sf::VideoMode(screenWidth, screenHeight, 32), "Hello world
 void Game::addMissile() {
 	// znajdź pozycję statku
 	sf::Vector2f shipPos = ship.getPosition();
-	//sf::Vector2f shipPos = ship.getShape().getPosition();
-	missiles.push_back(new Missile(shipPos.x, shipPos.y));
+	missiles.push_back(new Missile(shipPos.x + CONF_shipSize/2 - (CONF_missileSize/2), shipPos.y));
 }
 
 void Game::addEnemy() {
 	// znajdź pozycję statku
-	int xpos = rand() % screenWidth;
-	int ypos = rand() % screenHeight + 50;
+	int xpos = rand() % CONF_screenWidth;
+	int ypos = rand() % CONF_screenHeight + 50;
 	enemies.push_back(new Enemy(xpos, ypos));
 }
 
@@ -26,7 +25,7 @@ void Game::recalc() {
 	for (auto m = missiles.begin(); m != missiles.end(); ++m) {
 		sf::Vector2f mpos = (*m)->getPosition();
 		if (mpos.y <= 0) {
-			std::cout << "Usuwam pocisk " << mpos.x << std::endl;
+			//std::cout << "Usuwam pocisk " << mpos.x << std::endl;
 			missiles.erase(m);
 			recalc(); // !!!
 			return;
@@ -97,4 +96,5 @@ void Game::loop() {
 
 	window.draw(ship.getShape());
 	window.display();
+
 }

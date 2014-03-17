@@ -1,6 +1,6 @@
 #include "Missile.h"
 
-Missile::Missile(double xpos, double ypos) : r(sf::Vector2f(10, 10)) {
+Missile::Missile(double xpos, double ypos) : r(CONF_missileSize/2, 10) {
 	r.setPosition(xpos, ypos);
 	r.setFillColor(sf::Color::Red);
 }
@@ -8,6 +8,6 @@ Missile::Missile(double xpos, double ypos) : r(sf::Vector2f(10, 10)) {
 void Missile::moveIterate(const sf::Time& t) {
 	sf::Vector2f actPos = r.getPosition();
 	// tylko w górę
-	actPos.y -= 0.2 * t.asMilliseconds();
+	actPos.y -= CONF_missileSpeed * t.asMilliseconds();
 	r.setPosition(actPos);
 }
