@@ -1,3 +1,10 @@
+/*
+ * Missile.h
+ *
+ *  Created on: 17-03-2014
+ *      Author: kelog
+ */
+
 #ifndef MISSILE_H_
 #define MISSILE_H_
 #include <SFML/Graphics.hpp>

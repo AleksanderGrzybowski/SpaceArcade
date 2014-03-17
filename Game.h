@@ -6,7 +6,7 @@
 #include <vector>
 #include "Ship.h"
 #include "config.h"
-#include "Missile.h"
+#include "NormalMissile.h"
 #include "Enemy.h"
 #include "Direction.h"
 

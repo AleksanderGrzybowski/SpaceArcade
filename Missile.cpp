@@ -1,3 +1,10 @@
+/*
+ * Missile.cpp
+ *
+ *  Created on: 17-03-2014
+ *      Author: kelog
+ */
+
 #include "Missile.h"
 
 Missile::Missile(double xpos, double ypos) : r(CONF_missileSize/2, 10) {
