@@ -9,6 +9,8 @@
 #include "NormalMissile.h"
 #include "PowerMissile.h"
 #include "Enemy.h"
+#include "NormalEnemy.h"
+#include "HardEnemy.h"
 #include "Direction.h"
 
 class Game {

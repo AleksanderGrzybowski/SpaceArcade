@@ -19,7 +19,7 @@ void Game::addEnemy() {
 	// znajdź pozycję statku
 	int xpos = rand() % CONF_screenWidth;
 	int ypos = rand() % CONF_screenHeight + 50;
-	enemies.push_back(new Enemy(xpos, ypos));
+	enemies.push_back(new NormalEnemy(xpos, ypos));
 }
 
 void Game::recalc() {

@@ -13,6 +13,8 @@ public:
 
 	void moveIterate(sf::Time& t);
 	sf::Vector2f getPosition() { return shape.getPosition(); }
+
+	virtual ~Enemy() {}
 };
 
 #endif /* ENEMY_H_ */
