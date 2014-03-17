@@ -7,6 +7,7 @@
 #include "Ship.h"
 #include "config.h"
 #include "NormalMissile.h"
+#include "PowerMissile.h"
 #include "Enemy.h"
 #include "Direction.h"
 

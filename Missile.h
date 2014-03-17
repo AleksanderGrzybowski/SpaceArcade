@@ -20,6 +20,9 @@ public:
 
 	sf::Shape& getShape() { return r; }
 	sf::Vector2f getPosition() { return r.getPosition(); }
+	virtual double getSpeed() { return CONF_missileSpeed; }
+
+	virtual ~Missile() {}
 };
 
 #endif /* MISSILE_H_ */

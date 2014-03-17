@@ -9,7 +9,10 @@ Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), "H
 void Game::addMissile() {
 	// znajdź pozycję statku
 	sf::Vector2f shipPos = ship.getPosition();
-	missiles.push_back(new NormalMissile(shipPos.x + CONF_shipSize/2 - (CONF_missileSize/2), shipPos.y));
+	if (rand() % 2)
+		missiles.push_back(new NormalMissile(shipPos.x + CONF_shipSize/2 - (CONF_missileSize/2), shipPos.y));
+	else
+		missiles.push_back(new PowerMissile(shipPos.x + CONF_shipSize/2 - (CONF_missileSize/2), shipPos.y));
 }
 
 void Game::addEnemy() {

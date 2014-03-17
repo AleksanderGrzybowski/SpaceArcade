@@ -15,6 +15,6 @@ Missile::Missile(double xpos, double ypos) : r(CONF_missileSize/2, 10) {
 void Missile::moveIterate(const sf::Time& t) {
 	sf::Vector2f actPos = r.getPosition();
 	// tylko w górę
-	actPos.y -= CONF_missileSpeed * t.asMilliseconds();
+	actPos.y -= getSpeed() * t.asMilliseconds();
 	r.setPosition(actPos);
 }

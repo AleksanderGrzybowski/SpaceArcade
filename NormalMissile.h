@@ -10,6 +10,7 @@ public:
 
 	NormalMissile(double xpos, double ypos);
 
+
 };
 
 #endif /* MISSILE_H_ */
