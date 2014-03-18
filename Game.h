@@ -19,13 +19,14 @@ public:
 	Ship ship;
 
 	sf::Clock clock;
-	sf::Clock missileLimitClock;
+	sf::Clock missileLimitClock; // będą różne missile z różnymi czasami limitu, przerobić to
 
 	std::vector<Missile*> missiles;
 	std::vector<Enemy*> enemies;
 
 	Game();
 	void loop();
+	void mainloop() { while(1) loop(); }
 	void addMissile();
 	void addEnemy();
 	void recalc();
