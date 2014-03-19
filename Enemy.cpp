@@ -27,7 +27,7 @@ void Enemy::moveIterate(sf::Time& t) {
 	if (leftDistance > 0) {
 		double toMove = moveDistance*getSpeed()*t.asMilliseconds()/50.0;
 		leftDistance -= toMove;
-		switch (currentDirection) {
+		switch (currentDirection) { // na enum
 		case 0:
 			shape.move(toMove, 0);
 			break;
@@ -45,8 +45,6 @@ void Enemy::moveIterate(sf::Time& t) {
 		currentDirection = rand() % 4;
 		leftDistance = moveDistance;
 	}
-
-
 }
 
 void Enemy::damage(int damage) {

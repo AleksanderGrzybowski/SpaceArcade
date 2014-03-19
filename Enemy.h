@@ -6,7 +6,7 @@
 
 class Enemy {
 public:
-	sf::RectangleShape shape;
+	sf::Sprite shape;
 	int health;
 	double moveDistance;
 	double leftDistance;
@@ -14,7 +14,7 @@ public:
 
 	Enemy(double xpos, double ypos);
 
-	sf::RectangleShape getShape() { return shape; }
+	sf::Sprite& getShape() { return shape; }
 	void moveIterate(sf::Time& t);
 	sf::Vector2f getPosition() { return shape.getPosition(); }
 
