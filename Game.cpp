@@ -1,16 +1,16 @@
 #include "Game.h"
 
-Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CONF_windowTitle) {
+Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CONF_windowTitle), pointCount(0) {
 	window.setFramerateLimit(CONF_frameRateLimit);
-	pointCount = 0;
-	if (!font.loadFromFile("Arial.ttf")) {
+
+	if (!font.loadFromFile("Fonts/Arial.ttf")) {
 		std::cerr << "Nie idzie czcionki załadować" << std::endl;
-		exit(1);
+		throw std::exception();
 	}
 }
 
 void Game::addMissile() {
-	// znajdź pozycję statku
+	// znajdź pozycję statku, potrzebną do określenia pozycji pocisku
 	sf::Vector2f shipPos = ship.getPosition();
 	(rand() % 2) ? missiles.push_back(new NormalMissile(shipPos)) : missiles.push_back(new PowerMissile (shipPos));
 }
@@ -30,7 +30,6 @@ bool Game::checkCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int e
 	sf::Rect<float> erect(epos, esizes);
 
 	return mrect.intersects(erect);
-	//return (abs(mpos.x - epos.x) < CONF_collisionDistance) && (abs(mpos.y - epos.y) < CONF_collisionDistance);
 }
 
 void Game::recalc() {
@@ -39,6 +38,7 @@ againA:
 	for (auto m = missiles.begin(); m != missiles.end(); ++m) {
 		sf::Vector2f mpos = (*m)->getPosition();
 		if (mpos.y <= 0) {
+			delete *m;
 			missiles.erase(m);
 			goto againA;
 		}
@@ -53,9 +53,11 @@ againB:
 			if (checkCollision(mpos, epos, (*m)->getSize(), (*e)->getSize())) { // KOLIZJA JUPI
 				std::cout << "Kolizja " << rand() << std::endl;
 				int missileDamage = (*m)->getDamage();
+				delete *m;
 				missiles.erase(m);
 				(*e)->damage(missileDamage);
 				if (!((*e)->isAlive())) {
+					delete *e;
 					enemies.erase(e);
 					pointCount++; // jakaś fajniejsza logika
 				}
@@ -65,6 +67,14 @@ againB:
 	}
 }
 
+sf::Text Game::getText() {
+	sf::Text text;
+	text.setFont(font);
+	text.setString("Punkty: " + std::to_string(pointCount));
+	text.setCharacterSize(20);
+	text.setColor(sf::Color::White);
+	return text;
+}
 bool Game::loop() {
 	sf::Event e;
 	while (window.pollEvent(e)) {
@@ -72,6 +82,10 @@ bool Game::loop() {
 			window.close();
 			return false;
 		}
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) || sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
+		window.close();
+		return false;
 	}
 
 	// Restart głównego zegara
@@ -93,7 +107,7 @@ bool Game::loop() {
 
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) { // NormalMissile
-		if ((NormalMissile::missileLimitClock).getElapsedTime().asMilliseconds() > 100) {
+		if ((NormalMissile::missileLimitClock).getElapsedTime().asMilliseconds() > NormalMissile::timeLimit) {
 			sf::Vector2f shipPos = ship.getPosition();
 			missiles.push_back(new NormalMissile(shipPos));
 			NormalMissile::missileLimitClock.restart();
@@ -107,40 +121,37 @@ bool Game::loop() {
 		}
 	}
 
-
 	if (rand() % 100 == 0) addEnemy();
 
 	// Achtung
 	recalc();
-	// Już spoko
-
 
 	// Rysowanie
 	window.clear();
 
 	for (auto& m : missiles) {
 		m->moveIterate(t);
-		window.draw(m->getShape());
+		window.draw(*m);
 	}
 
 	for (auto& e : enemies) {
 		e->moveIterate(t);
-		window.draw(e->getShape());
+		window.draw(*e);
 	}
 
-	window.draw(ship.getShape());
+	window.draw(ship);
 
 	// Napis
-	sf::Text text;
-	text.setFont(font);
-	text.setString("Punkty: " + std::to_string(pointCount));
-	text.setCharacterSize(20);
-	text.setColor(sf::Color::White);
 
-	window.draw(text);
-
+	window.draw(getText());
 
 	window.display();
-
 	return true;
+}
+
+
+Game::~Game() {
+	for (auto m = missiles.begin(); m != missiles.end(); ++m) delete *m;
+	for (auto e = enemies.begin(); e != enemies.end(); ++e) delete *e;
+	window.close();
 }

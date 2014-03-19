@@ -6,18 +6,18 @@
 
 class Missile {
 public:
-	sf::Sprite r;
+	sf::Sprite shape;
+	sf::Texture texture;
 
 	Missile();
 
 	void moveIterate(const sf::Time& t);
-	sf::Sprite& getShape() { return r; }
-	sf::Vector2f getPosition() { return r.getPosition(); }
+	operator sf::Sprite&() { return shape; }
+	sf::Vector2f getPosition() { return shape.getPosition(); }
 
 	virtual double getSpeed() = 0;
 	virtual int getDamage() = 0;
 	virtual int getSize() = 0;
-	virtual sf::Color getColor() = 0;
 
 	virtual ~Missile() {}
 };

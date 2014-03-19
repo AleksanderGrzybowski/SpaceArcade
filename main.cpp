@@ -2,5 +2,9 @@
 #include "Game.h"
 
 int main() {
-	Game().mainloop();
+	try {
+		Game().mainloop();
+	} catch (std::exception& e) {
+		std::cout << "Blad" << std::endl;
+	}
 }

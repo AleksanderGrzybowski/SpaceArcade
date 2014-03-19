@@ -7,14 +7,14 @@
 
 class Ship {
 public:
-	//sf::RectangleShape shape; // potem sprite
 	sf::Sprite shape;
+	sf::Texture texture;
 
 	Ship();
 	void move(Direction d, const sf::Time& t);
 	const sf::Vector2f& getPosition() { return shape.getPosition(); }
-	sf::Sprite& getShape() { return shape; }
 
+	operator sf::Sprite&() { return shape; }
 };
 
 #endif /* SHIP_H_ */

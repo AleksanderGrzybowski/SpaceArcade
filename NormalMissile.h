@@ -5,7 +5,7 @@
 #include "config.h"
 #include "Missile.h"
 
-class NormalMissile : public Missile { // z niej można by wywodzić pozostałe
+class NormalMissile : public Missile {
 public:
 	static sf::Clock missileLimitClock;
 	static const int timeLimit;
@@ -17,6 +17,5 @@ public:
 	int getSize() { return 24; }
 	sf::Color getColor() { return sf::Color::Red; }
 };
-
 
 #endif /* MISSILE_H_ */

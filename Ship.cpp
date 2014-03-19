@@ -1,15 +1,9 @@
 #include "Ship.h"
 
-//Ship::Ship() : shape(sf::Vector2f(CONF_shipSize, CONF_shipSize)) {
-//	shape.setFillColor(CONF_shipColor);
-//	shape.setPosition(CONF_screenWidth/2.0 - CONF_shipSize/2, CONF_screenHeight-CONF_shipSize);
-//}
-
 Ship::Ship() {
-	sf::Texture* texture = new sf::Texture();
-	texture->loadFromFile("Sprites/spaceship.png");
-	shape.setTexture(*texture);
-	//shape.setFillColor(CONF_shipColor);
+	texture.loadFromFile("Sprites/spaceship.png");
+
+	shape.setTexture(texture);
 	shape.setPosition(CONF_screenWidth/2.0 - CONF_shipSize/2, CONF_screenHeight-CONF_shipSize);
 }
 
