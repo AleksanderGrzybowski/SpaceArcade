@@ -1,10 +1,3 @@
-/*
- * HardEnemy.h
- *
- *  Created on: 17-03-2014
- *      Author: kelog
- */
-
 #ifndef HARDENEMY_H_
 #define HARDENEMY_H_
 

@@ -2,6 +2,11 @@
 
 Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CONF_windowTitle) {
 	window.setFramerateLimit(CONF_frameRateLimit);
+	pointCount = 0;
+	if (!font.loadFromFile("Arial.ttf")) {
+		std::cerr << "Nie idzie czcionki załadować" << std::endl;
+		exit(1);
+	}
 }
 
 void Game::addMissile() {
@@ -50,7 +55,10 @@ againB:
 				int missileDamage = (*m)->getDamage();
 				missiles.erase(m);
 				(*e)->damage(missileDamage);
-				if (!((*e)->isAlive())) enemies.erase(e);
+				if (!((*e)->isAlive())) {
+					enemies.erase(e);
+					pointCount++; // jakaś fajniejsza logika
+				}
 				goto againB; // czy to ma sens logiczny?
 			}
 		}
@@ -121,6 +129,19 @@ bool Game::loop() {
 	}
 
 	window.draw(ship.getShape());
+
+	sf::Text text;
+	text.setFont(font);
+	text.setString("Punkty: " + std::to_string(pointCount));
+	text.setCharacterSize(20);
+	text.setColor(sf::Color::White);
+
+	window.draw(text);
+
+
+
+
+
 	window.display();
 
 	return true;

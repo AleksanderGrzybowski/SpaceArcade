@@ -11,10 +11,10 @@ public:
 	static const int timeLimit;
 	PowerMissile(const sf::Vector2f& shipPos);
 
-	int getDamage() { return 2; }
+	int getDamage() { return 20; }
 	double getSpeed() { return 0.5; }
 	sf::Color getColor() { return sf::Color::Red; }
-	int getSize() { return 30; }
+	int getSize() { return 10; }
 
 };
 

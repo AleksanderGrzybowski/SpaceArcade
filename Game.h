@@ -25,6 +25,9 @@ public:
 	std::vector<Missile*> missiles;
 	std::vector<Enemy*> enemies;
 
+	int pointCount;
+	sf::Font font;
+
 	Game();
 	bool loop();
 	void mainloop() { while (loop()); }
