@@ -91,7 +91,7 @@ void Game::loop() {
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) { // PowerMissile
-		if ((PowerMissile::missileLimitClock).getElapsedTime().asMilliseconds() > 100) {
+		if ((PowerMissile::missileLimitClock).getElapsedTime().asMilliseconds() > PowerMissile::timeLimit) {
 			sf::Vector2f shipPos = ship.getPosition();
 			missiles.push_back(new PowerMissile(shipPos));
 			PowerMissile::missileLimitClock.restart();
@@ -101,10 +101,12 @@ void Game::loop() {
 
 	if (rand() % 50 == 0) addEnemy();
 
+	// Achtung
 	recalc();
+	// Już spoko
+
 
 	// Rysowanie
-
 	window.clear();
 
 	for (auto& m : missiles) {

@@ -8,7 +8,7 @@ class PowerMissile : public Missile {
 public:
 
 	static sf::Clock missileLimitClock;
-
+	static const int timeLimit;
 	PowerMissile(const sf::Vector2f& shipPos);
 
 	int getDamage() { return 2; }
