@@ -14,7 +14,7 @@ public:
 	int getDamage() { return 20; }
 	double getSpeed() { return 0.5; }
 	sf::Color getColor() { return sf::Color::Red; }
-	int getSize() { return 10; }
+	int getSize() { return 24; }
 
 };
 

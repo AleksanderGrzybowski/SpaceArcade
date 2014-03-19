@@ -6,12 +6,12 @@
 
 class Missile {
 public:
-	sf::RectangleShape r;
+	sf::Sprite r;
 
 	Missile();
 
 	void moveIterate(const sf::Time& t);
-	sf::Shape& getShape() { return r; }
+	sf::Sprite& getShape() { return r; }
 	sf::Vector2f getPosition() { return r.getPosition(); }
 
 	virtual double getSpeed() = 0;

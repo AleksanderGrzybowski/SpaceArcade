@@ -1,6 +1,8 @@
 #include "Missile.h"
 
-Missile::Missile() {}
+Missile::Missile() {
+
+}
 
 void Missile::moveIterate(const sf::Time& t) {
 	sf::Vector2f actPos = r.getPosition();
