@@ -7,12 +7,13 @@
 
 class Ship {
 public:
-	sf::RectangleShape shape; // potem sprite
+	//sf::RectangleShape shape; // potem sprite
+	sf::Sprite shape;
 
 	Ship();
 	void move(Direction d, const sf::Time& t);
 	const sf::Vector2f& getPosition() { return shape.getPosition(); }
-	sf::Shape& getShape() { return shape; }
+	sf::Sprite& getShape() { return shape; }
 
 };
 

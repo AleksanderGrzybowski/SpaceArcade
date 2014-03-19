@@ -130,6 +130,7 @@ bool Game::loop() {
 
 	window.draw(ship.getShape());
 
+	// Napis
 	sf::Text text;
 	text.setFont(font);
 	text.setString("Punkty: " + std::to_string(pointCount));
@@ -137,9 +138,6 @@ bool Game::loop() {
 	text.setColor(sf::Color::White);
 
 	window.draw(text);
-
-
-
 
 
 	window.display();

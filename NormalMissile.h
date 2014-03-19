@@ -13,9 +13,9 @@ public:
 	NormalMissile(const sf::Vector2f& shipPos);
 
 	int getDamage() { return 5; }
-	double getSpeed() { return 0.2; }
-	int getSize() { return 20; }
-	sf::Color getColor() { return sf::Color::Blue; }
+	double getSpeed() { return 0.5; }
+	int getSize() { return 5; }
+	sf::Color getColor() { return sf::Color::Red; }
 };
 
 

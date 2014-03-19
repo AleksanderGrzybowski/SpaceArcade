@@ -8,10 +8,10 @@ static const std::string CONF_windowTitle = "SpaceArcade Alfa";
 static const int CONF_frameRateLimit = 60;
 static const int CONF_collisionDistance = 20;
 
-static const int CONF_shipSize = 20; // bok kwadratu
+static const int CONF_shipSize = 48; // bok kwadratu
 static const sf::Color CONF_shipColor = sf::Color::Yellow;
 static const double CONF_shipSpeed = 0.2;
-static const double CONF_shipUpLimit = 0.1; // ile do góry można
+static const double CONF_shipUpLimit = 0.4; // ile do góry można
 
 static const int CONF_screenHeight = 480;
 static const int CONF_screenWidth = 640;
