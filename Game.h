@@ -25,8 +25,8 @@ public:
 	std::vector<Enemy*> enemies;
 
 	Game();
-	void loop();
-	void mainloop() { while(1) loop(); }
+	bool loop();
+	void mainloop() { while (loop()); }
 	void addMissile();
 	void addEnemy();
 	void recalc();

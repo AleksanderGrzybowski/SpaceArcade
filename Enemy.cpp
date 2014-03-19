@@ -2,8 +2,6 @@
 
 Enemy::Enemy(double xpos, double ypos) : health(0) {
 	shape.move(xpos, ypos);
-
-
 }
 
 
@@ -24,4 +22,8 @@ void Enemy::moveIterate(sf::Time& t) {
 	case 3:
 		shape.move(0, -dis*CONF_enemySpeed*t.asMilliseconds());
 	}
+}
+
+void Enemy::damage(int damage) {
+	health -= damage*getDamageCoeff();
 }

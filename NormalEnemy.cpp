@@ -8,6 +8,3 @@ NormalEnemy::NormalEnemy(double xpos, double ypos) : Enemy(xpos, ypos) {
 	health = getMaxHealth();
 }
 
-void NormalEnemy::damage(int damage) {
-	health -= damage; // dobrać stałe lepiej
-}

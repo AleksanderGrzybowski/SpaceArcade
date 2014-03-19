@@ -8,11 +8,11 @@ class NormalEnemy : public Enemy {
 public:
 	NormalEnemy(double xpos, double ypos);
 
-	virtual void damage(int damage);
 	double getSpeed() { return 0.2; }
 	int getSize() { return 30; }
 	sf::Color getColor() { return sf::Color::Blue; }
 	int getMaxHealth() { return 10; }
+	double getDamageCoeff() { return 1; }
 };
 
 #endif /* ENEMY_H_ */

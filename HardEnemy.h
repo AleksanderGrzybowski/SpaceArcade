@@ -14,12 +14,12 @@ class HardEnemy: public Enemy {
 public:
 	HardEnemy(double xpos, double ypos);
 
-	void damage(int damage);
 
 	double getSpeed() { return 0.3; }
 	int getSize() { return 50; }
 	sf::Color getColor() { return sf::Color::Red; }
 	int getMaxHealth() { return 20; }
+	double getDamageCoeff() { return 0.5; }
 };
 
 #endif /* HARDENEMY_H_ */

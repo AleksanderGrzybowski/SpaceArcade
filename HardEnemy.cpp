@@ -7,6 +7,4 @@ HardEnemy::HardEnemy(double xpos, double ypos) : Enemy(xpos,ypos) {
 	health = getMaxHealth();
 }
 
-void HardEnemy::damage(int damage) {
-	health -= damage/2;
-}
+

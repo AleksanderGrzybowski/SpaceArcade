@@ -19,9 +19,10 @@ public:
 	virtual int getSize()  = 0;
 	virtual sf::Color getColor() = 0;
 	virtual int getMaxHealth() = 0;
+	virtual double getDamageCoeff() = 0;
 
 	bool isAlive() { return health > 0; }
-	virtual void damage(int damage) = 0;
+	void damage(int damage);
 	virtual ~Enemy() {}
 };
 
