@@ -6,7 +6,7 @@
 
 class Missile {
 public:
-	sf::CircleShape r;
+	sf::RectangleShape r;
 
 	Missile();
 

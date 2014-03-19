@@ -6,12 +6,12 @@
 
 class Enemy {
 public:
-	sf::CircleShape shape;
+	sf::RectangleShape shape;
 	int health;
 
 	Enemy(double xpos, double ypos);
 
-	sf::CircleShape getShape() { return shape; }
+	sf::RectangleShape getShape() { return shape; }
 	void moveIterate(sf::Time& t);
 	sf::Vector2f getPosition() { return shape.getPosition(); }
 

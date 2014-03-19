@@ -7,7 +7,7 @@
 
 class Ship {
 public:
-	sf::CircleShape shape; // potem sprite
+	sf::RectangleShape shape; // potem sprite
 
 	Ship();
 	void move(Direction d, const sf::Time& t);

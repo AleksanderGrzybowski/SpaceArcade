@@ -14,7 +14,6 @@ class HardEnemy: public Enemy {
 public:
 	HardEnemy(double xpos, double ypos);
 
-
 	double getSpeed() { return 0.3; }
 	int getSize() { return 50; }
 	sf::Color getColor() { return sf::Color::Red; }

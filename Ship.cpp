@@ -1,8 +1,7 @@
 #include "Ship.h"
 
-Ship::Ship() : shape(CONF_shipSize/2, 1000) {
+Ship::Ship() : shape(sf::Vector2f(CONF_shipSize, CONF_shipSize)) {
 	shape.setFillColor(CONF_shipColor);
-
 	shape.setPosition(CONF_screenWidth/2.0 - CONF_shipSize/2, CONF_screenHeight-CONF_shipSize);
 }
 
