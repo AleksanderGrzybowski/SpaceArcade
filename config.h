@@ -11,8 +11,8 @@ static const double CONF_shipUpLimit = 0.1; // ile do góry można
 static const int CONF_screenHeight = 480;
 static const int CONF_screenWidth = 640;
 
-static const double CONF_missileSpeed = 0.5;
-static const int CONF_missileSize = 20; // średnica
+//static const double CONF_missileSpeed = 0.5;
+//static const int CONF_missileSize = 20; // średnica
 
 static const int CONF_enemySize = 20; // średnica
 static const double CONF_enemySpeed = 0.2;

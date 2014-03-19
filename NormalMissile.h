@@ -8,7 +8,7 @@
 class NormalMissile : public Missile { // z niej można by wywodzić pozostałe
 public:
 	static sf::Clock missileLimitClock;
-	NormalMissile(double xpos, double ypos);
+	NormalMissile(const sf::Vector2f& shipPos);
 
 	int getDamage() { return 1; }
 	double getSpeed() { return 0.2; }

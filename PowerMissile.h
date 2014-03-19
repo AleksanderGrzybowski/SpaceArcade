@@ -9,7 +9,7 @@ public:
 
 	static sf::Clock missileLimitClock;
 
-	PowerMissile(double xpos, double ypos);
+	PowerMissile(const sf::Vector2f& shipPos);
 
 	int getDamage() { return 2; }
 	double getSpeed() { return 0.5; }

@@ -8,9 +8,10 @@ void Game::addMissile() {
 	// znajdź pozycję statku
 	sf::Vector2f shipPos = ship.getPosition();
 	if (rand() % 2)
-		missiles.push_back(new NormalMissile(shipPos.x + CONF_shipSize/2 - (CONF_missileSize/2), shipPos.y));
+		//missiles.push_back(new NormalMissile(shipPos.x + CONF_shipSize/2 - (CONF_missileSize/2), shipPos.y));
+		missiles.push_back(new NormalMissile(shipPos));
 	else
-		missiles.push_back(new PowerMissile (shipPos.x + CONF_shipSize/2 - (CONF_missileSize/2), shipPos.y));
+		missiles.push_back(new PowerMissile (shipPos));
 }
 
 void Game::addEnemy() {
@@ -85,14 +86,14 @@ void Game::loop() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) { // NormalMissile
 		if ((NormalMissile::missileLimitClock).getElapsedTime().asMilliseconds() > 100) {
 			sf::Vector2f shipPos = ship.getPosition();
-			missiles.push_back(new NormalMissile(shipPos.x + CONF_shipSize/2 - (CONF_missileSize/2), shipPos.y));
+			missiles.push_back(new NormalMissile(shipPos));
 			NormalMissile::missileLimitClock.restart();
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) { // PowerMissile
 		if ((PowerMissile::missileLimitClock).getElapsedTime().asMilliseconds() > 100) {
 			sf::Vector2f shipPos = ship.getPosition();
-			missiles.push_back(new PowerMissile(shipPos.x + CONF_shipSize/2 - (CONF_missileSize/2), shipPos.y));
+			missiles.push_back(new PowerMissile(shipPos));
 			PowerMissile::missileLimitClock.restart();
 		}
 	}
