@@ -64,13 +64,24 @@ void Game::loop() {
 		}
 	}
 
+	// Restart głównego zegara
 	sf::Time t = clock.restart();
+
+	// Poruszanie statkiem
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
 		ship.move(Left, t);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
 		ship.move(Right, t);
 	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+		ship.move(Up, t);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+		ship.move(Down, t);
+	}
+
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) { // NormalMissile
 		if ((NormalMissile::missileLimitClock).getElapsedTime().asMilliseconds() > 100) {
 			sf::Vector2f shipPos = ship.getPosition();
