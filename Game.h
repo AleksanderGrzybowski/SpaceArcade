@@ -2,6 +2,7 @@
 #define GAME_H_
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Rect.hpp> // może redundant?
 #include <iostream>
 #include <vector>
 #include "Ship.h"
@@ -30,6 +31,7 @@ public:
 	void addMissile();
 	void addEnemy();
 	void recalc();
+	bool checkCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize); // pociski są kwadratami!!!
 
 };
 

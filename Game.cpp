@@ -17,6 +17,17 @@ void Game::addEnemy() {
 	(rand() % 2) ? 	enemies.push_back(new NormalEnemy(xpos, ypos)) : enemies.push_back(new HardEnemy(xpos, ypos));
 }
 
+bool Game::checkCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize) { // pociski są kwadratami!!!
+	sf::Vector2f msizes(msize, msize);
+	sf::Vector2f esizes(esize, esize);
+
+	sf::Rect<float> mrect(mpos, msizes);
+	sf::Rect<float> erect(epos, esizes);
+
+	return mrect.intersects(erect);
+	//return (abs(mpos.x - epos.x) < CONF_collisionDistance) && (abs(mpos.y - epos.y) < CONF_collisionDistance);
+}
+
 void Game::recalc() {
 	// pociski poza ekranem
 againA:
@@ -34,7 +45,8 @@ againB:
 		for (auto e = enemies.begin(); e != enemies.end(); ++e) { // elementy są wskaźnikami
 			sf::Vector2f mpos = (*m)->getPosition();
 			sf::Vector2f epos = (*e)->getPosition();
-			if ( (abs(mpos.x - epos.x) < CONF_collisionDistance) && (abs(mpos.y - epos.y) < CONF_collisionDistance) ) { // KOLIZJA
+			if (checkCollision(mpos, epos, (*m)->getSize(), (*e)->getSize())) { // KOLIZJA JUPI
+				std::cout << "Kolizja " << rand() << std::endl;
 				int missileDamage = (*m)->getDamage();
 				missiles.erase(m);
 				(*e)->damage(missileDamage);
@@ -88,7 +100,7 @@ bool Game::loop() {
 	}
 
 
-	if (rand() % 50 == 0) addEnemy();
+	if (rand() % 100 == 0) addEnemy();
 
 	// Achtung
 	recalc();
