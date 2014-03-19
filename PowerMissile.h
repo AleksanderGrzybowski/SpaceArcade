@@ -7,10 +7,16 @@
 class PowerMissile : public Missile { // z niej można by wywodzić pozostałe
 public:
 
+	static sf::Clock missileLimitClock;
 
 	PowerMissile(double xpos, double ypos);
-	virtual double getSpeed() { return CONF_missileSpeed*2; }
+	virtual double getSpeed() { return CONF_missileSpeed; } // tu może być * 2
+
+	virtual Missile* newMissile(double xpos, double ypos) {
+		return new PowerMissile(xpos, ypos);
+	}
 
 };
+
 
 #endif /* MISSILE_H_ */

@@ -4,3 +4,4 @@ PowerMissile::PowerMissile(double xpos, double ypos) : Missile(xpos, ypos) {
 	r.setFillColor(sf::Color::Cyan);
 }
 
+sf::Clock PowerMissile::missileLimitClock;

@@ -66,12 +66,21 @@ void Game::loop() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
 		ship.move(Right, t);
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-		if (missileLimitClock.getElapsedTime().asMilliseconds() > 100) {
-			addMissile();
-			missileLimitClock.restart();
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) { // NormalMissile
+		if ((NormalMissile::missileLimitClock).getElapsedTime().asMilliseconds() > 100) {
+			sf::Vector2f shipPos = ship.getPosition();
+			missiles.push_back(new NormalMissile(shipPos.x + CONF_shipSize/2 - (CONF_missileSize/2), shipPos.y));
+			NormalMissile::missileLimitClock.restart();
 		}
 	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) { // PowerMissile
+		if ((PowerMissile::missileLimitClock).getElapsedTime().asMilliseconds() > 100) {
+			sf::Vector2f shipPos = ship.getPosition();
+			missiles.push_back(new PowerMissile(shipPos.x + CONF_shipSize/2 - (CONF_missileSize/2), shipPos.y));
+			PowerMissile::missileLimitClock.restart();
+		}
+	}
+
 
 	if (rand() % 10 == 0) addEnemy();
 

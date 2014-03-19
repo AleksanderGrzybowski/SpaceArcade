@@ -8,12 +8,17 @@ class Missile {
 public:
 	sf::CircleShape r;
 
+
 	Missile(double xpos, double ypos);
 
 	void moveIterate(const sf::Time& t);
 	sf::Shape& getShape() { return r; }
 	sf::Vector2f getPosition() { return r.getPosition(); }
 	virtual double getSpeed() { return CONF_missileSpeed; }
+
+	virtual Missile* newMissile(double xpos, double ypos) {
+		return new Missile(xpos, ypos);
+	}
 
 	virtual ~Missile() {}
 };
