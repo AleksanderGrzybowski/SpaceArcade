@@ -16,6 +16,8 @@ public:
 		return new PowerMissile(xpos, ypos);
 	}
 
+	int getDamage() { return 2; }
+
 };
 
 

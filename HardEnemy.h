@@ -13,6 +13,8 @@
 class HardEnemy: public Enemy {
 public:
 	HardEnemy(double xpos, double ypos);
+
+	void damage(int damage);
 };
 
 #endif /* HARDENEMY_H_ */

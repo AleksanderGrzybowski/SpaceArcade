@@ -41,9 +41,14 @@ againB:
 		for (auto e = enemies.begin(); e != enemies.end(); ++e) { // elementy są wskaźnikami
 			sf::Vector2f mpos = (*m)->getPosition();
 			sf::Vector2f epos = (*e)->getPosition();
-			if ( (abs(mpos.x - epos.x) < 50) && (abs(mpos.y - epos.y) < 50) ) {
+			if ( (abs(mpos.x - epos.x) < 50) && (abs(mpos.y - epos.y) < 50) ) { // KOLIZJA
+
+//				missiles.erase(m); // proste, zmieniam na to uwzgl. damage
+//				enemies.erase(e);
+				int missileDamage = (*m)->getDamage();
 				missiles.erase(m);
-				enemies.erase(e);
+				(*e)->damage(missileDamage);
+				if (!((*e)->isAlive())) enemies.erase(e);
 				goto againB;
 			}
 		}
@@ -82,7 +87,7 @@ void Game::loop() {
 	}
 
 
-	if (rand() % 10 == 0) addEnemy();
+	if (rand() % 50 == 0) addEnemy();
 
 	recalc();
 

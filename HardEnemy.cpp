@@ -7,4 +7,10 @@
 
 #include "HardEnemy.h"
 
-HardEnemy::HardEnemy(double xpos, double ypos) : Enemy(xpos,ypos) {}
+HardEnemy::HardEnemy(double xpos, double ypos) : Enemy(xpos,ypos) {
+	health = 20;
+}
+
+void HardEnemy::damage(int damage) {
+	health -= damage;
+}

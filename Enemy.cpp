@@ -1,7 +1,8 @@
 #include "Enemy.h"
 
-Enemy::Enemy(double xpos, double ypos) : shape(CONF_enemySize, 1000) {
+Enemy::Enemy(double xpos, double ypos) : shape(CONF_enemySize, 1000), health(0) {
 	shape.move(xpos, ypos);
+
 }
 
 

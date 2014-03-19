@@ -16,9 +16,10 @@ public:
 	sf::Vector2f getPosition() { return r.getPosition(); }
 	virtual double getSpeed() { return CONF_missileSpeed; }
 
-	virtual Missile* newMissile(double xpos, double ypos) {
-		return new Missile(xpos, ypos);
-	}
+//	virtual Missile* newMissile(double xpos, double ypos) { // wywalić
+//		return new Missile(xpos, ypos);
+//	}
+	virtual int getDamage() = 0;
 
 	virtual ~Missile() {}
 };

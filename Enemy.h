@@ -7,6 +7,7 @@
 class Enemy {
 public:
 	sf::CircleShape shape;
+	int health;
 
 	Enemy(double xpos, double ypos);
 
@@ -14,6 +15,8 @@ public:
 	void moveIterate(sf::Time& t);
 	sf::Vector2f getPosition() { return shape.getPosition(); }
 
+	bool isAlive() { return health > 0; }
+	virtual void damage(int damage) = 0;
 	virtual ~Enemy() {}
 };
 
