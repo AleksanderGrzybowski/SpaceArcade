@@ -2,8 +2,10 @@
 #include "NormalEnemy.h"
 
 NormalEnemy::NormalEnemy(double xpos, double ypos) : Enemy(xpos, ypos) {
-	shape.setFillColor(sf::Color::Blue);
-	health = 10;
+	shape = sf::CircleShape(getSize(), 1000);
+	shape.move(xpos, ypos);
+	shape.setFillColor(getColor());
+	health = getMaxHealth();
 }
 
 void NormalEnemy::damage(int damage) {

@@ -15,6 +15,11 @@ public:
 	void moveIterate(sf::Time& t);
 	sf::Vector2f getPosition() { return shape.getPosition(); }
 
+	virtual double getSpeed() { return 0.1;} // coś wymyślić
+	virtual int getSize() { return CONF_enemySize; }
+	virtual sf::Color getColor() { return sf::Color::White; } // zamienić wszystkie na virtual czysto
+	virtual int getMaxHealth() { return 10; }
+
 	bool isAlive() { return health > 0; }
 	virtual void damage(int damage) = 0;
 	virtual ~Enemy() {}

@@ -18,6 +18,4 @@ static const int CONF_enemySize = 20; // średnica
 static const double CONF_enemySpeed = 0.2;
 static const int CONF_movementRandomFactor = 5;
 
-
-
 #endif /* CONFIG_H_ */
