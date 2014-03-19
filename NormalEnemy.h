@@ -12,6 +12,7 @@ public:
 	double getSpeed() { return 0.2; }
 	int getSize() { return 30; }
 	sf::Color getColor() { return sf::Color::Blue; }
+	int getMaxHealth() { return 10; }
 };
 
 #endif /* ENEMY_H_ */

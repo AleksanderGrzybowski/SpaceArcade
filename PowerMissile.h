@@ -4,19 +4,17 @@
 #include "config.h"
 #include "Missile.h"
 
-class PowerMissile : public Missile { // z niej można by wywodzić pozostałe
+class PowerMissile : public Missile {
 public:
 
 	static sf::Clock missileLimitClock;
 
 	PowerMissile(double xpos, double ypos);
-	virtual double getSpeed() { return CONF_missileSpeed; } // tu może być * 2
-
-	virtual Missile* newMissile(double xpos, double ypos) {
-		return new PowerMissile(xpos, ypos);
-	}
 
 	int getDamage() { return 2; }
+	double getSpeed() { return 0.5; }
+	sf::Color getColor() { return sf::Color::Red; }
+	int getSize() { return 30; }
 
 };
 

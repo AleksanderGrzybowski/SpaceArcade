@@ -10,11 +10,10 @@ public:
 	static sf::Clock missileLimitClock;
 	NormalMissile(double xpos, double ypos);
 
-//	virtual Missile* newMissile(double xpos, double ypos) {
-//		return new NormalMissile(xpos, ypos);
-//	}
-
 	int getDamage() { return 1; }
+	double getSpeed() { return 0.2; }
+	int getSize() { return 20; }
+	sf::Color getColor() { return sf::Color::Blue; }
 };
 
 

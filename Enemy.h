@@ -16,9 +16,9 @@ public:
 	sf::Vector2f getPosition() { return shape.getPosition(); }
 
 	virtual double getSpeed() { return 0.1;} // coś wymyślić
-	virtual int getSize() { return CONF_enemySize; }
-	virtual sf::Color getColor() { return sf::Color::White; } // zamienić wszystkie na virtual czysto
-	virtual int getMaxHealth() { return 10; }
+	virtual int getSize()  = 0;
+	virtual sf::Color getColor() = 0;
+	virtual int getMaxHealth() = 0;
 
 	bool isAlive() { return health > 0; }
 	virtual void damage(int damage) = 0;
