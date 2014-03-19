@@ -2,6 +2,7 @@
 #define ENEMY_H_
 
 #include <SFML/Graphics.hpp>
+#include <iostream>
 #include "config.h"
 #include "Direction.h"
 

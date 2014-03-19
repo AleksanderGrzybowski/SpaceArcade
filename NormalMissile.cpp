@@ -10,4 +10,4 @@ NormalMissile::NormalMissile(const sf::Vector2f& shipPos) {
 }
 
 sf::Clock NormalMissile::missileLimitClock;
-const int NormalMissile::timeLimit = 300; // ms
+const int NormalMissile::timeLimit = 100; // ms

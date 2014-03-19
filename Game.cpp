@@ -121,7 +121,7 @@ bool Game::loop() {
 		}
 	}
 
-	if (rand() % 100 == 0) addEnemy();
+	if (rand() % 50 == 0) addEnemy();
 
 	// Achtung
 	recalc();
