@@ -8,6 +8,9 @@ class Enemy {
 public:
 	sf::RectangleShape shape;
 	int health;
+	double moveDistance;
+	double leftDistance;
+	int currentDirection; // zamienić na enum
 
 	Enemy(double xpos, double ypos);
 
