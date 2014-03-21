@@ -19,7 +19,6 @@ void Game::addEnemy() {
 
 	int xpos = rand() % CONF_screenWidth;
 	int ypos = (rand() % CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na enemy
-	std::cout << "Tworze nowego na pozycji " << xpos << " " << ypos << std::endl;
 	(rand() % 2) ? 	enemies.push_back(new NormalEnemy(xpos, ypos)) : enemies.push_back(new HardEnemy(xpos, ypos));
 }
 
@@ -52,7 +51,6 @@ againB:
 			sf::Vector2f mpos = (*m)->getPosition();
 			sf::Vector2f epos = (*e)->getPosition();
 			if (checkCollision(mpos, epos, (*m)->getSize(), (*e)->getSize())) { // KOLIZJA JUPI
-				std::cout << "Kolizja " << rand() << std::endl;
 				int missileDamage = (*m)->getDamage();
 				delete *m;
 				missiles.erase(m);
@@ -138,7 +136,6 @@ bool Game::loop() {
 
 	for (auto& e : enemies) {
 		sf::Vector2f dpos = e->getPosition();
-		std::cout << "Wyswietlam enemy na pozycji " << dpos.x << " " << dpos.y <<  std::endl;
 		e->moveIterate(t);
 		window.draw(*e);
 	}

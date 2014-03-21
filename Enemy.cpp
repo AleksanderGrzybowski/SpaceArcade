@@ -18,7 +18,6 @@ void Enemy::moveIterate(sf::Time& t) {
 	}
 	if (pos.x > (CONF_screenWidth-64)) {
 
-		std::cout << "Mam zły obiekt na pozycji"<< pos.x << " " << pos.y << std::endl;
 		pos.x = CONF_screenWidth-64;
 		shape.setPosition(pos.x, pos.y);
 
