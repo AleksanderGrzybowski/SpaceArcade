@@ -9,26 +9,43 @@ void Enemy::moveIterate(sf::Time& t) { // dodać niewychodzenie ich za ekran
 
 	sf::Vector2f pos = shape.getPosition();
 
-	if (pos.x < 0) {
-		shape.setPosition(0, pos.y);
+	bool bad = false;
+
+	if (pos.x < 0) { //bad=true;
+//		std::cout << "Mam zły obiekt na pozycji"<< pos.x << " " << pos.y << std::endl;
+		pos.x = 0;
+		shape.setPosition(pos.x, pos.y);
 		currentDirection = Right;
-		return;
+//		return;
 	}
-	if ((pos.x-64) > CONF_screenWidth) {
-		std::cout << "Korekta" << rand() << std::endl;
-		shape.setPosition(CONF_screenWidth-64, pos.y); // minus ileśtam (?)
+	if (pos.x > (CONF_screenWidth-64)) {bad=true;
+
+		std::cout << "Mam zły obiekt na pozycji"<< pos.x << " " << pos.y << std::endl;
+		pos.x = CONF_screenWidth-64;
+		shape.setPosition(pos.x, pos.y); // minus ileśtam (?) // było 64
+
 		currentDirection = Left;
-		return;
+//		return;
 	}
-	if (pos.y < 0) {
-		shape.setPosition(pos.x, 0);
+	if (pos.y < 0) {//bad=true;
+//		std::cout << "Mam zły obiekt na pozycji"<< pos.x << " " << pos.y << std::endl;
+//		std::cout << "Korekta" << rand() << std::endl;
+		pos.y = 0;
+		shape.setPosition(pos.x, pos.y);
 		currentDirection = Down;
-		return;
+//		return;
 	}
-	if (pos.y > CONF_screenHeight*CONF_enemyDownLimit) {
-		shape.setPosition(pos.x, CONF_screenHeight*CONF_enemyDownLimit);
+	if (pos.y > CONF_screenHeight*CONF_enemyDownLimit) {//bad=true;
+//		std::cout << "Mam zły obiekt na pozycji"<< pos.x << " " << pos.y << std::endl;
+		pos.y = CONF_screenHeight*CONF_enemyDownLimit;
+		shape.setPosition(pos.x, pos.y);
 		currentDirection = Up;
-		return;
+//		return;
+	}
+
+	if (bad) {
+		std::cout << "Poprawiono " << pos.x << " " << pos.y << std::endl;
+		bad = false;
 	}
 
 	if (leftDistance > 0) {
@@ -53,6 +70,8 @@ void Enemy::moveIterate(sf::Time& t) { // dodać niewychodzenie ich za ekran
 		currentDirection = (Direction)(rand() % 4);
 		leftDistance = moveDistance;
 	}
+
+	//shape.setPosition(10, 10);
 }
 
 void Enemy::damage(int damage) {

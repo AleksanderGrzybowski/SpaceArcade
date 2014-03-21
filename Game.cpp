@@ -16,9 +16,10 @@ void Game::addMissile() {
 }
 
 void Game::addEnemy() {
-	// znajdź pozycję statku
+
 	int xpos = rand() % CONF_screenWidth;
 	int ypos = (rand() % CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na enemy
+	std::cout << "Tworze nowego na pozycji " << xpos << " " << ypos << std::endl;
 	(rand() % 2) ? 	enemies.push_back(new NormalEnemy(xpos, ypos)) : enemies.push_back(new HardEnemy(xpos, ypos));
 }
 
@@ -75,6 +76,7 @@ sf::Text Game::getText() {
 	text.setColor(sf::Color::White);
 	return text;
 }
+
 bool Game::loop() {
 	sf::Event e;
 	while (window.pollEvent(e)) {
@@ -121,7 +123,7 @@ bool Game::loop() {
 		}
 	}
 
-	if (rand() % 50 == 0) addEnemy();
+	if (rand() % 30 == 0) addEnemy();
 
 	// Achtung
 	recalc();
@@ -135,6 +137,8 @@ bool Game::loop() {
 	}
 
 	for (auto& e : enemies) {
+		sf::Vector2f dpos = e->getPosition();
+		std::cout << "Wyswietlam enemy na pozycji " << dpos.x << " " << dpos.y <<  std::endl;
 		e->moveIterate(t);
 		window.draw(*e);
 	}
