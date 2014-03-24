@@ -60,7 +60,7 @@ againB:
 					enemies.erase(e);
 					pointCount++; // jakaś fajniejsza logika
 				}
-				goto againB; // czy to ma sens logiczny?
+				goto againB; // czy to ma sens logiczny? chyba działa
 			}
 		}
 	}
@@ -121,7 +121,7 @@ bool Game::loop() {
 		}
 	}
 
-	if (rand() % 30 == 0) addEnemy();
+	if (rand() % 100 == 0) addEnemy();
 
 	// Achtung
 	recalc();
@@ -135,7 +135,7 @@ bool Game::loop() {
 	}
 
 	for (auto& e : enemies) {
-		sf::Vector2f dpos = e->getPosition();
+		sf::Vector2f dpos = e->getPosition(); // ? wtf o co mi tu chodziło
 		e->moveIterate(t);
 		window.draw(*e);
 	}
