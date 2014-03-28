@@ -12,12 +12,16 @@ public:
 	Missile();
 
 	void moveIterate(const sf::Time& t);
-	operator sf::Sprite&() { return shape; }
+
 	sf::Vector2f getPosition() { return shape.getPosition(); }
 
 	virtual double getSpeed() = 0;
 	virtual int getDamage() = 0;
 	virtual int getSize() = 0;
+
+	void draw(sf::RenderWindow& window) {
+		window.draw(shape);
+	}
 
 	virtual ~Missile() {}
 };

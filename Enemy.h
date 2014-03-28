@@ -16,7 +16,9 @@ public:
 
 	Enemy(double xpos, double ypos);
 
-	operator sf::Sprite&() { return shape; }
+	void draw(sf::RenderWindow& window) {
+		window.draw(shape);
+	}
 	void moveIterate(sf::Time& t);
 	sf::Vector2f getPosition() { return shape.getPosition(); }
 

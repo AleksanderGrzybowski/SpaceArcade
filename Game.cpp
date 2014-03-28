@@ -132,17 +132,19 @@ bool Game::loop() {
 
 	for (auto& m : missiles) {
 		m->moveIterate(t);
-		window.draw(*m);
+		m->draw(window);
 	}
 
 	for (auto& e : enemies) {
 		e->moveIterate(t);
-		window.draw(*e);
+		e->draw(window);
 	}
 
-	window.draw(ship);
+
+	ship.draw(window);
 
 	// Napis
+
 
 	window.draw(getText());
 

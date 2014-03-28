@@ -15,7 +15,10 @@ public:
 	void move(Direction d, const sf::Time& t);
 	const sf::Vector2f& getPosition() { return shape.getPosition(); }
 
-	operator sf::Sprite&() { return shape; }
+	void draw(sf::RenderWindow& window) {
+		window.draw(shape);
+	}
+
 };
 
 #endif /* SHIP_H_ */
