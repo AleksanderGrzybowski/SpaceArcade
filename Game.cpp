@@ -106,6 +106,7 @@ bool Game::loop() {
 	}
 
 
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) { // NormalMissile
 		if ((NormalMissile::missileLimitClock).getElapsedTime().asMilliseconds() > NormalMissile::timeLimit) {
 			sf::Vector2f shipPos = ship.getPosition();
