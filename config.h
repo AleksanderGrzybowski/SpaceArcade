@@ -1,7 +1,6 @@
 #ifndef CONFIG_H_
 #define CONFIG_H_
 
-#include <SFML/Graphics.hpp>
 #include <string>
 
 static const std::string CONF_windowTitle = "SpaceArcade Alfa";
