@@ -3,13 +3,11 @@
 
 #include <SFML/Graphics.hpp>
 #include "config.h"
-
+#include "TextureFlipper.h"
 class Missile {
 public:
 	sf::Sprite shape;
-	sf::Texture textureA;
-	sf::Texture textureB;
-	bool currentTexture;
+	TextureFlipper tf;
 	sf::Clock animationSpeedClock;
 	Missile();
 

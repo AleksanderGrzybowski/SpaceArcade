@@ -5,6 +5,7 @@
 
 static const std::string CONF_windowTitle = "SpaceArcade Alfa";
 static const int CONF_frameRateLimit = 60;
+static const int CONF_animationSpeed = 100; // co 100 ms zmiana tekstury
 
 static const int CONF_shipSize = 48; // bok kwadratu
 static const double CONF_shipSpeed = 0.2;

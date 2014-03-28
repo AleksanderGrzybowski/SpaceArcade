@@ -13,14 +13,9 @@ void Missile::moveIterate(const sf::Time& t) {
 
 void Missile::draw(sf::RenderWindow& window) {
 	//if ((PowerMissile::missileLimitClock).getElapsedTime().asMilliseconds() > PowerMissile::timeLimit) {
-	if ((animationSpeedClock).getElapsedTime().asMilliseconds() > 100) {
+	if ((animationSpeedClock).getElapsedTime().asMilliseconds() > CONF_animationSpeed) {
+		shape.setTexture(tf.getFlip());
 		animationSpeedClock.restart();
-		if (currentTexture) {
-			shape.setTexture(textureA);
-		} else {
-			shape.setTexture(textureB);
-		}
-		currentTexture = !currentTexture;
 	}
 	window.draw(shape);
 }
