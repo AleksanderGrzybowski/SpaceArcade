@@ -1,8 +1,10 @@
 #include "NormalMissile.h"
 
 NormalMissile::NormalMissile(const sf::Vector2f& shipPos) {
-	texture.loadFromFile("Sprites/NormalMissile.png");
-	shape.setTexture(texture);
+	textureA.loadFromFile("Sprites/NormalMissileA.png");
+	textureB.loadFromFile("Sprites/NormalMissileB.png");
+	shape.setTexture(textureA);
+	shape.setTexture(textureB);
 
 	double xpos = shipPos.x + CONF_shipSize/2 - (getSize()/2.0);
 	double ypos = shipPos.y;
@@ -10,4 +12,5 @@ NormalMissile::NormalMissile(const sf::Vector2f& shipPos) {
 }
 
 sf::Clock NormalMissile::missileLimitClock;
+
 const int NormalMissile::timeLimit = 100; // ms

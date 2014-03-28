@@ -16,11 +16,9 @@ public:
 
 	Enemy(double xpos, double ypos);
 
-	void draw(sf::RenderWindow& window) {
-		window.draw(shape);
-	}
 	void moveIterate(sf::Time& t);
 	sf::Vector2f getPosition() { return shape.getPosition(); }
+	void draw(sf::RenderWindow& window) { window.draw(shape); 	}
 
 	virtual double getSpeed() { return 0.1;} // coś wymyślić
 	virtual int getSize()  = 0;
@@ -29,6 +27,7 @@ public:
 
 	bool isAlive() { return health > 0; }
 	void damage(int damage);
+
 	virtual ~Enemy() {}
 };
 

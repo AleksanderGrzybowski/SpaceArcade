@@ -8,6 +8,7 @@
 class NormalMissile : public Missile {
 public:
 	static sf::Clock missileLimitClock;
+	static sf::Clock animationSpeedClock;
 	static const int timeLimit;
 
 	NormalMissile(const sf::Vector2f& shipPos);

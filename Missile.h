@@ -7,8 +7,10 @@
 class Missile {
 public:
 	sf::Sprite shape;
-	sf::Texture texture;
-
+	sf::Texture textureA;
+	sf::Texture textureB;
+	bool currentTexture;
+	sf::Clock animationSpeedClock;
 	Missile();
 
 	void moveIterate(const sf::Time& t);
@@ -19,9 +21,7 @@ public:
 	virtual int getDamage() = 0;
 	virtual int getSize() = 0;
 
-	void draw(sf::RenderWindow& window) {
-		window.draw(shape);
-	}
+	void draw(sf::RenderWindow& window);
 
 	virtual ~Missile() {}
 };
