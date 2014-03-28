@@ -15,7 +15,6 @@ public:
 	int getDamage() { return 5; }
 	double getSpeed() { return 0.5; }
 	int getSize() { return 24; }
-	sf::Color getColor() { return sf::Color::Red; }
 };
 
 #endif /* MISSILE_H_ */

@@ -70,7 +70,7 @@ sf::Text Game::getText() {
 	sf::Text text;
 	text.setFont(font);
 	text.setString("Punkty: " + std::to_string(pointCount));
-	text.setCharacterSize(20);
+	text.setCharacterSize(CONF_fontSize);
 	text.setColor(sf::Color::White);
 	return text;
 }
@@ -136,7 +136,6 @@ bool Game::loop() {
 	}
 
 	for (auto& e : enemies) {
-		sf::Vector2f dpos = e->getPosition(); // ? wtf o co mi tu chodziło
 		e->moveIterate(t);
 		window.draw(*e);
 	}

@@ -15,4 +15,6 @@ static const int CONF_screenWidth = 640;
 
 static const double CONF_enemyDownLimit = 0.2;
 
+static const int CONF_fontSize = 20;
+
 #endif /* CONFIG_H_ */

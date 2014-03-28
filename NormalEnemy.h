@@ -10,7 +10,6 @@ public:
 
 	double getSpeed() { return 0.2; }
 	int getSize() { return 64; }
-	sf::Color getColor() { return sf::Color::Blue; }
 	int getMaxHealth() { return 10; }
 	double getDamageCoeff() { return 1; }
 };

@@ -22,7 +22,6 @@ public:
 
 	virtual double getSpeed() { return 0.1;} // coś wymyślić
 	virtual int getSize()  = 0;
-//	virtual sf::Color getColor() = 0;
 	virtual int getMaxHealth() = 0;
 	virtual double getDamageCoeff() = 0;
 

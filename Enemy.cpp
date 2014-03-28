@@ -14,27 +14,21 @@ void Enemy::moveIterate(sf::Time& t) {
 		pos.x = 0;
 		shape.setPosition(pos.x, pos.y);
 		currentDirection = Right;
-//		return;
 	}
 	if (pos.x > (CONF_screenWidth-64)) {
-
 		pos.x = CONF_screenWidth-64;
 		shape.setPosition(pos.x, pos.y);
-
 		currentDirection = Left;
-//		return;
 	}
 	if (pos.y < 0) {
 		pos.y = 0;
 		shape.setPosition(pos.x, pos.y);
 		currentDirection = Down;
-//		return;
 	}
 	if (pos.y > CONF_screenHeight*CONF_enemyDownLimit) {
 		pos.y = CONF_screenHeight*CONF_enemyDownLimit;
 		shape.setPosition(pos.x, pos.y);
 		currentDirection = Up;
-//		return;
 	}
 
 
@@ -60,8 +54,6 @@ void Enemy::moveIterate(sf::Time& t) {
 		currentDirection = (Direction)(rand() % 4);
 		leftDistance = moveDistance;
 	}
-
-
 }
 
 void Enemy::damage(int damage) {
