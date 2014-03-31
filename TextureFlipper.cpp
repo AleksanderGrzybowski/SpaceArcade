@@ -1,7 +1,9 @@
 
 #include "TextureFlipper.h"
 
-TextureFlipper::TextureFlipper() : next(0) {}
+TextureFlipper::TextureFlipper() : next(0) {
+	tab.reserve(10); // unikamy realokacji
+}
 
 void TextureFlipper::add(sf::Texture t) {
 	tab.push_back(t);

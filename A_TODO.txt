@@ -1,0 +1,15 @@
+przesuwanie się statków w dół
+rysowanie linii po której przekroczeniu przegrywa się
+
+
+
+
+
+
+
+
+
+
+TextureFlipper: uwaga, SFML bierze sobie wskaźnik do tekstury i z niego korzysta, jeśli wykona
+się jakieś przeniesienie tekstur w TextureFlipper to może nastąpić realokacja pamięci i szlag trafi wszystko
+Nie zmieniać tekstur, ewentualnie spróbować reserve(ileśtam) wcześniej
