@@ -2,9 +2,9 @@
 
 PowerMissile::PowerMissile(const sf::Vector2f& shipPos) {
 	sf::Texture t;
-	t.loadFromFile("Sprites/NormalMissileA.png");
+	t.loadFromFile("Sprites/PowerMissileA.png");
 	tf.add(t);
-	t.loadFromFile("Sprites/NormalMissileB.png");
+	t.loadFromFile("Sprites/PowerMissileB.png");
 	tf.add(t);
 	shape.setTexture(tf.getFlip());
 
