@@ -12,6 +12,8 @@ public:
 
 	PowerMissile(const sf::Vector2f& shipPos);
 
+	static bool canBeSent();
+
 	int getDamage() { return 20; }
 	double getSpeed() { return 0.5; }
 	int getSize() { return 24; }

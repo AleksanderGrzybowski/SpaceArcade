@@ -13,5 +13,9 @@ PowerMissile::PowerMissile(const sf::Vector2f& shipPos) {
 	shape.move(xpos, ypos);
 }
 
+bool PowerMissile::canBeSent() {
+	return (PowerMissile::missileLimitClock).getElapsedTime().asMilliseconds() > PowerMissile::timeLimit;
+}
+
 sf::Clock PowerMissile::missileLimitClock;
 const int PowerMissile::timeLimit = 1000;

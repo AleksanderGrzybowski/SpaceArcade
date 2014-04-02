@@ -14,6 +14,10 @@ NormalMissile::NormalMissile(const sf::Vector2f& shipPos) {
 	shape.move(xpos, ypos);
 }
 
+bool NormalMissile::canBeSent() {
+	return (NormalMissile::missileLimitClock).getElapsedTime().asMilliseconds() > NormalMissile::timeLimit;
+}
+
 sf::Clock NormalMissile::missileLimitClock;
 
 const int NormalMissile::timeLimit = 100; // ms

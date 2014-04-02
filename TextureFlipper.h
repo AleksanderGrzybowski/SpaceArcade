@@ -13,6 +13,8 @@ public:
 	void add(sf::Texture t);
 	sf::Texture& getFlip();
 
+
+
 };
 
 #endif /* TEXTUREFLIPPER_H_ */

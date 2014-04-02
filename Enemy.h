@@ -8,7 +8,8 @@
 
 class Enemy {
 public:
-	sf::Sprite shape;
+	sf::Sprite sprite;
+
 	int health;
 	double moveDistance;
 	double leftDistance; // pozostały
@@ -17,10 +18,10 @@ public:
 	Enemy(double xpos, double ypos);
 
 	void moveIterate(sf::Time& t);
-	sf::Vector2f getPosition() { return shape.getPosition(); }
-	void draw(sf::RenderWindow& window) { window.draw(shape); 	}
+	sf::Vector2f getPosition() { return sprite.getPosition(); }
+	void draw(sf::RenderWindow& window) { window.draw(sprite); }
 
-	virtual double getSpeed() { return 0.1;} // coś wymyślić
+	virtual double getSpeed() { return CONF_enemySpeed;}
 	virtual int getSize()  = 0;
 	virtual int getMaxHealth() = 0;
 	virtual double getDamageCoeff() = 0;

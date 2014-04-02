@@ -34,11 +34,10 @@ public:
 	void addMissile();
 	void addEnemy();
 	void recalc();
-	bool checkCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize); // pociski są kwadratami!!!
+	bool isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize); // pociski są kwadratami!!!
 	sf::Text getText();
 
 	~Game();
-
 };
 
 #endif /* GAME_H_ */

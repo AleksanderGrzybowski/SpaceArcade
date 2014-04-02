@@ -2,7 +2,6 @@
 
 Ship::Ship() {
 	texture.loadFromFile("Sprites/spaceship.png");
-
 	shape.setTexture(texture);
 	shape.setPosition(CONF_screenWidth/2.0 - CONF_shipSize/2, CONF_screenHeight-CONF_shipSize);
 }

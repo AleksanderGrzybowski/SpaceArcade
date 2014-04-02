@@ -3,8 +3,9 @@ rysowanie linii po której przekroczeniu przegrywa się
 
 
 
-
-
+prędkość poszczególnych enemy
+każdy enemy inna liczba punktów
+wycieki poszukać
 
 
 

@@ -15,3 +15,5 @@ sf::Texture& TextureFlipper::getFlip() {
 	if (next == tab.size()) next = 0;
 	return ret;
 }
+
+

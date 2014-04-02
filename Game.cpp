@@ -3,7 +3,7 @@
 Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CONF_windowTitle), pointCount(0) {
 	window.setFramerateLimit(CONF_frameRateLimit);
 
-	if (!font.loadFromFile("Fonts/Arial.ttf")) {
+	if (!font.loadFromFile("Fonts/Arial.ttf")) { // should never happen
 		std::cerr << "Nie idzie czcionki załadować" << std::endl;
 		throw std::exception();
 	}
@@ -16,13 +16,12 @@ void Game::addMissile() {
 }
 
 void Game::addEnemy() {
-
 	int xpos = rand() % CONF_screenWidth;
 	int ypos = (rand() % CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na enemy
 	(rand() % 2) ? 	enemies.push_back(new NormalEnemy(xpos, ypos)) : enemies.push_back(new HardEnemy(xpos, ypos));
 }
 
-bool Game::checkCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize) { // pociski są kwadratami!!!
+bool Game::isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize) { // pociski są kwadratami!!!
 	sf::Vector2f msizes(msize, msize);
 	sf::Vector2f esizes(esize, esize);
 
@@ -50,7 +49,7 @@ againB:
 		for (auto e = enemies.begin(); e != enemies.end(); ++e) { // elementy są wskaźnikami
 			sf::Vector2f mpos = (*m)->getPosition();
 			sf::Vector2f epos = (*e)->getPosition();
-			if (checkCollision(mpos, epos, (*m)->getSize(), (*e)->getSize())) { // KOLIZJA JUPI
+			if (isCollision(mpos, epos, (*m)->getSize(), (*e)->getSize())) { // KOLIZJA JUPI
 				int missileDamage = (*m)->getDamage();
 				delete *m;
 				missiles.erase(m);
@@ -106,23 +105,22 @@ bool Game::loop() {
 	}
 
 
-
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) { // NormalMissile
-		if ((NormalMissile::missileLimitClock).getElapsedTime().asMilliseconds() > NormalMissile::timeLimit) {
+		if (NormalMissile::canBeSent()) {
 			sf::Vector2f shipPos = ship.getPosition();
 			missiles.push_back(new NormalMissile(shipPos));
 			NormalMissile::missileLimitClock.restart();
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) { // PowerMissile
-		if ((PowerMissile::missileLimitClock).getElapsedTime().asMilliseconds() > PowerMissile::timeLimit) {
+		if (PowerMissile::canBeSent()) {
 			sf::Vector2f shipPos = ship.getPosition();
 			missiles.push_back(new PowerMissile(shipPos));
 			PowerMissile::missileLimitClock.restart();
 		}
 	}
 
-	if (rand() % 100 == 0) addEnemy();
+	if (rand() % CONF_enemyGenerationFactor == 0) addEnemy();
 
 	// Achtung
 	recalc();
@@ -140,18 +138,14 @@ bool Game::loop() {
 		e->draw(window);
 	}
 
-
 	ship.draw(window);
 
 	// Napis
-
-
 	window.draw(getText());
 
 	window.display();
 	return true;
 }
-
 
 Game::~Game() {
 	for (auto m = missiles.begin(); m != missiles.end(); ++m) delete *m;
