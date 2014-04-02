@@ -78,7 +78,6 @@ bool Game::loop() {
 	sf::Event e;
 	while (window.pollEvent(e)) {
 		if (e.type == sf::Event::Closed) {
-			window.close();
 			return false;
 		}
 	}

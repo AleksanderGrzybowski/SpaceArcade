@@ -5,10 +5,11 @@
 #include <iostream>
 #include "config.h"
 #include "Direction.h"
-
+#include "TextureFlipper.h"
 class Enemy {
 public:
 	sf::Sprite sprite;
+	TextureFlipper tf;
 
 	int health;
 	double moveDistance;
