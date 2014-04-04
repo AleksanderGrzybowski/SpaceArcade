@@ -12,7 +12,6 @@ Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CO
 void Game::addMissile() {
 	// znajdź pozycję statku, potrzebną do określenia pozycji pocisku
 	sf::Vector2f shipPos = ship.getPosition();
-	//(rand() % 2) ? missiles.push_back(new NormalMissile(shipPos)) : missiles.push_back(new PowerMissile (shipPos));
 	missiles.push_back(MissileFactory::getRandomMissile(shipPos));
 }
 

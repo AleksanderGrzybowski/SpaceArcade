@@ -1,8 +1,13 @@
 #include "Ship.h"
 
 Ship::Ship() {
-	texture.loadFromFile("Sprites/spaceship.png");
-	shape.setTexture(texture);
+	sf::Texture t;
+	t.loadFromFile("Sprites/spaceshipA.png");
+	tf.add(t);
+	t.loadFromFile("Sprites/spaceshipB.png");
+	tf.add(t);
+
+	shape.setTexture(tf.getFlip());
 	shape.setPosition(CONF_screenWidth/2.0 - CONF_shipSize/2, CONF_screenHeight-CONF_shipSize);
 }
 
@@ -32,8 +37,14 @@ void Ship::move(Direction b, const sf::Time& t) {
 
 	if (! (( (pos.y + ydistance) >= (CONF_screenHeight-CONF_shipSize)) || ((pos.y + ydistance) <= (CONF_screenHeight*(1-CONF_shipUpLimit)))) )
 		shape.move(0, ydistance);
-
-
 }
 
 
+void Ship::draw(sf::RenderWindow& window) {
+	//if ((PowerMissile::missileLimitClock).getElapsedTime().asMilliseconds() > PowerMissile::timeLimit) {
+	if ((animationSpeedClock).getElapsedTime().asMilliseconds() > CONF_animationSpeed) {
+		shape.setTexture(tf.getFlip());
+		animationSpeedClock.restart();
+	}
+	window.draw(shape);
+}
