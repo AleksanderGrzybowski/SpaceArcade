@@ -21,7 +21,7 @@ public:
 	void moveIterate(sf::Time& t);
 	sf::Vector2f getPosition() { return sprite.getPosition(); }
 	void draw(sf::RenderWindow& window) {
-		std::cout << "Rysuje przeciwnika na pozycji " << getPosition().x << " " << getPosition().y << std::endl;
+		//std::cout << "Rysuje przeciwnika na pozycji " << getPosition().x << " " << getPosition().y << std::endl;
 		window.draw(sprite);
 	}
 
