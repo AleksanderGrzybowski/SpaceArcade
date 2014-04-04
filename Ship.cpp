@@ -1,11 +1,7 @@
 #include "Ship.h"
 
 Ship::Ship() {
-	sf::Texture t;
-	t.loadFromFile("Sprites/spaceshipA.png");
-	tf.add(t);
-	t.loadFromFile("Sprites/spaceshipB.png");
-	tf.add(t);
+	tf.add(std::vector<std::string> {"Sprites/spaceshipA.png", "Sprites/spaceshipB.png"});
 
 	shape.setTexture(tf.getFlip());
 	shape.setPosition(CONF_screenWidth/2.0 - CONF_shipSize/2, CONF_screenHeight-CONF_shipSize);

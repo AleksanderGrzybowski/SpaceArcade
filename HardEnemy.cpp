@@ -1,9 +1,7 @@
 #include "HardEnemy.h"
 
 HardEnemy::HardEnemy(double xpos, double ypos) : Enemy(xpos,ypos) {
-	sf::Texture t;
-	t.loadFromFile("Sprites/HardEnemy.png"); // na razie bez animacji
-	tf.add(t);
+	tf.add(std::vector<std::string> {"Sprites/HardEnemy.png"});
 	sprite.setTexture(tf.getFlip());
 	sprite.setPosition(xpos, ypos);
 	health = getMaxHealth();

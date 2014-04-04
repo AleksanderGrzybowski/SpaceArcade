@@ -1,11 +1,13 @@
 #include "PowerMissile.h"
 
 PowerMissile::PowerMissile(const sf::Vector2f& shipPos) {
-	sf::Texture t;
-	t.loadFromFile("Sprites/PowerMissileA.png");
-	tf.add(t);
-	t.loadFromFile("Sprites/PowerMissileB.png");
-	tf.add(t);
+//	sf::Texture t;
+//	t.loadFromFile("Sprites/PowerMissileA.png");
+//	tf.add(t);
+//	t.loadFromFile("Sprites/PowerMissileB.png");
+//	tf.add(t);
+
+	tf.add(std::vector<std::string> {"Sprites/PowerMissileA.png", "Sprites/PowerMissileB.png"});
 	shape.setTexture(tf.getFlip());
 
 	double xpos = shipPos.x + CONF_shipSize/2 - (getSize()/2.0); // środek pocisku na środku statku

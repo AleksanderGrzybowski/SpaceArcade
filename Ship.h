@@ -5,6 +5,8 @@
 #include "Direction.h"
 #include "TextureFlipper.h"
 #include <iostream>
+#include <string>
+#include <vector>
 #include <SFML/Graphics.hpp>
 
 class Ship {

@@ -7,6 +7,8 @@ NormalMissile::NormalMissile(const sf::Vector2f& shipPos) {
 	t.loadFromFile("Sprites/NormalMissileB.png");
 	tf.add(t);
 
+	tf.add(std::vector<std::string> {"Sprites/NormalMissileA.png", "Sprites/NormalMissileB.png"});
+
 	shape.setTexture(tf.getFlip());
 
 	double xpos = shipPos.x + CONF_shipSize/2 - (getSize()/2.0);
