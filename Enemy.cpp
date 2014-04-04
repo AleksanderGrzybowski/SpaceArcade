@@ -4,7 +4,7 @@ Enemy::Enemy(double xpos, double ypos) : health(0), moveDistance(0), leftDistanc
 	sprite.move(xpos, ypos);
 }
 
-void Enemy::moveIterate(sf::Time& t) {
+/*void Enemy::moveIterate(sf::Time& t) {
 
 	sf::Vector2f pos = getPosition();
 
@@ -52,8 +52,12 @@ void Enemy::moveIterate(sf::Time& t) {
 		currentDirection = (Direction)(rand() % 4);
 		leftDistance = moveDistance; // obie równe sobie
 	}
-}
+}*/
 
+void Enemy::moveIterate(sf::Time& t) {
+	double toMove = 100*getSpeed()*t.asMilliseconds()/CONF_globalEnemySpeedFactor;
+	sprite.move(0, toMove);
+}
 void Enemy::damage(int damage) {
 	health -= damage*getDamageCoeff();
 }
