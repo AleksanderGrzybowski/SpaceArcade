@@ -6,8 +6,8 @@ rysowanie linii po której przekroczeniu przegrywa się
 prędkość poszczególnych enemy
 każdy enemy inna liczba punktów
 wycieki poszukać
-
-
+dodać interfejs Drawable z metodą (pewnie wirt) draw taką jaka jest
+napis punkty jako osobna klasa
 
 
 

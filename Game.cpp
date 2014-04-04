@@ -138,7 +138,7 @@ bool Game::loop() {
 	}
 
 	ship.draw(window);
-
+	line.draw(window);
 	// Napis
 	window.draw(getText());
 

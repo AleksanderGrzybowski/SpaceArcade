@@ -22,4 +22,6 @@ static const double CONF_enemyDownLimit = 0.2;
 static const double CONF_enemySpeed = 0.1;
 static const int CONF_enemyGenerationFactor = 50;
 
+// Line
+static const int CONF_lineHeight = 5;
 #endif /* CONFIG_H_ */

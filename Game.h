@@ -15,6 +15,7 @@
 #include "NormalEnemy.h"
 #include "HardEnemy.h"
 #include "Direction.h"
+#include "Line.h"
 
 class Game {
 public:
@@ -24,6 +25,7 @@ public:
 	Ship ship;
 	std::vector<Missile*> missiles;
 	std::vector<Enemy*> enemies;
+	Line line;
 
 	int pointCount;
 	sf::Font font;
