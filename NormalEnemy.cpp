@@ -5,7 +5,7 @@ NormalEnemy::NormalEnemy(double xpos, double ypos) : Enemy(xpos, ypos) {
 	t.loadFromFile("Sprites/NormalEnemy.png"); // na razie bez animacji
 	tf.add(t);
 	sprite.setTexture(tf.getFlip());
-	sprite.move(xpos, ypos);
+	sprite.setPosition(xpos, ypos);
 
 	health = getMaxHealth();
 }

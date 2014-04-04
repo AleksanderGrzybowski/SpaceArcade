@@ -9,6 +9,8 @@ public:
 	sf::RectangleShape shape;
 
 	Line();
+
+	sf::Vector2f getPosition() { return shape.getPosition(); }
 	void draw(sf::RenderWindow& window) { window.draw(shape); }
 };
 

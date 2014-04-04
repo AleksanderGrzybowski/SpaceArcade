@@ -18,7 +18,13 @@ void Game::addMissile() {
 void Game::addEnemy() {
 	int xpos = rand() % CONF_screenWidth;
 	int ypos = (rand() % CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na enemy
-	(rand() % 2) ? 	enemies.push_back(new NormalEnemy(xpos, ypos)) : enemies.push_back(new HardEnemy(xpos, ypos));
+	if (rand() % 2) {
+		enemies.push_back(new NormalEnemy(xpos, ypos));
+		std::cout << "Dodaje NormalEnemy na pozycji " << xpos << " " << ypos << std::endl;
+	} else {
+		enemies.push_back(new HardEnemy(xpos, ypos));
+		std::cout << "Dodaje HardEnemy na pozycji " << xpos << " " << ypos << std::endl;
+	}
 }
 
 bool Game::isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize) { // pociski są kwadratami!!!
@@ -61,6 +67,15 @@ againB:
 				}
 				goto againB; // czy to ma sens logiczny? chyba działa
 			}
+		}
+	}
+
+	// Czy przypadkiem gracz nie wtopił
+	for (auto e = enemies.begin(); e != enemies.end(); ++e) {
+		sf::Vector2f epos = (*e)->getPosition();
+		if (epos.y > (-CONF_shipSize + CONF_screenHeight*(1-CONF_enemyDownLimit))) {
+			//throw std::exception();
+			std::cout << "Wtapiasz: pozycja przeciwnika " << epos.x << " " << epos.y << std::endl;
 		}
 	}
 }
@@ -133,6 +148,7 @@ bool Game::loop() {
 	}
 
 	for (auto& e : enemies) {
+		//std::cout << "Mamy łącznie " << enemies.size() << " przeciwnikow" << std::endl;
 		e->moveIterate(t);
 		e->draw(window);
 	}
