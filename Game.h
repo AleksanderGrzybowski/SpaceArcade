@@ -11,6 +11,7 @@
 #include "config.h"
 #include "NormalMissile.h"
 #include "PowerMissile.h"
+#include "MissileFactory.h"
 #include "Enemy.h"
 #include "NormalEnemy.h"
 #include "HardEnemy.h"

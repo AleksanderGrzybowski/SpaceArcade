@@ -12,21 +12,15 @@ Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CO
 void Game::addMissile() {
 	// znajdź pozycję statku, potrzebną do określenia pozycji pocisku
 	sf::Vector2f shipPos = ship.getPosition();
-	(rand() % 2) ? missiles.push_back(new NormalMissile(shipPos)) : missiles.push_back(new PowerMissile (shipPos));
+	//(rand() % 2) ? missiles.push_back(new NormalMissile(shipPos)) : missiles.push_back(new PowerMissile (shipPos));
+	missiles.push_back(MissileFactory::getRandomMissile(shipPos));
 }
 
 void Game::addEnemy() {
 	int xpos = rand() % CONF_screenWidth;
 	int ypos = (rand() % CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na enemy
-//	if (rand() % 2) {
-//		enemies.push_back(new NormalEnemy(xpos, ypos));
-//		std::cout << "Dodaje NormalEnemy na pozycji " << xpos << " " << ypos << std::endl;
-//	} else {
-//		enemies.push_back(new HardEnemy(xpos, ypos));
-//		std::cout << "Dodaje HardEnemy na pozycji " << xpos << " " << ypos << std::endl;
-//	}
-	enemies.push_back(EnemyFactory::getRandomEnemy(xpos, ypos));
 
+	enemies.push_back(EnemyFactory::getRandomEnemy(xpos, ypos));
 }
 
 bool Game::isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize) { // pociski są kwadratami!!!
