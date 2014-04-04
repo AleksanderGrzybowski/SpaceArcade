@@ -14,8 +14,10 @@
 #include "Enemy.h"
 #include "NormalEnemy.h"
 #include "HardEnemy.h"
+#include "EnemyFactory.h"
 #include "Direction.h"
 #include "Line.h"
+
 
 class Game {
 public:

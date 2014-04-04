@@ -18,13 +18,15 @@ void Game::addMissile() {
 void Game::addEnemy() {
 	int xpos = rand() % CONF_screenWidth;
 	int ypos = (rand() % CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na enemy
-	if (rand() % 2) {
-		enemies.push_back(new NormalEnemy(xpos, ypos));
-		std::cout << "Dodaje NormalEnemy na pozycji " << xpos << " " << ypos << std::endl;
-	} else {
-		enemies.push_back(new HardEnemy(xpos, ypos));
-		std::cout << "Dodaje HardEnemy na pozycji " << xpos << " " << ypos << std::endl;
-	}
+//	if (rand() % 2) {
+//		enemies.push_back(new NormalEnemy(xpos, ypos));
+//		std::cout << "Dodaje NormalEnemy na pozycji " << xpos << " " << ypos << std::endl;
+//	} else {
+//		enemies.push_back(new HardEnemy(xpos, ypos));
+//		std::cout << "Dodaje HardEnemy na pozycji " << xpos << " " << ypos << std::endl;
+//	}
+	enemies.push_back(EnemyFactory::getRandomEnemy(xpos, ypos));
+
 }
 
 bool Game::isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize) { // pociski są kwadratami!!!
