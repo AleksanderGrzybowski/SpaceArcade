@@ -17,6 +17,7 @@ public:
 	Enemy(double xpos, double ypos);
 
 	void moveIterate(sf::Time& t);
+	void setPosition(int x, int y) { sprite.setPosition(x, y); }
 	sf::Vector2f getPosition() { return sprite.getPosition(); }
 	void draw(sf::RenderWindow& window) {
 		window.draw(sprite);

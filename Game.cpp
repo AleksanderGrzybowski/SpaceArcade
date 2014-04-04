@@ -11,10 +11,11 @@ void Game::addMissile() {
 }
 
 void Game::addEnemy() {
-	int xpos = rand() % CONF_screenWidth;
+	Enemy* e = EnemyFactory::getRandomEnemy(0, 0); // dowolne
+	int xpos = rand() % CONF_screenWidth - e->getSize();
 	int ypos = (rand() % CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na enemy
-
-	enemies.push_back(EnemyFactory::getRandomEnemy(xpos, ypos));
+	e->setPosition(xpos, ypos);
+	enemies.push_back(e);
 }
 
 bool Game::isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize) { // pociski są kwadratami!!!
