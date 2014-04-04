@@ -1,6 +1,5 @@
 #include "Missile.h"
 
-
 Missile::Missile() {}
 
 void Missile::moveIterate(const sf::Time& t) {
@@ -12,7 +11,6 @@ void Missile::moveIterate(const sf::Time& t) {
 }
 
 void Missile::draw(sf::RenderWindow& window) {
-	//if ((PowerMissile::missileLimitClock).getElapsedTime().asMilliseconds() > PowerMissile::timeLimit) {
 	if ((animationSpeedClock).getElapsedTime().asMilliseconds() > CONF_animationSpeed) {
 		shape.setTexture(tf.getFlip());
 		animationSpeedClock.restart();

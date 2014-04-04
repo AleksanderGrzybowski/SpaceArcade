@@ -11,7 +11,7 @@ public:
 	static sf::Clock animationSpeedClock;
 	static const int timeLimit;
 
-	NormalMissile(const sf::Vector2f& shipPos);
+	NormalMissile(int shipx, int shipy);
 
 	static bool canBeSent();
 	int getDamage() { return 5; }

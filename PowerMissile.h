@@ -10,7 +10,7 @@ public:
 	static sf::Clock missileLimitClock;
 	static const int timeLimit;
 
-	PowerMissile(const sf::Vector2f& shipPos);
+	PowerMissile(int shipx, int shipy);
 
 	static bool canBeSent();
 

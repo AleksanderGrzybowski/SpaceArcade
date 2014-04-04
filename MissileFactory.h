@@ -15,6 +15,6 @@
 
 class MissileFactory {
 public:
-	static Missile* getRandomMissile(sf::Vector2f shipPos);
+	static Missile* getRandomMissile(int shipx, int shipy);
 };
 #endif /* MISSILEFACTORY_H_ */

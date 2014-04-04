@@ -1,18 +1,11 @@
 #include "NormalMissile.h"
 
-NormalMissile::NormalMissile(const sf::Vector2f& shipPos) {
-	sf::Texture t;
-	t.loadFromFile("Sprites/NormalMissileA.png");
-	tf.add(t);
-	t.loadFromFile("Sprites/NormalMissileB.png");
-	tf.add(t);
-
+NormalMissile::NormalMissile(int shipx, int shipy) {
 	tf.add(std::vector<std::string> {"Sprites/NormalMissileA.png", "Sprites/NormalMissileB.png"});
-
 	shape.setTexture(tf.getFlip());
 
-	double xpos = shipPos.x + CONF_shipSize/2 - (getSize()/2.0);
-	double ypos = shipPos.y;
+	double xpos = shipx + CONF_shipSize/2 - (getSize()/2.0);
+	double ypos = shipy;
 	shape.move(xpos, ypos);
 }
 
