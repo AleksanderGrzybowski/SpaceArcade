@@ -18,6 +18,7 @@
 #include "EnemyFactory.h"
 #include "Direction.h"
 #include "Line.h"
+#include "PointsCounter.h"
 
 
 class Game {
@@ -29,9 +30,8 @@ public:
 	std::vector<Missile*> missiles;
 	std::vector<Enemy*> enemies;
 	Line line;
+	PointsCounter pc;
 
-	int pointCount;
-	sf::Font font;
 
 	Game();
 	bool loop();
@@ -40,7 +40,7 @@ public:
 	void addEnemy();
 	void recalc();
 	bool isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize); // pociski są kwadratami!!!
-	sf::Text getText();
+	//sf::Text getText();
 
 	~Game();
 };
