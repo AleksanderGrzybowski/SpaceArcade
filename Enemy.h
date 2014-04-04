@@ -26,7 +26,7 @@ public:
 	}
 
 	virtual double getSpeed() { return CONF_enemySpeed;}
-	virtual int getSize()  = 0;
+	virtual int getSize() = 0;
 	virtual int getMaxHealth() = 0;
 	virtual double getDamageCoeff() = 0;
 
