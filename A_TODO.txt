@@ -4,6 +4,7 @@ wycieki poszukać
 dodać interfejs Drawable z metodą (pewnie wirt) draw taką jaka jest
 napis punkty jako osobna klasa
 
+komunikat po przegraniu, ew. granie od nowa
 
 
 TextureFlipper: uwaga, SFML bierze sobie wskaźnik do tekstury i z niego korzysta, jeśli wykona

@@ -14,11 +14,11 @@ static const int CONF_animationSpeed = 100; // co 100 ms zmiana tekstury
 // Statek
 static const int CONF_shipSize = 48; // bok kwadratu
 static const double CONF_shipSpeed = 0.4;
-static const double CONF_shipUpLimit = 0.3; // ile do góry można
+static const double CONF_shipUpLimit = 0.5; // ile do góry można
 
 // Enemy
 static const int CONF_enemySize = 64; // używane żeby nie wyświetlać ich poza ekranem
-static const double CONF_enemyDownLimit = 0.2;
+static const double CONF_enemyDownLimit = 0.3;
 static const double CONF_enemySpeed = 0.1;
 static const int CONF_enemyGenerationFactor = 100;
 static const double CONF_globalEnemySpeedFactor = 300.0;
