@@ -28,6 +28,7 @@ public:
 	virtual int getSize() = 0;
 	virtual int getMaxHealth() = 0;
 	virtual double getDamageCoeff() = 0;
+	virtual int getPoints() = 0;
 
 	bool isAlive() { return health > 0; }
 	void damage(int damage);

@@ -11,6 +11,7 @@ public:
 	int getSize() { return 64; }
 	int getMaxHealth() { return 20; }
 	double getDamageCoeff() { return 0.5; }
+	int getPoints() { return 5; }
 };
 
 #endif /* HARDENEMY_H_ */

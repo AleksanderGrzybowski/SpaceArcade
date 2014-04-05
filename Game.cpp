@@ -12,7 +12,7 @@ void Game::addMissile() {
 
 void Game::addEnemy() {
 	Enemy* e = EnemyFactory::getRandomEnemy(0, 0); // dowolne
-	int xpos = rand() % CONF_screenWidth - e->getSize();
+	int xpos = rand() % CONF_screenWidth - e->getSize(); // nie można inaczej
 	int ypos = (rand() % CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na enemy
 	e->setPosition(xpos, ypos);
 	enemies.push_back(e);
@@ -52,9 +52,10 @@ againB:
 				missiles.erase(m);
 				(*e)->damage(missileDamage);
 				if (!((*e)->isAlive())) {
+					pc.add((*e)->getPoints());
 					delete *e;
 					enemies.erase(e);
-					pc.add(1); // jakaś fajniejsza logika
+
 				}
 				goto againB; // czy to ma sens logiczny? chyba działa
 			}

@@ -12,6 +12,7 @@ public:
 	int getSize() { return 64; }
 	int getMaxHealth() { return 10; }
 	double getDamageCoeff() { return 1; }
+	int getPoints() { return 1; }
 };
 
 #endif /* ENEMY_H_ */
