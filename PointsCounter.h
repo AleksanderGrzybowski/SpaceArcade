@@ -14,6 +14,7 @@ public:
 
 	void add(int n) { pointsCount += n; }
 	void draw(sf::RenderWindow& window);
+	void reset() { pointsCount = 0; }
 };
 
 #endif /* POINTSCOUNTER_H_ */

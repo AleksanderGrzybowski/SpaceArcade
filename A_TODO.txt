@@ -1,12 +1,9 @@
-prędkość poszczególnych enemy
-każdy enemy inna liczba punktów
-wycieki poszukać
 dodać interfejs Drawable z metodą (pewnie wirt) draw taką jaka jest
-napis punkty jako osobna klasa
+
 
 komunikat po przegraniu, ew. granie od nowa
 
 
 TextureFlipper: uwaga, SFML bierze sobie wskaźnik do tekstury i z niego korzysta, jeśli wykona
 się jakieś przeniesienie tekstur w TextureFlipper to może nastąpić realokacja pamięci i szlag trafi wszystko
-Nie zmieniać tekstur, ewentualnie spróbować reserve(ileśtam) wcześniej
+Nie zmieniać tekstur, ewentualnie spróbować reserve(ileśtam) wcześniej // dałem reserve i jest ok na razie

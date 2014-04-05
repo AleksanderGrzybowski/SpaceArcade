@@ -39,7 +39,7 @@ public:
 	void addEnemy();
 	void recalc();
 	bool isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize); // pociski są kwadratami!!!
-
+	void reset();
 	~Game();
 };
 

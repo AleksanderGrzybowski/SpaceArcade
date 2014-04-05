@@ -4,6 +4,15 @@ Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CO
 	window.setFramerateLimit(CONF_frameRateLimit);
 }
 
+void Game::reset() {
+	pc.reset();
+	for (unsigned int i = 0; i < missiles.size(); ++i) delete missiles[i];
+	for (unsigned int i = 0; i < enemies.size(); ++i) delete enemies[i];
+	missiles.clear();
+	enemies.clear();
+	window.clear();
+}
+
 void Game::addMissile() {
 	// znajdź pozycję statku, potrzebną do określenia pozycji pocisku
 	sf::Vector2f shipPos = ship.getPosition();
@@ -101,6 +110,9 @@ bool Game::loop() {
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
 		ship.move(Down, t);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+		reset();
 	}
 
 
