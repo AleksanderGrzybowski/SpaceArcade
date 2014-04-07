@@ -1,12 +1,6 @@
 #include "PowerMissile.h"
 
 PowerMissile::PowerMissile(int shipx, int shipy) {
-//	sf::Texture t;
-//	t.loadFromFile("Sprites/PowerMissileA.png");
-//	tf.add(t);
-//	t.loadFromFile("Sprites/PowerMissileB.png");
-//	tf.add(t);
-
 	tf.add(std::vector<std::string> {"Sprites/PowerMissileA.png", "Sprites/PowerMissileB.png"});
 	shape.setTexture(tf.getFlip());
 

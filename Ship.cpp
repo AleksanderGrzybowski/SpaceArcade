@@ -37,7 +37,6 @@ void Ship::move(Direction b, const sf::Time& t) {
 
 
 void Ship::draw(sf::RenderWindow& window) {
-	//if ((PowerMissile::missileLimitClock).getElapsedTime().asMilliseconds() > PowerMissile::timeLimit) {
 	if ((animationSpeedClock).getElapsedTime().asMilliseconds() > CONF_animationSpeed) {
 		shape.setTexture(tf.getFlip());
 		animationSpeedClock.restart();

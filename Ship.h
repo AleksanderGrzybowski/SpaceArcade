@@ -12,16 +12,14 @@
 class Ship {
 public:
 	sf::Sprite shape;
-	//sf::Texture texture;
 	TextureFlipper tf;
 	sf::Clock animationSpeedClock;
 
 	Ship();
+
 	void move(Direction d, const sf::Time& t);
 	const sf::Vector2f& getPosition() { return shape.getPosition(); }
-
 	void draw(sf::RenderWindow& window);
-
 };
 
 #endif /* SHIP_H_ */

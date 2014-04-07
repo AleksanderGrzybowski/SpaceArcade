@@ -1,4 +1,3 @@
-
 #include "TextureFlipper.h"
 
 TextureFlipper::TextureFlipper() : next(0) {
@@ -24,5 +23,3 @@ sf::Texture& TextureFlipper::getFlip() {
 	if (next == tab.size()) next = 0;
 	return ret;
 }
-
-

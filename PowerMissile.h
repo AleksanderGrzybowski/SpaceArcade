@@ -1,5 +1,6 @@
 #ifndef POWERMISSILE_H_
 #define POWERMISSILE_H_
+
 #include <SFML/Graphics.hpp>
 #include "config.h"
 #include "Missile.h"
