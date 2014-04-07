@@ -24,7 +24,7 @@ public:
 	}
 
 	// przesłaniane w potomnych
-	virtual double getSpeed() { return CONF_enemySpeed; }
+	virtual double getSpeed() = 0;
 	virtual int getSize() = 0;
 	virtual int getMaxHealth() = 0;
 	virtual double getDamageCoeff() = 0;

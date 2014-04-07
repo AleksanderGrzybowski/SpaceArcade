@@ -74,7 +74,7 @@ againB:
 	// Czy przypadkiem gracz nie wtopił
 	for (auto e = enemies.begin(); e != enemies.end(); ++e) {
 		sf::Vector2f epos = (*e)->getPosition();
-		if (epos.y > (-CONF_shipSize + CONF_screenHeight*(1-CONF_enemyDownLimit))) {
+		if (epos.y > (CONF_screenHeight*(1-CONF_enemyDownLimit) - CONF_enemySize)) {
 			//throw std::exception();
 			std::cout << "Wtapiasz: pozycja przeciwnika " << epos.x << " " << epos.y << std::endl;
 		}

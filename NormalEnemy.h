@@ -8,7 +8,7 @@ class NormalEnemy : public Enemy {
 public:
 	NormalEnemy(double xpos, double ypos);
 
-	double getSpeed() { return 0.2; }
+	double getSpeed() { return 0.2*CONF_enemySpeed; }
 	int getSize() { return 64; }
 	int getMaxHealth() { return 10; }
 	double getDamageCoeff() { return 1; }
