@@ -13,8 +13,11 @@ public:
 	virtual const sf::Vector2f& getPosition() {
 		return sprite.getPosition();
 	}
-	virtual void setPosition(int x, int y) {
+	virtual void setPosition(double x, double y) {
 		sprite.setPosition(x, y);
+	}
+	virtual void move(double x, double y) {
+		sprite.move(x, y);
 	}
 
 	virtual void setTexture(sf::Texture& t) {
