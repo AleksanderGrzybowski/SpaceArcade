@@ -13,5 +13,8 @@ void PointsCounter::draw(sf::RenderWindow& window) {
 	text.setString("Punkty: " + std::to_string(pointsCount));
 	text.setCharacterSize(CONF_fontSize);
 	text.setColor(sf::Color::White);
+
+
 	window.draw(text);
+	//((Drawable*)this)->draw(window);
 }

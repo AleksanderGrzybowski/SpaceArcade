@@ -4,16 +4,18 @@
 #include <SFML/Graphics.hpp>
 #include "config.h"
 #include "TextureFlipper.h"
-class Missile {
+#include "Drawable.h"
+
+class Missile : public Drawable {
 public:
-	sf::Sprite shape;
+	//sf::Sprite shape;
 	TextureFlipper tf;
 	sf::Clock animationSpeedClock;
 
 	Missile();
 
 	void moveIterate(const sf::Time& t);
-	sf::Vector2f getPosition() { return shape.getPosition(); }
+	//sf::Vector2f getPosition() { return shape.getPosition(); }
 	virtual int getSize() = 0;
 
 	void initialize(int shipx, int shipy);

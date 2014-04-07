@@ -6,10 +6,11 @@
 #include "config.h"
 #include "Direction.h"
 #include "TextureFlipper.h"
+#include "Drawable.h"
 
-class Enemy {
+class Enemy : public Drawable {
 public:
-	sf::Sprite sprite;
+	//sf::Sprite sprite;
 	TextureFlipper tf;
 
 	int health;
@@ -19,9 +20,9 @@ public:
 	void moveIterate(sf::Time& t);
 	void setPosition(int x, int y) { sprite.setPosition(x, y); }
 	sf::Vector2f getPosition() { return sprite.getPosition(); }
-	void draw(sf::RenderWindow& window) {
-		window.draw(sprite);
-	}
+//	void draw(sf::RenderWindow& window) {
+//		window.draw(sprite);
+//	}
 
 	// przesłaniane w potomnych
 	virtual double getSpeed() = 0;

@@ -3,26 +3,26 @@
 Missile::Missile() {}
 
 void Missile::moveIterate(const sf::Time& t) {
-	sf::Vector2f actPos = shape.getPosition();
+	sf::Vector2f actPos = sprite.getPosition();
 
 	// tylko w górę
 	actPos.y -= getSpeed() * t.asMilliseconds();
-	shape.setPosition(actPos);
+	sprite.setPosition(actPos);
 }
 
 void Missile::draw(sf::RenderWindow& window) {
 	if ((animationSpeedClock).getElapsedTime().asMilliseconds() > CONF_animationSpeed) {
-		shape.setTexture(tf.getFlip());
+		sprite.setTexture(tf.getFlip());
 		animationSpeedClock.restart();
 	}
-	window.draw(shape);
+	window.draw(sprite);
 }
 
 void Missile::initialize(int shipx, int shipy) {
 	tf.add(getSpritesString());
-	shape.setTexture(tf.getFlip());
+	sprite.setTexture(tf.getFlip());
 
 	double xpos = shipx + CONF_shipSize/2 - (getSize()/2.0); // środek pocisku na środku statku
 	double ypos = shipy;
-	shape.move(xpos, ypos);
+	sprite.move(xpos, ypos);
 }

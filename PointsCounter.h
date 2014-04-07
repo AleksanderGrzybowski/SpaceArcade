@@ -4,7 +4,8 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "config.h"
-class PointsCounter {
+#include "Drawable.h"
+class PointsCounter : public Drawable {
 public:
 	int pointsCount;
 	sf::Font font;

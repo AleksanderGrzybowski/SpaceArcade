@@ -8,17 +8,17 @@
 #include <string>
 #include <vector>
 #include <SFML/Graphics.hpp>
-
-class Ship {
+#include "Drawable.h"
+class Ship : public Drawable {
 public:
-	sf::Sprite shape;
+	//sf::Sprite shape;
 	TextureFlipper tf;
 	sf::Clock animationSpeedClock;
 
 	Ship();
 
 	void move(Direction d, const sf::Time& t);
-	const sf::Vector2f& getPosition() { return shape.getPosition(); }
+	//const sf::Vector2f& getPosition() { return shape.getPosition(); }
 	void draw(sf::RenderWindow& window);
 };
 
