@@ -5,6 +5,7 @@
 #include <vector>
 #include <exception>
 #include <SFML/Graphics.hpp>
+#include <unistd.h>
 
 #include "Ship.h"
 #include "config.h"
@@ -19,6 +20,7 @@
 #include "Line.h"
 #include "PointsCounter.h"
 
+class GameOverException {};
 
 class Game {
 public:
@@ -40,6 +42,7 @@ public:
 	void recalc();
 	bool isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize); // pociski są kwadratami!!!
 	void reset();
+	void gameOver();
 	~Game();
 };
 

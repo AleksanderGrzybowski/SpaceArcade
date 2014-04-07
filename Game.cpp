@@ -76,7 +76,8 @@ againB:
 		sf::Vector2f epos = (*e)->getPosition();
 		if (epos.y > (CONF_screenHeight*(1-CONF_shipUpLimit) - CONF_enemySize)) {
 			//throw std::exception();
-			std::cout << "Wtapiasz: pozycja przeciwnika " << epos.x << " " << epos.y << std::endl;
+			//std::cout << "Wtapiasz: pozycja przeciwnika " << epos.x << " " << epos.y << std::endl;
+			throw GameOverException();
 		}
 	}
 }
@@ -134,7 +135,12 @@ bool Game::loop() {
 	if (rand() % CONF_enemyGenerationFactor == 0) addEnemy();
 
 	// Achtung
-	recalc();
+	try {
+		recalc();
+	} catch (GameOverException&) {
+		gameOver();
+		reset();
+	}
 
 	// Rysowanie
 	window.clear();
@@ -158,6 +164,28 @@ bool Game::loop() {
 	window.display();
 	return true;
 }
+
+void Game::gameOver() {
+	std::cout << "Over" << std::endl;
+	sf::Font font;
+	if (!font.loadFromFile("Fonts/Arial.ttf")) { // should never happen
+		std::cerr << "Nie idzie czcionki załadować" << std::endl;
+		throw std::exception();
+	}
+
+	sf::Text text;
+	text.setFont(font);
+	text.setString("Game Over");
+	text.setCharacterSize(CONF_fontSize*2);
+	text.setColor(sf::Color::Yellow);
+	text.setPosition(CONF_screenWidth/2, CONF_screenHeight*0.8);
+
+	window.draw(text);
+	window.display();
+	sleep(2);
+
+}
+
 
 Game::~Game() {
 	for (auto m = missiles.begin(); m != missiles.end(); ++m) delete *m;
