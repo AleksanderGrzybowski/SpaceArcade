@@ -47,10 +47,6 @@ private:
 	bool isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize); // pociski są kwadratami!!!
 	void reset();
 	void gameOver();
-
-
-
-
 };
 
 #endif /* GAME_H_ */
