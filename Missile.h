@@ -8,21 +8,24 @@
 
 class Missile : public Drawable {
 public:
-	TextureFlipper tf;
-	sf::Clock animationSpeedClock;
-
 	Missile();
 
 	void moveIterate(const sf::Time& t);
 	virtual int getSize() = 0;
 
-	void initialize(int shipx, int shipy);
-	virtual std::vector<std::string> getSpritesString() = 0;
 	virtual double getSpeed() = 0;
 	virtual int getDamage() = 0;
 	void draw(sf::RenderWindow& window);
 
 	virtual ~Missile() {}
+
+protected:
+	virtual std::vector<std::string> getSpritesString() = 0;
+	void initialize(int shipx, int shipy);
+
+private:
+	TextureFlipper tf;
+	sf::Clock animationSpeedClock;
 };
 
 #endif /* MISSILE_H_ */

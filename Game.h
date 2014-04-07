@@ -24,6 +24,13 @@ class GameOverException {};
 
 class Game {
 public:
+	Game();
+
+	void mainloop() { while (loop()); }
+
+	~Game();
+
+private:
 	sf::RenderWindow window;
 	sf::Clock clock;
 
@@ -33,17 +40,17 @@ public:
 	Line line;
 	PointsCounter pc;
 
-	Game();
-
 	bool loop();
-	void mainloop() { while (loop()); }
 	void addMissile();
 	void addEnemy();
 	void recalc();
 	bool isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize); // pociski są kwadratami!!!
 	void reset();
 	void gameOver();
-	~Game();
+
+
+
+
 };
 
 #endif /* GAME_H_ */

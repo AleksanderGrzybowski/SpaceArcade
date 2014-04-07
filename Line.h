@@ -7,13 +7,11 @@
 
 class Line : public Drawable {
 public:
-	//sf::RectangleShape shape;
-	sf::Texture texture;
-
 	Line();
 
-	//sf::Vector2f getPosition() { return shape.getPosition(); }
-	//void draw(sf::RenderWindow& window) { window.draw(shape); }
+private:
+	sf::Texture texture; // potrzebne, bo zarządzane po swojemu
+
 };
 
 #endif /* LINE_H_ */

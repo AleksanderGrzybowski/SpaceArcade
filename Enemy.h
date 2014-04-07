@@ -10,11 +10,7 @@
 
 class Enemy : public Drawable {
 public:
-	TextureFlipper tf;
-	int health;
-
 	Enemy();
-	virtual void initialize(int xpos, int ypos);
 	void moveIterate(sf::Time& t);
 
 	// przesłaniane w potomnych
@@ -26,9 +22,15 @@ public:
 
 	bool isAlive() { return health > 0; }
 	void damage(int damage);
-	virtual std::vector<std::string> getSpritesString() = 0;
 
 	virtual ~Enemy() {}
+
+protected:
+	virtual std::vector<std::string> getSpritesString() = 0;
+	virtual void initialize(int xpos, int ypos);
+private:
+	TextureFlipper tf;
+	int health;
 };
 
 #endif /* ENEMY_H_ */

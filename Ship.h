@@ -12,13 +12,14 @@
 
 class Ship : public Drawable {
 public:
-	TextureFlipper tf;
-	sf::Clock animationSpeedClock;
-
 	Ship();
 
 	void move(Direction d, const sf::Time& t);
 	void draw(sf::RenderWindow& window);
+
+private:
+	TextureFlipper tf;
+	sf::Clock animationSpeedClock;
 };
 
 #endif /* SHIP_H_ */

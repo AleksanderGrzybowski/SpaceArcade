@@ -9,18 +9,20 @@ class PowerMissile : public Missile {
 public:
 
 	static sf::Clock missileLimitClock;
-	static const int timeLimit;
 
 	PowerMissile(int shipx, int shipy);
 
 	static bool canBeSent();
 
-	std::vector<std::string> getSpritesString() {
-		return std::vector<std::string> {"Sprites/PowerMissileA.png", "Sprites/PowerMissileB.png"};
-	}
 	int getDamage() { return 20; }
 	double getSpeed() { return 0.5; }
 	int getSize() { return 24; }
+
+private:
+	std::vector<std::string> getSpritesString() {
+		return std::vector<std::string> {"Sprites/PowerMissileA.png", "Sprites/PowerMissileB.png"};
+	}
+	static const int timeLimit;
 };
 
 

@@ -13,6 +13,8 @@ public:
 	int getMaxHealth() { return 10; }
 	double getDamageCoeff() { return 1; }
 	int getPoints() { return 1; }
+
+private:
 	std::vector<std::string> getSpritesString() {
 		return std::vector<std::string> {"Sprites/NormalEnemy.png"};
 	}

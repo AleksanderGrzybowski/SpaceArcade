@@ -5,7 +5,7 @@
 
 class Drawable {
 public:
-	sf::Sprite sprite;
+
 
 	virtual void draw(sf::RenderWindow& window) {
 		window.draw(sprite);
@@ -24,6 +24,9 @@ public:
 		sprite.setTexture(t);
 	}
 	virtual ~Drawable() {}
+
+protected:
+	sf::Sprite sprite;
 };
 
 #endif /* DRAWABLE_H_ */

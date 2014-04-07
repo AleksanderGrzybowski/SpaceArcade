@@ -7,14 +7,15 @@
 
 class TextureFlipper {
 public:
-	std::vector<sf::Texture> tab;
-	unsigned int next;
-
 	TextureFlipper();
 
 	void add(sf::Texture t);
 	void add(std::vector<std::string> v);
 	sf::Texture& getFlip();
+
+private:
+	std::vector<sf::Texture> tab;
+	unsigned int next;
 };
 
 #endif /* TEXTUREFLIPPER_H_ */
