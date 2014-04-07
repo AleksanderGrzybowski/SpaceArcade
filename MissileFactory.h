@@ -17,4 +17,5 @@ class MissileFactory {
 public:
 	static Missile* getRandomMissile(int shipx, int shipy);
 };
+
 #endif /* MISSILEFACTORY_H_ */

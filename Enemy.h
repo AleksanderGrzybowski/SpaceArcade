@@ -13,7 +13,7 @@ public:
 	TextureFlipper tf;
 	int health;
 
-	Enemy(/*double xpos, double ypos*/);
+	Enemy();
 	virtual void initialize(int xpos, int ypos);
 	void moveIterate(sf::Time& t);
 

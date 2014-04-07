@@ -8,14 +8,12 @@
 
 class Missile : public Drawable {
 public:
-	//sf::Sprite shape;
 	TextureFlipper tf;
 	sf::Clock animationSpeedClock;
 
 	Missile();
 
 	void moveIterate(const sf::Time& t);
-	//sf::Vector2f getPosition() { return shape.getPosition(); }
 	virtual int getSize() = 0;
 
 	void initialize(int shipx, int shipy);
@@ -23,7 +21,6 @@ public:
 	virtual double getSpeed() = 0;
 	virtual int getDamage() = 0;
 	void draw(sf::RenderWindow& window);
-
 
 	virtual ~Missile() {}
 };

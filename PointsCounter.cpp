@@ -14,7 +14,5 @@ void PointsCounter::draw(sf::RenderWindow& window) {
 	text.setCharacterSize(CONF_fontSize);
 	text.setColor(sf::Color::White);
 
-
 	window.draw(text);
-
 }

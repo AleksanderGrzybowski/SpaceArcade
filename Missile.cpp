@@ -15,14 +15,14 @@ void Missile::draw(sf::RenderWindow& window) {
 		sprite.setTexture(tf.getFlip());
 		animationSpeedClock.restart();
 	}
-	window.draw(sprite);
+	Drawable::draw(window);
 }
 
 void Missile::initialize(int shipx, int shipy) {
 	tf.add(getSpritesString());
-	sprite.setTexture(tf.getFlip());
+	setTexture(tf.getFlip());
 
 	double xpos = shipx + CONF_shipSize/2 - (getSize()/2.0); // środek pocisku na środku statku
 	double ypos = shipy;
-	sprite.move(xpos, ypos);
+	move(xpos, ypos);
 }

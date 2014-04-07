@@ -9,5 +9,4 @@ bool NormalMissile::canBeSent() {
 }
 
 sf::Clock NormalMissile::missileLimitClock;
-
 const int NormalMissile::timeLimit = 100; // ms

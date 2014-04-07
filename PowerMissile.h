@@ -23,4 +23,5 @@ public:
 	int getSize() { return 24; }
 };
 
+
 #endif /* MISSILE_H_ */

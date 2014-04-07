@@ -5,11 +5,12 @@
 #include <iostream>
 #include "config.h"
 #include "Drawable.h"
+
 class PointsCounter : public Drawable {
 public:
+
 	int pointsCount;
 	sf::Font font;
-
 
 	PointsCounter();
 
