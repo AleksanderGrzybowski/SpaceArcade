@@ -41,6 +41,6 @@ void Ship::draw(sf::RenderWindow& window) {
 		sprite.setTexture(tf.getFlip());
 		animationSpeedClock.restart();
 	}
-	((Drawable*)this)->draw(window);
-	//window.draw(sprite);
+
+	window.draw(sprite);
 }

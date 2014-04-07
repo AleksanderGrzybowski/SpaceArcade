@@ -10,19 +10,12 @@
 
 class Enemy : public Drawable {
 public:
-	//sf::Sprite sprite;
 	TextureFlipper tf;
-
 	int health;
 
-	Enemy(double xpos, double ypos);
-
+	Enemy(/*double xpos, double ypos*/);
+	virtual void initialize(int xpos, int ypos);
 	void moveIterate(sf::Time& t);
-	void setPosition(int x, int y) { sprite.setPosition(x, y); }
-	sf::Vector2f getPosition() { return sprite.getPosition(); }
-//	void draw(sf::RenderWindow& window) {
-//		window.draw(sprite);
-//	}
 
 	// przesłaniane w potomnych
 	virtual double getSpeed() = 0;
@@ -33,6 +26,7 @@ public:
 
 	bool isAlive() { return health > 0; }
 	void damage(int damage);
+	virtual std::vector<std::string> getSpritesString() = 0;
 
 	virtual ~Enemy() {}
 };

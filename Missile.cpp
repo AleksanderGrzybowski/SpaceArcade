@@ -3,11 +3,11 @@
 Missile::Missile() {}
 
 void Missile::moveIterate(const sf::Time& t) {
-	sf::Vector2f actPos = sprite.getPosition();
+	sf::Vector2f actPos = getPosition();
 
 	// tylko w górę
 	actPos.y -= getSpeed() * t.asMilliseconds();
-	sprite.setPosition(actPos);
+	setPosition(actPos.x, actPos.y);
 }
 
 void Missile::draw(sf::RenderWindow& window) {

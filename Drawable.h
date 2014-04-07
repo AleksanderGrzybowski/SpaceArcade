@@ -10,10 +10,16 @@ public:
 	virtual void draw(sf::RenderWindow& window) {
 		window.draw(sprite);
 	}
-	const sf::Vector2f& getPosition() {
+	virtual const sf::Vector2f& getPosition() {
 		return sprite.getPosition();
 	}
+	virtual void setPosition(int x, int y) {
+		sprite.setPosition(x, y);
+	}
 
+	virtual void setTexture(sf::Texture& t) {
+		sprite.setTexture(t);
+	}
 	virtual ~Drawable() {}
 };
 

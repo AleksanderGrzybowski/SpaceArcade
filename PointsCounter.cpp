@@ -16,5 +16,5 @@ void PointsCounter::draw(sf::RenderWindow& window) {
 
 
 	window.draw(text);
-	//((Drawable*)this)->draw(window);
+
 }

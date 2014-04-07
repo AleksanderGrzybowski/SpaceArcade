@@ -182,7 +182,7 @@ void Game::gameOver() {
 
 	window.draw(text);
 	window.display();
-	sleep(2);
+	sleep(1);
 
 }
 
