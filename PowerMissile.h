@@ -15,6 +15,9 @@ public:
 
 	static bool canBeSent();
 
+	std::vector<std::string> getSpritesString() {
+		return std::vector<std::string> {"Sprites/PowerMissileA.png", "Sprites/PowerMissileB.png"};
+	}
 	int getDamage() { return 20; }
 	double getSpeed() { return 0.5; }
 	int getSize() { return 24; }

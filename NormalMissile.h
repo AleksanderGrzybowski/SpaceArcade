@@ -13,6 +13,9 @@ public:
 
 	NormalMissile(int shipx, int shipy);
 
+	std::vector<std::string> getSpritesString() {
+		return std::vector<std::string> {"Sprites/NormalMissileA.png", "Sprites/NormalMissileB.png"};
+	}
 	static bool canBeSent();
 	int getDamage() { return 5; }
 	double getSpeed() { return 0.5; }
