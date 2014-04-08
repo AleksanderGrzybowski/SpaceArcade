@@ -14,7 +14,7 @@ class Ship : public Drawable {
 public:
 	Ship();
 
-	void move(Direction d, const sf::Time& t);
+	void move(Direction d, const sf::Time& t); // ona nie jest przesłonięta, bo inne parametry
 	void draw(sf::RenderWindow& window);
 
 private:

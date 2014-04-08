@@ -20,7 +20,7 @@ static const double CONF_shipUpLimit = 0.2; // ile do góry można
 static const int CONF_enemySize = 64; // używane żeby nie wyświetlać ich poza ekranem
 static const double CONF_enemyDownLimit = 0.3;
 static const double CONF_enemySpeed = 10;
-static const int CONF_enemyGenerationFactor = 10;
+static const int CONF_enemyGenerationFactor = 100;
 static const double CONF_globalEnemySpeedFactor = 300.0;
 
 // Line
