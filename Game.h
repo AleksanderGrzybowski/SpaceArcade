@@ -19,6 +19,7 @@
 #include "Direction.h"
 #include "Line.h"
 #include "PointsCounter.h"
+#include "Random.h"
 
 class GameOverException {};
 

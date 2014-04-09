@@ -12,6 +12,7 @@
 #include "Missile.h"
 #include "NormalMissile.h"
 #include "PowerMissile.h"
+#include "Random.h"
 
 class MissileFactory {
 public:

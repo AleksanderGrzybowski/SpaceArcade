@@ -21,8 +21,8 @@ void Game::addMissile() {
 
 void Game::addEnemy() {
 	Enemy* e = EnemyFactory::getRandomEnemy(0, 0); // dowolne
-	int xpos = rand()% (CONF_screenWidth-e->getSize());
-	int ypos = (rand() % CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na enemy
+	int xpos = Random::getInt(0, CONF_screenWidth-e->getSize());
+	int ypos = Random::getInt(0, CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na enemy
 	e->setPosition(xpos, ypos);
 	enemies.push_back(e);
 }
@@ -132,7 +132,7 @@ bool Game::loop() {
 		}
 	}
 
-	if (rand() % CONF_enemyGenerationFactor == 0) addEnemy();
+	if (Random::tryChance(CONF_enemyGenerationChance)) addEnemy();
 
 	// Achtung
 	try {

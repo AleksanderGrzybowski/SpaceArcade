@@ -1,8 +1,6 @@
-dodać interfejs Drawable z metodą (pewnie wirt) draw taką jaka jest
-
-
-komunikat po przegraniu, ew. granie od nowa
-
+random i nextint(min, max) inclusive - jako klasa
+bonusy + integracja ich z enemy (tak samo spadają)
+może jako FallingObject i RTTI przy ich sprawdzaniu?
 
 TextureFlipper: uwaga, SFML bierze sobie wskaźnik do tekstury i z niego korzysta, jeśli wykona
 się jakieś przeniesienie tekstur w TextureFlipper to może nastąpić realokacja pamięci i szlag trafi wszystko

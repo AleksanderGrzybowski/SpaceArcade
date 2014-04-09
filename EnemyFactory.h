@@ -4,6 +4,8 @@
 #include "Enemy.h"
 #include "NormalEnemy.h"
 #include "HardEnemy.h"
+#include "Random.h"
+
 class EnemyFactory {
 public:
 	static Enemy* getRandomEnemy(int xpos, int ypos);
