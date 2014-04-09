@@ -2,7 +2,7 @@
 
 Missile::Missile() {}
 
-void Missile::moveIterate(const sf::Time& t) {
+void Missile::moveIterate(sf::Time& t) {
 	sf::Vector2f actPos = getPosition();
 
 	// tylko w górę

@@ -7,11 +7,12 @@
 #include "Direction.h"
 #include "TextureFlipper.h"
 #include "Drawable.h"
+#include "Moving.h"
 
-class Enemy : public Drawable {
+class Enemy : public Drawable, public Moving {
 public:
 	Enemy();
-	void moveIterate(sf::Time& t);
+	virtual void moveIterate(sf::Time& t);
 
 	// przesłaniane w potomnych
 	virtual double getSpeed() = 0;

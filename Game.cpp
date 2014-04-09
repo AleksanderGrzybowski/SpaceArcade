@@ -8,8 +8,10 @@ void Game::reset() {
 	pc.reset();
 	for (unsigned int i = 0; i < missiles.size(); ++i) delete missiles[i];
 	for (unsigned int i = 0; i < enemies.size(); ++i) delete enemies[i];
+	for (unsigned int i = 0; i < bonuses.size(); ++i) delete bonuses[i];
 	missiles.clear();
 	enemies.clear();
+	bonuses.clear();
 	window.clear();
 }
 
@@ -27,6 +29,14 @@ void Game::addEnemy() {
 	enemies.push_back(e);
 }
 
+void Game::addBonus() {
+	Bonus* b = new SimpleBonus(0, 0); // dowolne
+	int xpos = Random::getInt(0, CONF_screenWidth - b->getSize());
+	int ypos = Random::getInt(0, CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na bonusy też
+	b->setPosition(xpos, ypos);
+	bonuses.push_back(b);
+}
+
 bool Game::isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize) { // pociski są kwadratami!!!
 	sf::Vector2f msizes(msize, msize);
 	sf::Vector2f esizes(esize, esize);
@@ -39,17 +49,27 @@ bool Game::isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esiz
 
 void Game::recalc() {
 	// pociski poza ekranem
-againA:
+againMissilesOff:
 	for (auto m = missiles.begin(); m != missiles.end(); ++m) {
 		sf::Vector2f mpos = (*m)->getPosition();
 		if (mpos.y <= 0) {
 			delete *m;
 			missiles.erase(m);
-			goto againA;
+			goto againMissilesOff;
+		}
+	}
+	// bonusy poza ekranem
+againBonusesOff:
+	for (auto b = bonuses.begin(); b != bonuses.end(); ++b) {
+		sf::Vector2f pos = (*b)->getPosition();
+		if (pos.y >= CONF_screenHeight) {
+			delete *b;
+			bonuses.erase(b);
+			goto againBonusesOff;
 		}
 	}
 
-againB:
+againMissilesCrash:
 	// sprawdzanie kolizji
 	for (auto m = missiles.begin(); m != missiles.end(); ++m) {
 		for (auto e = enemies.begin(); e != enemies.end(); ++e) { // elementy są wskaźnikami
@@ -66,10 +86,26 @@ againB:
 					enemies.erase(e);
 
 				}
-				goto againB; // czy to ma sens logiczny? chyba działa
+				goto againMissilesCrash; // czy to ma sens logiczny? chyba działa
 			}
 		}
 	}
+
+// Pochłanianie bonusów
+againBonusCatch:
+	// sprawdzanie kolizji
+	sf::Vector2f shipPos = ship.getPosition();
+	for (auto b = bonuses.begin(); b != bonuses.end(); ++b) { // elementy są wskaźnikami
+		sf::Vector2f pos = (*b)->getPosition();
+		if (isCollision(pos, shipPos, (*b)->getSize(), CONF_shipSize)) { // KOLIZJA JUPI
+			pc.add((*b)->getPoints());
+			delete *b;
+			bonuses.erase(b);
+			goto againBonusCatch; // czy to ma sens logiczny? chyba działa
+		}
+	}
+
+
 
 	// Czy przypadkiem gracz nie wtopił
 	for (auto e = enemies.begin(); e != enemies.end(); ++e) {
@@ -133,6 +169,7 @@ bool Game::loop() {
 	}
 
 	if (Random::tryChance(CONF_enemyGenerationChance)) addEnemy();
+	if (Random::tryChance(CONF_bonusGenerationChance)) addBonus();
 
 	// Achtung
 	try {
@@ -154,6 +191,11 @@ bool Game::loop() {
 		//std::cout << "Mamy łącznie " << enemies.size() << " przeciwnikow" << std::endl;
 		e->moveIterate(t);
 		e->draw(window);
+	}
+
+	for (auto& b : bonuses) {
+		b->moveIterate(t);
+		b->draw(window);
 	}
 
 	ship.draw(window);
@@ -183,7 +225,6 @@ void Game::gameOver() {
 	window.draw(text);
 	window.display();
 	sleep(1);
-
 }
 
 

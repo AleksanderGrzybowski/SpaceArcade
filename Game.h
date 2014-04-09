@@ -20,6 +20,8 @@
 #include "Line.h"
 #include "PointsCounter.h"
 #include "Random.h"
+#include "Bonus.h"
+#include "SimpleBonus.h"
 
 class GameOverException {};
 
@@ -38,12 +40,14 @@ private:
 	Ship ship;
 	std::vector<Missile*> missiles;
 	std::vector<Enemy*> enemies;
+	std::vector<Bonus*> bonuses;
 	Line line;
 	PointsCounter pc;
 
 	bool loop();
 	void addMissile();
 	void addEnemy();
+	void addBonus();
 	void recalc();
 	bool isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize); // pociski są kwadratami!!!
 	void reset();

@@ -5,12 +5,12 @@
 #include "config.h"
 #include "TextureFlipper.h"
 #include "Drawable.h"
-
-class Missile : public Drawable {
+#include "Moving.h"
+class Missile : public Drawable, public Moving {
 public:
 	Missile();
 
-	void moveIterate(const sf::Time& t);
+	void moveIterate(sf::Time& t);
 	virtual int getSize() = 0;
 
 	virtual double getSpeed() = 0;
