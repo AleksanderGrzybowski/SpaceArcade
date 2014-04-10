@@ -11,7 +11,7 @@ class Missile : public Moving {
 public:
 	Missile();
 
-	void moveIterate(sf::Time& t);
+//	void moveIterate(sf::Time& t);
 	virtual int getSize() = 0;
 
 	virtual double getSpeed() = 0;

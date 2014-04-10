@@ -15,7 +15,7 @@ public:
 	static bool canBeSent();
 
 	int getDamage() { return 20; }
-	double getSpeed() { return 0.5; }
+	double getSpeed() { return 200; }
 	int getSize() { return 24; }
 
 private:

@@ -14,7 +14,7 @@
 class Bonus: public Moving {
 public:
 	Bonus() {}
-	virtual void moveIterate(sf::Time& t);
+	//virtual void moveIterate(sf::Time& t);
 
 	// przesłaniane w potomnych
 	virtual double getSpeed() = 0;

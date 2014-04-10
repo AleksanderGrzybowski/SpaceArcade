@@ -8,7 +8,7 @@
 #include "config.h"
 class Moving : public Drawable {
 public:
-	virtual void moveIterate(sf::Time& t) = 0;
+	virtual void moveIterate(sf::Time& t);
 	virtual ~Moving() {}
 	virtual double getSpeed() = 0;
 	virtual Direction getDirection() = 0;

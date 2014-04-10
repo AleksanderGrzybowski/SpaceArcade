@@ -2,10 +2,10 @@
 
 Enemy::Enemy() : health(0) {}
 
-void Enemy::moveIterate(sf::Time& t) {
-	double toMove = getSpeed()*t.asMilliseconds()/CONF_globalEnemySpeedFactor;
-	move(0, toMove);
-}
+//void Enemy::moveIterate(sf::Time& t) {
+//	double toMove = getSpeed()*t.asMilliseconds()/CONF_globalEnemySpeedFactor;
+//	move(0, toMove);
+//}
 
 void Enemy::damage(int damage) {
 	health -= damage*getDamageCoeff();

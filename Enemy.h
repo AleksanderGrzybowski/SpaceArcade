@@ -13,7 +13,7 @@
 class Enemy : public Moving {
 public:
 	Enemy();
-	virtual void moveIterate(sf::Time& t);
+	//virtual void moveIterate(sf::Time& t);
 
 	// przesłaniane w potomnych
 	virtual double getSpeed() = 0;
