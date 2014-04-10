@@ -8,8 +8,10 @@
 #include "config.h"
 #include <vector>
 #include <string>
+#include "Drawable.h"
+#include "Direction.h"
 
-class Bonus: public Drawable, public Moving {
+class Bonus: public Moving {
 public:
 	Bonus() {}
 	virtual void moveIterate(sf::Time& t);
@@ -18,7 +20,7 @@ public:
 	virtual double getSpeed() = 0;
 	virtual int getSize() = 0;
 	virtual int getPoints() = 0;
-
+	Direction getDirection() { return Down; }
 	virtual ~Bonus() {}
 
 protected:

@@ -8,8 +8,9 @@
 #include "TextureFlipper.h"
 #include "Drawable.h"
 #include "Moving.h"
+#include "Direction.h"
 
-class Enemy : public Drawable, public Moving {
+class Enemy : public Moving {
 public:
 	Enemy();
 	virtual void moveIterate(sf::Time& t);
@@ -20,6 +21,7 @@ public:
 	virtual int getMaxHealth() = 0;
 	virtual double getDamageCoeff() = 0;
 	virtual int getPoints() = 0;
+	Direction getDirection() { return Down; }
 
 	bool isAlive() { return health > 0; }
 	void damage(int damage);

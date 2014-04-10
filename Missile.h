@@ -6,7 +6,8 @@
 #include "TextureFlipper.h"
 #include "Drawable.h"
 #include "Moving.h"
-class Missile : public Drawable, public Moving {
+#include "Direction.h"
+class Missile : public Moving {
 public:
 	Missile();
 
@@ -16,7 +17,7 @@ public:
 	virtual double getSpeed() = 0;
 	virtual int getDamage() = 0;
 	void draw(sf::RenderWindow& window);
-
+	Direction getDirection() { return Up; }
 	virtual ~Missile() {}
 
 protected:
