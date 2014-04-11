@@ -10,7 +10,7 @@ public:
 
 	static bool getBool();
 	static int getInt(int min, int max);
-	static bool tryChance(int perc);
+	static bool tryChance(double perc);
 
 private:
 	static bool initialized;
