@@ -6,7 +6,6 @@
 class Drawable {
 public:
 
-
 	virtual void draw(sf::RenderWindow& window) {
 		window.draw(sprite);
 	}
@@ -19,10 +18,10 @@ public:
 	virtual void move(double x, double y) {
 		sprite.move(x, y);
 	}
-
 	virtual void setTexture(sf::Texture& t) {
 		sprite.setTexture(t);
 	}
+
 	virtual ~Drawable() {}
 
 protected:

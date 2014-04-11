@@ -22,4 +22,5 @@ bool Random::tryChance(int prob) { // prob <0..100>
 	else return false;
 
 }
+
 bool Random::initialized = false;
