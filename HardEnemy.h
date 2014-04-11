@@ -7,7 +7,7 @@ class HardEnemy: public Enemy {
 public:
 	HardEnemy(double xpos, double ypos);
 
-	double getSpeed() const { return 0.9*CONF_enemySpeed; }
+	double getSpeed() const { return 0.1; }
 	int getSize() const { return 64; }
 	int getMaxHealth() const { return 20; }
 	double getDamageCoeff() const { return 0.5; }
