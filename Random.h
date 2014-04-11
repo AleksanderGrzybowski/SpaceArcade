@@ -13,7 +13,6 @@ public:
 	static bool tryChance(int perc);
 
 private:
-
 	static bool initialized;
 };
 

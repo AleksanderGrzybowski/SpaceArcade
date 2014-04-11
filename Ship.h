@@ -16,6 +16,7 @@ public:
 
 	void move(Direction d, const sf::Time& t); // ona nie jest przesłonięta, bo inne parametry
 	void draw(sf::RenderWindow& window);
+	int getSize() const { return 1337; }
 
 private:
 	TextureFlipper tf;

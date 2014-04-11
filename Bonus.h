@@ -14,10 +14,8 @@
 class Bonus: public Moving {
 public:
 	Bonus() {}
-	//virtual void moveIterate(sf::Time& t);
 
 	// przesłaniane w potomnych
-	virtual double getSpeed() const = 0;
 	virtual int getSize() const = 0;
 	virtual int getPoints() const = 0;
 	Direction getDirection() const { return Down; }

@@ -6,12 +6,14 @@
 #include "Drawable.h"
 #include "Direction.h"
 #include "config.h"
+
 class Moving : public Drawable {
 public:
 	virtual void moveIterate(sf::Time& t);
-	virtual ~Moving() {}
 	virtual double getSpeed() const = 0;
 	virtual Direction getDirection() const = 0;
+
+	virtual ~Moving() {}
 };
 
 #endif /* MOVING_H_ */

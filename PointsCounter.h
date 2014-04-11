@@ -17,6 +17,7 @@ public:
 	void add(int n) { pointsCount += n; }
 	void draw(sf::RenderWindow& window);
 	void reset() { pointsCount = 0; }
+	int getSize() const { return 1337; }
 };
 
 #endif /* POINTSCOUNTER_H_ */

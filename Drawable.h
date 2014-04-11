@@ -21,6 +21,7 @@ public:
 	virtual void setTexture(sf::Texture& t) {
 		sprite.setTexture(t);
 	}
+	virtual int getSize() const = 0;
 
 	virtual ~Drawable() {}
 
