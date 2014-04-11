@@ -32,7 +32,7 @@ protected:
 	virtual std::vector<std::string> getSpritesString() const = 0;
 	virtual void initialize(int xpos, int ypos);
 private:
-	TextureFlipper tf;
+//	TextureFlipper tf;
 	int health;
 };
 

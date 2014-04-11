@@ -25,7 +25,7 @@ protected:
 	void initialize(int shipx, int shipy);
 
 private:
-	TextureFlipper tf;
+//	TextureFlipper tf;
 	sf::Clock animationSpeedClock;
 };
 

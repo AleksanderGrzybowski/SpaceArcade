@@ -2,7 +2,7 @@
 #define DRAWABLE_H_
 
 #include "SFML/Graphics.hpp"
-
+#include "TextureFlipper.h"
 class Drawable {
 public:
 
@@ -27,6 +27,7 @@ public:
 
 protected:
 	sf::Sprite sprite;
+	TextureFlipper tf;
 };
 
 #endif /* DRAWABLE_H_ */

@@ -25,7 +25,7 @@ protected:
 	virtual void initialize(int xpos, int ypos);
 
 private:
-	TextureFlipper tf;
+//	TextureFlipper tf;
 };
 
 #endif /* BONUS_H_ */

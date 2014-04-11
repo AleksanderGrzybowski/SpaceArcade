@@ -19,7 +19,7 @@ public:
 	int getSize() const { return 1337; }
 
 private:
-	TextureFlipper tf;
+//	TextureFlipper tf;
 	sf::Clock animationSpeedClock;
 };
 
