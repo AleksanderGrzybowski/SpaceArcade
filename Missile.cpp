@@ -10,13 +10,13 @@ Missile::Missile() {}
 //	setPosition(actPos.x, actPos.y);
 //}
 
-void Missile::draw(sf::RenderWindow& window) {
-	if ((animationSpeedClock).getElapsedTime().asMilliseconds() > CONF_animationSpeed) {
-		sprite.setTexture(tf.getFlip());
-		animationSpeedClock.restart();
-	}
-	Drawable::draw(window);
-}
+//void Missile::draw(sf::RenderWindow& window) {
+//	if ((animationSpeedClock).getElapsedTime().asMilliseconds() > CONF_animationSpeed) {
+//		sprite.setTexture(tf.getFlip());
+//		animationSpeedClock.restart();
+//	}
+//	Drawable::draw(window);
+//}
 
 void Missile::initialize(int shipx, int shipy) {
 	tf.add(getSpritesString());

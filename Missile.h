@@ -16,7 +16,7 @@ public:
 
 	virtual double getSpeed() const = 0;
 	virtual int getDamage() const = 0;
-	void draw(sf::RenderWindow& window);
+	//void draw(sf::RenderWindow& window);
 	Direction getDirection() const { return Up; }
 	virtual ~Missile() {}
 

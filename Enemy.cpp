@@ -12,6 +12,7 @@ void Enemy::damage(int damage) {
 }
 
 void Enemy::initialize(int xpos, int ypos) {
+	std::cout << "enemy init" << std::endl;
 	tf.add(getSpritesString());
 	setTexture(tf.getFlip());
 	setPosition(xpos, ypos);

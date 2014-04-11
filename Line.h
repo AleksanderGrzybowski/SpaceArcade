@@ -10,8 +10,9 @@ public:
 	Line();
 	int getSize() const { return 1337; }
 
+
 private:
-	sf::Texture texture; // potrzebne, bo zarządzane po swojemu
+//	sf::Texture texture; // potrzebne, bo zarządzane po swojemu
 
 };
 

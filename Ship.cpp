@@ -35,10 +35,10 @@ void Ship::move(Direction b, const sf::Time& t) {
 		sprite.move(0, ydistance);
 }
 
-void Ship::draw(sf::RenderWindow& window) {
-	if ((animationSpeedClock).getElapsedTime().asMilliseconds() > CONF_animationSpeed) {
-		sprite.setTexture(tf.getFlip());
-		animationSpeedClock.restart();
-	}
-	Drawable::draw(window);
-}
+//void Ship::draw(sf::RenderWindow& window) {
+//	if ((animationSpeedClock).getElapsedTime().asMilliseconds() > CONF_animationSpeed) {
+//		sprite.setTexture(tf.getFlip());
+//		animationSpeedClock.restart();
+//	}
+//	Drawable::draw(window);
+//}

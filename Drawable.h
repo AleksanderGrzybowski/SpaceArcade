@@ -3,12 +3,29 @@
 
 #include "SFML/Graphics.hpp"
 #include "TextureFlipper.h"
+#include "config.h"
 class Drawable {
 public:
 
+//	virtual void draw(sf::RenderWindow& window) {
+//		window.draw(sprite);
+//	}
+
+	// test
 	virtual void draw(sf::RenderWindow& window) {
+
+		if ((animationSpeedClock).getElapsedTime().asMilliseconds() > CONF_animationSpeed) {
+			sprite.setTexture(tf.getFlip());
+			animationSpeedClock.restart();
+		}
+	//	sprite.setTexture(tf.getFlip());
 		window.draw(sprite);
+		//Drawable::draw(window);
 	}
+
+
+
+
 	virtual const sf::Vector2f& getPosition() const {
 		return sprite.getPosition();
 	}
