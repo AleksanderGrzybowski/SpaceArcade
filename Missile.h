@@ -26,7 +26,7 @@ protected:
 
 private:
 //	TextureFlipper tf;
-	sf::Clock animationSpeedClock;
+	//sf::Clock animationSpeedClock;
 };
 
 #endif /* MISSILE_H_ */

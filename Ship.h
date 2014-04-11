@@ -20,7 +20,7 @@ public:
 
 private:
 //	TextureFlipper tf;
-	sf::Clock animationSpeedClock;
+	//sf::Clock animationSpeedClock;
 };
 
 #endif /* SHIP_H_ */

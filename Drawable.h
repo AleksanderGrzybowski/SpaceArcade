@@ -28,6 +28,7 @@ public:
 protected:
 	sf::Sprite sprite;
 	TextureFlipper tf;
+	sf::Clock animationSpeedClock;
 };
 
 #endif /* DRAWABLE_H_ */
