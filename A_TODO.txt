@@ -1,4 +1,4 @@
-bonusy + integracja ich z enemy (tak samo spadają)
+----------------------bonusy + integracja ich z enemy (tak samo spadają)
 może jako FallingObject i RTTI przy ich sprawdzaniu?
 consty pododawać przy parametrach i na końcu funkcyj
 

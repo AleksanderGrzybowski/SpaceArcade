@@ -16,20 +16,20 @@ public:
 	//virtual void moveIterate(sf::Time& t);
 
 	// przesłaniane w potomnych
-	virtual double getSpeed() = 0;
-	virtual int getSize() = 0;
-	virtual int getMaxHealth() = 0;
-	virtual double getDamageCoeff() = 0;
-	virtual int getPoints() = 0;
-	Direction getDirection() { return Down; }
+	virtual double getSpeed() const = 0;
+	virtual int getSize() const = 0;
+	virtual int getMaxHealth() const = 0;
+	virtual double getDamageCoeff() const = 0;
+	virtual int getPoints() const = 0;
+	Direction getDirection() const { return Down; }
 
-	bool isAlive() { return health > 0; }
+	bool isAlive() const { return health > 0; }
 	void damage(int damage);
 
 	virtual ~Enemy() {}
 
 protected:
-	virtual std::vector<std::string> getSpritesString() = 0;
+	virtual std::vector<std::string> getSpritesString() const = 0;
 	virtual void initialize(int xpos, int ypos);
 private:
 	TextureFlipper tf;

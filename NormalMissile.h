@@ -13,12 +13,12 @@ public:
 	NormalMissile(int shipx, int shipy);
 
 	static bool canBeSent();
-	int getDamage() { return 5; }
-	double getSpeed() { return 50; }
-	int getSize() { return 24; }
+	int getDamage() const { return 5; }
+	double getSpeed() const { return 50; }
+	int getSize() const { return 24; }
 
 private:
-	std::vector<std::string> getSpritesString() {
+	std::vector<std::string> getSpritesString() const {
 		return std::vector<std::string> {"Sprites/NormalMissileA.png", "Sprites/NormalMissileB.png"};
 	}
 	static const int timeLimit;

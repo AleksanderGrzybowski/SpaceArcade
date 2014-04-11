@@ -12,16 +12,16 @@ public:
 	Missile();
 
 //	void moveIterate(sf::Time& t);
-	virtual int getSize() = 0;
+	virtual int getSize() const = 0;
 
-	virtual double getSpeed() = 0;
-	virtual int getDamage() = 0;
+	virtual double getSpeed() const = 0;
+	virtual int getDamage() const = 0;
 	void draw(sf::RenderWindow& window);
-	Direction getDirection() { return Up; }
+	Direction getDirection() const { return Up; }
 	virtual ~Missile() {}
 
 protected:
-	virtual std::vector<std::string> getSpritesString() = 0;
+	virtual std::vector<std::string> getSpritesString() const = 0;
 	void initialize(int shipx, int shipy);
 
 private:

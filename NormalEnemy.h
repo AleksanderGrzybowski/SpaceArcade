@@ -8,14 +8,14 @@ class NormalEnemy : public Enemy {
 public:
 	NormalEnemy(double xpos, double ypos);
 
-	double getSpeed() { return 0.2*CONF_enemySpeed; }
-	int getSize() { return 64; }
-	int getMaxHealth() { return 10; }
-	double getDamageCoeff() { return 1; }
-	int getPoints() { return 1; }
+	double getSpeed() const { return 0.2*CONF_enemySpeed; }
+	int getSize() const { return 64; }
+	int getMaxHealth() const { return 10; }
+	double getDamageCoeff() const { return 1; }
+	int getPoints() const { return 1; }
 
 private:
-	std::vector<std::string> getSpritesString() {
+	std::vector<std::string> getSpritesString() const {
 		return std::vector<std::string> {"Sprites/NormalEnemy.png"};
 	}
 };

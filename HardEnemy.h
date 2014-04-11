@@ -7,15 +7,15 @@ class HardEnemy: public Enemy {
 public:
 	HardEnemy(double xpos, double ypos);
 
-	double getSpeed() { return 0.9*CONF_enemySpeed; }
-	int getSize() { return 64; }
-	int getMaxHealth() { return 20; }
-	double getDamageCoeff() { return 0.5; }
-	int getPoints() { return 5; }
+	double getSpeed() const { return 0.9*CONF_enemySpeed; }
+	int getSize() const { return 64; }
+	int getMaxHealth() const { return 20; }
+	double getDamageCoeff() const { return 0.5; }
+	int getPoints() const { return 5; }
 
 
 private:
-	std::vector<std::string> getSpritesString() {
+	std::vector<std::string> getSpritesString() const {
 		return std::vector<std::string> {"Sprites/HardEnemy.png"};
 	}
 };

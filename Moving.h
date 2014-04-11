@@ -10,8 +10,8 @@ class Moving : public Drawable {
 public:
 	virtual void moveIterate(sf::Time& t);
 	virtual ~Moving() {}
-	virtual double getSpeed() = 0;
-	virtual Direction getDirection() = 0;
+	virtual double getSpeed() const = 0;
+	virtual Direction getDirection() const = 0;
 };
 
 #endif /* MOVING_H_ */

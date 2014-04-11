@@ -14,12 +14,12 @@ public:
 
 	static bool canBeSent();
 
-	int getDamage() { return 20; }
-	double getSpeed() { return 200; }
-	int getSize() { return 24; }
+	int getDamage() const { return 20; }
+	double getSpeed() const { return 200; }
+	int getSize() const { return 24; }
 
 private:
-	std::vector<std::string> getSpritesString() {
+	std::vector<std::string> getSpritesString() const {
 		return std::vector<std::string> {"Sprites/PowerMissileA.png", "Sprites/PowerMissileB.png"};
 	}
 	static const int timeLimit;

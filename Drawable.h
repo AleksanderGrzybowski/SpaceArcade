@@ -10,7 +10,7 @@ public:
 	virtual void draw(sf::RenderWindow& window) {
 		window.draw(sprite);
 	}
-	virtual const sf::Vector2f& getPosition() {
+	virtual const sf::Vector2f& getPosition() const {
 		return sprite.getPosition();
 	}
 	virtual void setPosition(double x, double y) {
