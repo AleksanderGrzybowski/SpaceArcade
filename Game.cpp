@@ -23,7 +23,7 @@ void Game::addMissile() {
 
 void Game::addEnemy() {
 	Enemy* e = EnemyFactory::getRandomEnemy(0, 0); // dowolne
-	int xpos = Random::getInt(0, CONF_screenWidth-e->getSize());
+	int xpos = Random::getInt(0, CONF_screenWidth - e->getSize());
 	int ypos = Random::getInt(0, CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na enemy
 	e->setPosition(xpos, ypos);
 	enemies.push_back(e);
@@ -171,7 +171,7 @@ bool Game::loop() {
 	if (Random::tryChance(CONF_enemyGenerationChance)) addEnemy();
 	if (Random::tryChance(CONF_bonusGenerationChance)) addBonus();
 
-	// Achtung
+	// Achtung!!! Ważne rzeczy się dzieją właśnie tu
 	try {
 		recalc();
 	} catch (GameOverException&) {
@@ -188,7 +188,6 @@ bool Game::loop() {
 	}
 
 	for (auto& e : enemies) {
-		//std::cout << "Mamy łącznie " << enemies.size() << " przeciwnikow" << std::endl;
 		e->moveIterate(t);
 		e->draw(window);
 	}

@@ -16,7 +16,6 @@ public:
 	Bonus() {}
 
 	// przesłaniane w potomnych
-	virtual int getSize() const = 0;
 	virtual int getPoints() const = 0;
 	Direction getDirection() const { return Down; }
 	virtual ~Bonus() {}
@@ -24,6 +23,7 @@ public:
 protected:
 	virtual std::vector<std::string> getSpritesString() const = 0;
 	virtual void initialize(int xpos, int ypos);
+
 private:
 	TextureFlipper tf;
 };
