@@ -20,7 +20,6 @@ bool Random::tryChance(double prob) { // prob <0..100>
 	int l = getInt(0, 100);
 	if (prob > l) return true;
 	else return false;
-
 }
 
 bool Random::initialized = false;
