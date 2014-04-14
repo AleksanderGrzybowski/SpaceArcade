@@ -207,21 +207,8 @@ bool Game::loop() {
 }
 
 void Game::gameOver() {
-	std::cout << "Over" << std::endl;
-	sf::Font font;
-	if (!font.loadFromFile("Fonts/Arial.ttf")) { // should never happen
-		std::cerr << "Nie idzie czcionki załadować" << std::endl;
-		throw std::exception();
-	}
-
-	sf::Text text;
-	text.setFont(font);
-	text.setString("Game Over");
-	text.setCharacterSize(CONF_fontSize*2);
-	text.setColor(sf::Color::Yellow);
-	text.setPosition(CONF_screenWidth/2, CONF_screenHeight*0.8);
-
-	window.draw(text);
+	GameOverText gt;
+	gt.draw(window);
 	window.display();
 	sleep(1);
 }

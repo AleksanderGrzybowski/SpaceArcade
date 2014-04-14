@@ -22,6 +22,7 @@
 #include "Random.h"
 #include "Bonus.h"
 #include "SimpleBonus.h"
+#include "GameOverText.h"
 
 class GameOverException {};
 

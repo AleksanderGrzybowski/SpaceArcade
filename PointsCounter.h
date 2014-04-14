@@ -5,19 +5,21 @@
 #include <iostream>
 #include "config.h"
 #include "Drawable.h"
+#include "TextObject.h"
 
-class PointsCounter : public Drawable {
+class PointsCounter : public TextObject {
 public:
 
 	int pointsCount;
-	sf::Font font;
 
 	PointsCounter();
 
 	void add(int n) { pointsCount += n; }
-	void draw(sf::RenderWindow& window);
 	void reset() { pointsCount = 0; }
-	int getSize() const { return 1337; }
+	int getFontSize() { return 20; }
+
+private:
+	std::string getString(); // impl
 };
 
 #endif /* POINTSCOUNTER_H_ */
