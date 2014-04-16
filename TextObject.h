@@ -17,7 +17,7 @@ public:
 
 	virtual std::string getString() = 0;
 	virtual int getFontSize() = 0;
-
+	virtual sf::Color getColor() = 0;
 	virtual ~TextObject() {}
 
 protected:

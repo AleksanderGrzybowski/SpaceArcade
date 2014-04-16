@@ -17,6 +17,7 @@ public:
 	void add(int n) { pointsCount += n; }
 	void reset() { pointsCount = 0; }
 	int getFontSize() { return 20; }
+	sf::Color getColor() { return sf::Color::White; }
 
 private:
 	std::string getString(); // impl

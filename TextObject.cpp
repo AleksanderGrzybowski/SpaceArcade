@@ -14,7 +14,7 @@ void TextObject::draw(sf::RenderWindow& window) {
 	text.setString(getString());
 	text.setPosition(xpos, ypos);
 	text.setCharacterSize(getFontSize());
-	text.setColor(sf::Color::White);
+	text.setColor(getColor());
 
 	window.draw(text);
 }

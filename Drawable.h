@@ -4,6 +4,9 @@
 #include "SFML/Graphics.hpp"
 #include "TextureFlipper.h"
 #include "config.h"
+
+
+/* Klasa określająca właściwości obiektu 'rysowalnego' */
 class Drawable {
 public:
 
@@ -23,9 +26,10 @@ public:
 	}
 	virtual int getSize() const = 0;
 	virtual int getAnimationSpeed() const = 0;
+
 	virtual ~Drawable() {}
 
-protected:
+protected: // każdy obiekt ma swoje własne:
 	sf::Sprite sprite;
 	TextureFlipper tf;
 	sf::Clock animationSpeedClock;

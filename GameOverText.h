@@ -13,6 +13,7 @@ public:
 	}
 
 	int getFontSize() { return 40; }
+	sf::Color getColor() { return sf::Color::Yellow; }
 
 private:
 	std::string getString() { return "Cienias"; }

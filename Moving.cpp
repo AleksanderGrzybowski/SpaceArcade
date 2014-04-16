@@ -1,5 +1,6 @@
 #include "Moving.h"
 
+/* Główna metoda do iteracyjnego poruszania obiektów */
 void Moving::moveIterate(sf::Time& t) {
 	double toMove = getSpeed()*t.asMilliseconds();
 

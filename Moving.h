@@ -7,6 +7,9 @@
 #include "Direction.h"
 #include "config.h"
 
+/* Klasa określająca obiekt poruszający się
+ * lub poruszany, np. Ship nie wykorzystuje nic z poniższych,
+ * bo rusza nim gracz a nie algorytm */
 class Moving : public Drawable {
 public:
 	virtual void moveIterate(sf::Time& t);
