@@ -8,7 +8,7 @@ static const int CONF_screenWidth = 600;
 static const int CONF_screenHeight = 600;
 static const std::string CONF_windowTitle = "SpaceArcade Alfa";
 static const int CONF_frameRateLimit = 60;
-static const int CONF_animationSpeed = 100; // co 100 ms zmiana tekstury
+//static const int CONF_animationSpeed = 100; // co 100 ms zmiana tekstury
 
 // Statek
 static const int CONF_shipSize = 48; // bok kwadratu
@@ -21,7 +21,7 @@ static const double CONF_enemyDownLimit = 0.3;
 static const int CONF_enemyGenerationChance = 1;
 
 // Bonus
-static const int CONF_bonusGenerationChance = 10;
+static const int CONF_bonusGenerationChance = 1;
 // Line
 static const int CONF_lineHeight = 2;
 #endif /* CONFIG_H_ */

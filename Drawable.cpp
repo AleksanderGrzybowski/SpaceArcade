@@ -3,7 +3,9 @@
 
 void Drawable::draw(sf::RenderWindow& window) {
 
-	if ((animationSpeedClock).getElapsedTime().asMilliseconds() > CONF_animationSpeed) {
+	int animSpeed = getAnimationSpeed();
+
+	if ((animationSpeedClock).getElapsedTime().asMilliseconds() > animSpeed) {
 		sprite.setTexture(tf.getFlip());
 		animationSpeedClock.restart();
 	}

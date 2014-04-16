@@ -22,7 +22,7 @@ public:
 		sprite.setTexture(t);
 	}
 	virtual int getSize() const = 0;
-
+	virtual int getAnimationSpeed() const = 0;
 	virtual ~Drawable() {}
 
 protected:

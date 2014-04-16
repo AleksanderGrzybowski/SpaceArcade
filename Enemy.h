@@ -22,7 +22,7 @@ public:
 	virtual double getDamageCoeff() const = 0;
 	virtual int getPoints() const = 0;
 	Direction getDirection() const { return Down; }
-
+	int getAnimationSpeed() const { return 100; }
 	bool isAlive() const { return health > 0; }
 	void damage(int damage);
 

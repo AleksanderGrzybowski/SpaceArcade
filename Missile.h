@@ -18,6 +18,8 @@ public:
 	virtual int getDamage() const = 0;
 	//void draw(sf::RenderWindow& window);
 	Direction getDirection() const { return Up; }
+	int getAnimationSpeed() const { return 100; }
+
 	virtual ~Missile() {}
 
 protected:

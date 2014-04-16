@@ -18,6 +18,7 @@ public:
 	// przesłaniane w potomnych
 	virtual int getPoints() const = 0;
 	Direction getDirection() const { return Down; }
+	int getAnimationSpeed() const { return 100; }
 	virtual ~Bonus() {}
 
 protected:
