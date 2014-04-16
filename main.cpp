@@ -1,14 +1,17 @@
 #include <iostream>
 #include "Game.h"
-#include "Random.h"
-
+#include "FileNotFoundException.h"
 int main() {
-	//for (int i = 0; i < 100; ++i) std::cout << "Proba " << i << " " << Random::tryChance(100) << std::endl;
+
+	std::cout << "Startujemy gre" << std::endl;
+
+
+
 
 	try {
 		Game().mainloop();
-	} catch (std::exception& e) {
-		std::cout << "Blad" << std::endl;
+	} catch (FileNotFoundException& e) {
+		std::cerr << "Nie mozna znalezc pliku " << e.fileName << std::endl;
 	}
 
 }

@@ -1,10 +1,9 @@
 #include "TextObject.h"
 
 TextObject::TextObject() {
-	if (!font.loadFromFile("Fonts/Arial.ttf")) { // should never happen
-		std::cerr << "Nie idzie czcionki załadować" << std::endl;
-		throw std::exception();
-	}
+	if (!fileExists("Fonts/Arial.ttf")) throw FileNotFoundException("Fonts/Arial.ttf");
+	font.loadFromFile("Fonts/Arial.ttf");
+
 	xpos = ypos = 0;
 }
 

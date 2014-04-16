@@ -50,7 +50,10 @@ private:
 	void addEnemy();
 	void addBonus();
 	void recalc();
+
+	// może to static?
 	bool isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize); // pociski są kwadratami!!!
+
 	void reset();
 	void gameOver();
 };

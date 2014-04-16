@@ -12,6 +12,7 @@ void TextureFlipper::add(std::vector<std::string> v) {
 	sf::Texture t;
 
 	for (std::string& s : v) {
+		if (!fileExists(s)) throw FileNotFoundException(s);
 		t.loadFromFile(s);
 		tab.push_back(t);
 	}

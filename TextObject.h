@@ -5,6 +5,8 @@
 #include <iostream>
 #include "config.h"
 #include "Drawable.h"
+#include "FileNotFoundException.h"
+#include "fileExists.h"
 #include <string>
 
 class TextObject {

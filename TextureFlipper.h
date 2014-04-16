@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 #include <SFML/Graphics.hpp>
+#include "fileExists.h"
+#include "FileNotFoundException.h"
 
 class TextureFlipper {
 public:
