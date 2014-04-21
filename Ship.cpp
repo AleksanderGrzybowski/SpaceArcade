@@ -1,7 +1,7 @@
 #include "Ship.h"
 
 Ship::Ship() {
-	tf.add(std::vector<std::string> {"Sprites/spaceshipA.png", "Sprites/spaceshipB.png"});
+	tf.add(getSpritesString());
 
 	sprite.setTexture(tf.getFlip());
 	sprite.setPosition(CONF_screenWidth/2.0 - CONF_shipSize/2, CONF_screenHeight-CONF_shipSize);

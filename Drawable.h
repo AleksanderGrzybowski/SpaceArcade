@@ -35,6 +35,8 @@ protected: // każdy obiekt ma swoje własne:
 	sf::Sprite sprite;
 	TextureFlipper tf;
 	sf::Clock animationSpeedClock;
+
+	virtual std::vector<std::string> getSpritesString() const = 0;
 };
 
 #endif /* DRAWABLE_H_ */

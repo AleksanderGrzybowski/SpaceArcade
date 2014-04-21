@@ -17,6 +17,9 @@ public:
 	void move(Direction d, const sf::Time& t); // inne parametry! nie impl. z Drawable
 	int getSize() const { return 1337; }
 	int getAnimationSpeed() const { return 100; }
+	virtual std::vector<std::string> getSpritesString() const {
+		return {"Sprites/spaceshipA.png", "Sprites/spaceshipB.png"};
+	}
 };
 
 #endif /* SHIP_H_ */
