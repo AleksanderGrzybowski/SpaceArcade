@@ -5,6 +5,9 @@
 #include <time.h>
 #include <cstdlib>
 
+/* Prosta klasa do losowania liczb z zakresu
+ * oraz losowania prawdopodobieństw.
+ */
 class Random {
 public:
 

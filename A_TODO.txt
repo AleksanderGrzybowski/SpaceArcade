@@ -3,7 +3,19 @@ może jako FallingObject i RTTI przy ich sprawdzaniu?
 ----------------------consty pododawać przy parametrach i na końcu funkcyj
 ----------------gameoverscreen jako osobny obiekt, drawable, czcionka itp.
 -----------------wyjątki przekazywane na konsolę (np. że nie ma czcionki czy sprite)
-getspritesstring do drawable ?
+-----getspritesstring do drawable ?
+statek move timer nie w game tylko w ship LOL
+przemyśleć czy w każdym ctorze trzeba getspritestring i move itd. // chyba initialize nie przejdzie, bo missile i enemy się różnie initializują
+ship przesuwanie - korzystać z getspeed - co robi 'główny zegar' w loop?
+sleep(3) na to z timerem
+wywalić wszędzie getspritesstring gdzie niepotrzebne
+random czy dobry warunek
+getspritesstring zwraca CONST vector a nie vector
+pododawać consty przy wartościach zwracanych
+missilelimitclock private?
+static normalmissile::timelimit zmienić na metody statyczne, może można je przesłaniać?
+getfont w pochodnych textobject
+przyjmowanie wektorów przez const& a nie normalnie
 
 TextureFlipper: uwaga, SFML bierze sobie wskaźnik do tekstury i z niego korzysta, jeśli wykona
 się jakieś przeniesienie tekstur w TextureFlipper to może nastąpić realokacja pamięci i szlag trafi wszystko

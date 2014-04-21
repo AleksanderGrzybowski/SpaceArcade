@@ -9,8 +9,7 @@
 #include "fileExists.h"
 #include <string>
 
-/* Obiekt tekstowy. Nie Drawable bo to nie sprite.
- *
+/* Obiekt tekstowy. Nie Drawable bo nie ma sprite.
  */
 class TextObject {
 public:

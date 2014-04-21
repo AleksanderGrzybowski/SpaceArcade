@@ -1,5 +1,7 @@
 #include "Random.h"
 
+// Może jest lepszy sposób niż ten z !initialized ??
+
 bool Random::getBool() {
 	if (!initialized) {
 		srand(time(0));

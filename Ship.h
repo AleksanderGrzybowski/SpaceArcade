@@ -1,7 +1,6 @@
 #ifndef SHIP_H_
 #define SHIP_H_
 
-//#include <iostream>
 #include <string>
 #include <vector>
 #include <SFML/Graphics.hpp>
@@ -10,6 +9,9 @@
 #include "TextureFlipper.h"
 #include "Drawable.h"
 
+/* Statek. Implementuje Drawable, ale nie używa moveIterate,
+ * ma swoje własne move sterowane klawiaturą.
+ */
 class Ship : public Drawable {
 public:
 	Ship();
@@ -17,7 +19,9 @@ public:
 	void move(Direction d, const sf::Time& t); // inne parametry! nie impl. z Drawable
 	int getSize() const { return 1337; }
 	int getAnimationSpeed() const { return 100; }
-	virtual std::vector<std::string> getSpritesString() const {
+
+protected:
+	std::vector<std::string> getSpritesString() const {
 		return {"Sprites/spaceshipA.png", "Sprites/spaceshipB.png"};
 	}
 };

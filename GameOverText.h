@@ -9,7 +9,9 @@
 class GameOverText : public TextObject {
 public:
 
-	GameOverText() { setPosition(CONF_screenWidth/2, CONF_screenHeight/2); }
+	GameOverText() {
+		setPosition(CONF_screenWidth/2, CONF_screenHeight/2);
+	}
 
 	int getFontSize() { return 40; }
 	sf::Color getColor() { return sf::Color::Yellow; }

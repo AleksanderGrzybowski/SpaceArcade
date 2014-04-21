@@ -13,7 +13,6 @@ public:
 	double getDamageCoeff() const { return 0.5; }
 	int getPoints() const { return 5; }
 
-
 private:
 	std::vector<std::string> getSpritesString() const {
 		return std::vector<std::string> {"Sprites/HardEnemy.png"};

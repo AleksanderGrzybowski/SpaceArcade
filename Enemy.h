@@ -13,7 +13,6 @@
 class Enemy : public Moving {
 public:
 	Enemy();
-	//virtual void moveIterate(sf::Time& t);
 
 	// przesłaniane w potomnych
 	virtual double getSpeed() const = 0;
@@ -29,10 +28,8 @@ public:
 	virtual ~Enemy() {}
 
 protected:
-	//virtual std::vector<std::string> getSpritesString() const = 0;
 	virtual void initialize(int xpos, int ypos);
 private:
-//	TextureFlipper tf;
 	int health;
 };
 

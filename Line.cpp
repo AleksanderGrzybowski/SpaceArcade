@@ -2,7 +2,7 @@
 
 Line::Line() {
 	// Musimy tutaj oporządzić teksturę, bo wycinamy z niej prostokąt szeroki jak ekran
-	// Dlatego też automatyczne wczytywanie tekstury z getSpritesString tu nie zadziała
+	// Z każdej tekstury w getSpritesString() wycinamy prostokąt
 
 	for (std::string& s: getSpritesString()) {
 		sf::Texture texture;

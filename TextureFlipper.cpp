@@ -21,6 +21,6 @@ void TextureFlipper::add(std::vector<std::string> v) {
 sf::Texture& TextureFlipper::getFlip() {
 	sf::Texture& ret = tab[next];
 	next++;
-	if (next == tab.size()) next = 0;
+	if (next == tab.size()) next = 0; // stos
 	return ret;
 }

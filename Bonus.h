@@ -1,13 +1,13 @@
 #ifndef BONUS_H_
 #define BONUS_H_
 
+#include <vector>
+#include <string>
+#include <SFML/Graphics.hpp>
 #include "Drawable.h"
 #include "Moving.h"
 #include "TextureFlipper.h"
-#include <SFML/Graphics.hpp>
 #include "config.h"
-#include <vector>
-#include <string>
 #include "Drawable.h"
 #include "Direction.h"
 
@@ -24,9 +24,6 @@ public:
 protected:
 	virtual std::vector<std::string> getSpritesString() const = 0;
 	virtual void initialize(int xpos, int ypos);
-
-private:
-//	TextureFlipper tf;
 };
 
 #endif /* BONUS_H_ */

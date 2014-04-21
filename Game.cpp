@@ -111,8 +111,6 @@ againBonusCatch:
 	for (auto e = enemies.begin(); e != enemies.end(); ++e) {
 		sf::Vector2f epos = (*e)->getPosition();
 		if (epos.y > (CONF_screenHeight*(1-CONF_shipUpLimit) - CONF_enemySize)) {
-			//throw std::exception();
-			//std::cout << "Wtapiasz: pozycja przeciwnika " << epos.x << " " << epos.y << std::endl;
 			throw GameOverException();
 		}
 	}
@@ -215,7 +213,8 @@ void Game::gameOver() {
 
 
 Game::~Game() {
-	for (auto m = missiles.begin(); m != missiles.end(); ++m) delete *m;
-	for (auto e = enemies.begin(); e != enemies.end(); ++e) delete *e;
+//	for (auto m = missiles.begin(); m != missiles.end(); ++m) delete *m;
+//	for (auto e = enemies.begin(); e != enemies.end(); ++e) delete *e;
+	reset();
 	window.close();
 }
