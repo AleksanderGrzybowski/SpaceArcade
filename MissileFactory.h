@@ -1,10 +1,3 @@
-/*
- * MissileFactory.h
- *
- *  Created on: 4 kwi 2014
- *      Author: kelog
- */
-
 #ifndef MISSILEFACTORY_H_
 #define MISSILEFACTORY_H_
 
@@ -14,6 +7,10 @@
 #include "PowerMissile.h"
 #include "Random.h"
 
+/* Ta klasa służy wyłącznie do tworzenia losowych pocisków.
+ * W całym programie nie zastosowano wzorca Factory,
+ * bo nie było to przydatne ani dobre.
+ */
 class MissileFactory {
 public:
 	static Missile* getRandomMissile(int shipx, int shipy);

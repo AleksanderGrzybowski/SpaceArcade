@@ -11,7 +11,7 @@ int main() {
 	try {
 		Game().mainloop();
 	} catch (FileNotFoundException& e) {
-		std::cerr << "Nie mozna znalezc pliku " << e.fileName << std::endl;
+		std::cerr << "Nie mozna znalezc pliku " << e.getFileName() << std::endl;
 	}
 
 }

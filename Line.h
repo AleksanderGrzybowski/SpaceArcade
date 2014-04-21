@@ -8,12 +8,9 @@
 class Line : public Drawable {
 public:
 	Line();
-	int getSize() const { return 1337; }
-	int getAnimationSpeed() const { return 100; }
 
-private:
-//	sf::Texture texture; // potrzebne, bo zarządzane po swojemu
-
+	int getSize() const { return 1337; } // nieistotne - a przynajmniej nie powinno być
+	int getAnimationSpeed() const { return 100; } // nieistotne, przynajmniej teraz
 };
 
 #endif /* LINE_H_ */

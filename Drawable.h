@@ -6,7 +6,9 @@
 #include "config.h"
 
 
-/* Klasa określająca właściwości obiektu 'rysowalnego' */
+/* Klasa określająca właściwości obiektu 'rysowalnego'
+ * i nie tylko
+ */
 class Drawable {
 public:
 

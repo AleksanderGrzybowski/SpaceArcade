@@ -6,6 +6,10 @@
 #include "HardEnemy.h"
 #include "Random.h"
 
+/* Ta klasa służy wyłącznie do tworzenia losowych przeciwników.
+ * W całym programie nie zastosowano wzorca Factory,
+ * bo nie było to przydatne ani dobre.
+ */
 class EnemyFactory {
 public:
 	static Enemy* getRandomEnemy(int xpos, int ypos);

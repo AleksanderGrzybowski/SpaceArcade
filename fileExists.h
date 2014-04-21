@@ -6,5 +6,4 @@
 
 bool fileExists(std::string fname);
 
-
 #endif /* FILEEXISTS_H_ */

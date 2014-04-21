@@ -15,5 +15,5 @@ void TextObject::draw(sf::RenderWindow& window) {
 	text.setCharacterSize(getFontSize());
 	text.setColor(getColor());
 
-	window.draw(text);
+	window.draw(text); // nie Drawable::draw() !
 }

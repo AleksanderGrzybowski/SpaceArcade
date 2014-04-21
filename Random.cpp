@@ -13,7 +13,7 @@ int Random::getInt(int min, int max) {
 		srand(time(0));
 		initialized = true;
 	}
-	return rand()%(max-min+1)+min;
+	return rand() % ( max - min + 1) + min;
 }
 
 bool Random::tryChance(double prob) { // prob <0..100>

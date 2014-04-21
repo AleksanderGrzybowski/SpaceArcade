@@ -28,17 +28,11 @@ void Ship::move(Direction b, const sf::Time& t) {
 		break;
 	}
 
+	// Statek może wyjść na boki max 50%, do góry i dołu 0%
+	// Uwaga: pozycja statku to lewy górny róg jego prostokąta
 	if (! (( (pos.x + xdistance) <= -CONF_shipSize/2) || ((pos.x + xdistance) >= (CONF_screenWidth-CONF_shipSize/2))) )
 		sprite.move(xdistance, 0);
 
 	if (! (( (pos.y + ydistance) >= (CONF_screenHeight-CONF_shipSize)) || ((pos.y + ydistance) <= (CONF_screenHeight*(1-CONF_shipUpLimit)))) )
 		sprite.move(0, ydistance);
 }
-
-//void Ship::draw(sf::RenderWindow& window) {
-//	if ((animationSpeedClock).getElapsedTime().asMilliseconds() > CONF_animationSpeed) {
-//		sprite.setTexture(tf.getFlip());
-//		animationSpeedClock.restart();
-//	}
-//	Drawable::draw(window);
-//}
