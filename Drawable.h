@@ -23,7 +23,7 @@ public:
 	virtual void move(double x, double y) {
 		sprite.move(x, y);
 	}
-	virtual void setTexture(sf::Texture& t) {
+	virtual void setTexture(const sf::Texture& t) {
 		sprite.setTexture(t);
 	}
 	virtual int getSize() const = 0;

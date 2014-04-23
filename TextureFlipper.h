@@ -16,9 +16,9 @@ class TextureFlipper {
 public:
 	TextureFlipper();
 
-	void add(sf::Texture t); // pojedyncza już wczytana
-	void add(std::vector<std::string> v); // wiele, ale może być też 1 element
-	sf::Texture& getFlip();
+	void add(const sf::Texture& t); // pojedyncza już wczytana wcześniej
+	void add(const std::vector<std::string> v); // wiele, ale może być też 1 element
+	const sf::Texture& getFlip();
 
 private:
 	std::vector<sf::Texture> tab;
