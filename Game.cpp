@@ -208,7 +208,11 @@ void Game::gameOver() {
 	GameOverText gt;
 	gt.draw(window);
 	window.display();
-	sleep(1);
+	//sleep(1);
+
+	sf::Clock cl;
+	cl.restart();
+	while (cl.getElapsedTime().asMilliseconds() < 1000);
 }
 
 
