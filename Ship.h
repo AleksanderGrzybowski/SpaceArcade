@@ -19,6 +19,7 @@ public:
 	void move(Direction d, const sf::Time& t); // inne parametry! nie impl. z Drawable
 	int getSize() const { return 1337; }
 	int getAnimationSpeed() const { return 100; }
+	const double getSpeed() const { return 0.4; }
 
 protected:
 	std::vector<std::string> getSpritesString() const {

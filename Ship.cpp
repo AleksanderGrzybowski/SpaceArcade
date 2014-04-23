@@ -15,16 +15,16 @@ void Ship::move(Direction b, const sf::Time& t) {
 
 	switch(b) {
 	case Left:
-		xdistance = -CONF_shipSpeed*t.asMilliseconds();
+		xdistance = -getSpeed()*t.asMilliseconds();
 		break;
 	case Right:
-		xdistance = +CONF_shipSpeed*t.asMilliseconds();
+		xdistance = +getSpeed()*t.asMilliseconds();
 		break;
 	case Up:
-		ydistance = -CONF_shipSpeed*t.asMilliseconds();
+		ydistance = -getSpeed()*t.asMilliseconds();
 		break;
 	case Down:
-		ydistance = CONF_shipSpeed*t.asMilliseconds();
+		ydistance = getSpeed()*t.asMilliseconds();
 		break;
 	}
 

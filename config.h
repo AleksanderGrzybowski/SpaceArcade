@@ -11,7 +11,7 @@ static const int CONF_frameRateLimit = 60;
 
 // Statek
 static const int CONF_shipSize = 48; // bok kwadratu
-static const double CONF_shipSpeed = 0.4;
+//static const double CONF_shipSpeed = 0.4;
 static const double CONF_shipUpLimit = 0.2; // ile do góry można
 
 // Enemy
