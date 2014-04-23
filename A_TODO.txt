@@ -7,7 +7,7 @@ może jako FallingObject i RTTI przy ich sprawdzaniu?
 --------- statek move timer nie w game tylko w ship LOL // nie, za dużo clocków rozproszonych po programie
 przemyśleć czy w każdym ctorze trzeba getspritestring i move itd. // chyba initialize nie przejdzie, bo missile i enemy się różnie initializują
 ship przesuwanie - korzystać z getspeed - co robi 'główny zegar' w loop?
-sleep(3) na to z timerem
+--------sleep(3) na to z timerem
 wywalić wszędzie getspritesstring gdzie niepotrzebne
 random czy dobry warunek
 getspritesstring zwraca CONST vector a nie vector
@@ -16,6 +16,8 @@ missilelimitclock private?
 static normalmissile::timelimit zmienić na metody statyczne, może można je przesłaniać?
 getfont w pochodnych textobject
 przyjmowanie wektorów przez const& a nie normalnie
+moving < drawable ----> osobno i dziedziczenie po wielu klasach
+
 
 TextureFlipper: uwaga, SFML bierze sobie wskaźnik do tekstury i z niego korzysta, jeśli wykona
 się jakieś przeniesienie tekstur w TextureFlipper to może nastąpić realokacja pamięci i szlag trafi wszystko

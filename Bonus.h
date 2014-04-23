@@ -22,7 +22,7 @@ public:
 	virtual ~Bonus() {}
 
 protected:
-	virtual std::vector<std::string> getSpritesString() const = 0;
+	//virtual std::vector<std::string> getSpritesString() const = 0;
 	virtual void initialize(int xpos, int ypos);
 };
 

@@ -22,7 +22,7 @@ public:
 	virtual ~Missile() {}
 
 protected:
-	virtual std::vector<std::string> getSpritesString() const = 0;
+	//virtual std::vector<std::string> getSpritesString() const = 0;
 	void initialize(int shipx, int shipy);
 };
 
