@@ -16,7 +16,7 @@ public:
 	int getPoints() const { return 1; }
 
 private:
-	std::vector<std::string> getSpritesString() const {
+	const std::vector<std::string> getSpritesString() const {
 		return std::vector<std::string> {"Sprites/NormalEnemy.png"};
 	}
 };

@@ -19,7 +19,7 @@ public:
 	int getSize() const { return 24; }
 
 private:
-	std::vector<std::string> getSpritesString() const {
+	const std::vector<std::string> getSpritesString() const {
 		return std::vector<std::string> {"Sprites/PowerMissileA.png", "Sprites/PowerMissileB.png"};
 	}
 	static const int timeLimit;
