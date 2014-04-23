@@ -155,14 +155,14 @@ bool Game::loop() {
 		if (NormalMissile::canBeSent()) {
 			sf::Vector2f shipPos = ship.getPosition();
 			missiles.push_back(new NormalMissile(shipPos.x, shipPos.y));
-			NormalMissile::missileLimitClock.restart();
+			NormalMissile::restartClock();
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) { // PowerMissile
 		if (PowerMissile::canBeSent()) {
 			sf::Vector2f shipPos = ship.getPosition();
 			missiles.push_back(new PowerMissile(shipPos.x, shipPos.y));
-			PowerMissile::missileLimitClock.restart();
+			PowerMissile::restartClock();
 		}
 	}
 

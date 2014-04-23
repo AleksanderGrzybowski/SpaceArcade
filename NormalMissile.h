@@ -12,6 +12,8 @@ public:
 
 	NormalMissile(int shipx, int shipy);
 
+	static void restartClock();
+
 	static bool canBeSent();
 	int getDamage() const { return 5; }
 	double getSpeed() const { return 0.5; }

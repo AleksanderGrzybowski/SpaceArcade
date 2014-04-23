@@ -8,5 +8,9 @@ bool PowerMissile::canBeSent() {
 	return (PowerMissile::missileLimitClock).getElapsedTime().asMilliseconds() > PowerMissile::timeLimit;
 }
 
+void PowerMissile::restartClock() {
+	missileLimitClock.restart();
+}
+
 sf::Clock PowerMissile::missileLimitClock;
 const int PowerMissile::timeLimit = 1000;
