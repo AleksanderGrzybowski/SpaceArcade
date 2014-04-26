@@ -9,15 +9,18 @@ przemyśleć czy w każdym ctorze trzeba getspritestring i move itd. // chyba in
 ship przesuwanie - korzystać z getspeed - co robi 'główny zegar' w loop?
 --------sleep(3) na to z timerem
 -----wywalić wszędzie getspritesstring gdzie niepotrzebne
-random czy dobry warunek
-getspritesstring zwraca CONST vector a nie vector
+-------random czy dobry warunek // kij nieważne
+-------------getspritesstring zwraca CONST vector a nie vector
 pododawać consty przy wartościach zwracanych
 missilelimitclock private?
 static normalmissile::timelimit zmienić na metody statyczne, może można je przesłaniać?
 getfont w pochodnych textobject
 przyjmowanie wektorów przez const& a nie normalnie
-moving < drawable ----> osobno i dziedziczenie po wielu klasach
-
+moving < drawable ----> osobno i dziedziczenie po wielu klasach // czy jest obiekt który jest moving i nie jest drawable?
+const sf::Time'y gdzie nie są resetowane (resety też ostrożnie wywalić - side effect)
+powermissile - jakiś licznik ładowania na dole
+game should get harder in time
+static missilepowerfactor - zwiększany przy zbieraniu bonusów?
 
 TextureFlipper: uwaga, SFML bierze sobie wskaźnik do tekstury i z niego korzysta, jeśli wykona
 się jakieś przeniesienie tekstur w TextureFlipper to może nastąpić realokacja pamięci i szlag trafi wszystko

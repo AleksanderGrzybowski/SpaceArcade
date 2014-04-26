@@ -17,7 +17,7 @@ public:
 
 private:
 	const std::vector<std::string> getSpritesString() const {
-		return std::vector<std::string> {"Sprites/NormalEnemy.png"};
+		return std::vector<std::string> {"Sprites/NormalEnemy_.png"};
 	}
 };
 
