@@ -23,7 +23,7 @@
 #include "Bonus.h"
 #include "SimpleBonus.h"
 #include "GameOverText.h"
-
+#include "PowerMissileIndicator.h"
 class GameOverException {};
 
 class Game {
@@ -43,6 +43,7 @@ private:
 	std::vector<Enemy*> enemies;
 	std::vector<Bonus*> bonuses;
 	Line line;
+	PowerMissileIndicator mind;
 	PointsCounter pc;
 
 	bool loop();

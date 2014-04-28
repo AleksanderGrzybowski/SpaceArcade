@@ -200,7 +200,16 @@ bool Game::loop() {
 	// Napis
 	pc.draw(window);
 
+	mind.update();
+	mind.draw(window);
+
+
 	window.display();
+
+//	std::cout << "Limit: " << PowerMissile::timeLimit << std::endl;
+//	std::cout << "Cur: " << PowerMissile::missileLimitClock.getElapsedTime().asMilliseconds() << std::endl;
+
+
 	return true;
 }
 

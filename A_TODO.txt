@@ -1,3 +1,7 @@
+TextureFlipper: uwaga, SFML bierze sobie wskaźnik do tekstury i z niego korzysta, jeśli wykona
+się jakieś przeniesienie tekstur w TextureFlipper to może nastąpić realokacja pamięci i szlag trafi wszystko
+Nie zmieniać tekstur, ewentualnie spróbować reserve(ileśtam) wcześniej // dałem reserve i jest ok na razie
+
 ----------------------bonusy + integracja ich z enemy (tak samo spadają)
 może jako FallingObject i RTTI przy ich sprawdzaniu?
 ----------------------consty pododawać przy parametrach i na końcu funkcyj
@@ -13,15 +17,12 @@ ship przesuwanie - korzystać z getspeed - co robi 'główny zegar' w loop?
 -------------getspritesstring zwraca CONST vector a nie vector
 pododawać consty przy wartościach zwracanych
 missilelimitclock private?
-static normalmissile::timelimit zmienić na metody statyczne, może można je przesłaniać?
-getfont w pochodnych textobject
+static normalmissile::timelimit zmienić na metody statyczne, może można je przesłaniać? // nie ma czegoś takiego jak static virtual, ale może inaczej?
+------getfont w pochodnych textobject // po co, wystarczy 1 czcionka.
 przyjmowanie wektorów przez const& a nie normalnie
 moving < drawable ----> osobno i dziedziczenie po wielu klasach // czy jest obiekt który jest moving i nie jest drawable?
 const sf::Time'y gdzie nie są resetowane (resety też ostrożnie wywalić - side effect)
 powermissile - jakiś licznik ładowania na dole
 game should get harder in time
 static missilepowerfactor - zwiększany przy zbieraniu bonusów?
-
-TextureFlipper: uwaga, SFML bierze sobie wskaźnik do tekstury i z niego korzysta, jeśli wykona
-się jakieś przeniesienie tekstur w TextureFlipper to może nastąpić realokacja pamięci i szlag trafi wszystko
-Nie zmieniać tekstur, ewentualnie spróbować reserve(ileśtam) wcześniej // dałem reserve i jest ok na razie
+nazwy spritów małe-duże, może liczby?
