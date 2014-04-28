@@ -5,9 +5,8 @@
 #include "TextureFlipper.h"
 #include "config.h"
 
-
 /* Klasa określająca właściwości obiektu 'rysowalnego'
- * i nie tylko
+ * i nie tylko, obiekt ten POSIADA SPRITE!
  */
 class Drawable {
 public:
@@ -26,6 +25,8 @@ public:
 	virtual void setTexture(const sf::Texture& t) {
 		sprite.setTexture(t);
 	}
+
+	// przesłaniane
 	virtual int getSize() const = 0;
 	virtual int getAnimationSpeed() const = 0;
 

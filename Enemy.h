@@ -10,16 +10,21 @@
 #include "Moving.h"
 #include "Direction.h"
 
+/* Klasa bazowa przeciwnika. Porusza się on w dół,
+ * przy kontakcie z linią koniec gry, przy kontakcie z pociskiem
+ * zadawany damage i zniknięcie pocisku.
+ */
 class Enemy : public Moving {
 public:
 	Enemy();
 
-	// przesłaniane w potomnych
+	// przesłaniane
 	virtual double getSpeed() const = 0;
 	virtual int getSize() const = 0;
 	virtual int getMaxHealth() const = 0;
 	virtual double getDamageCoeff() const = 0;
 	virtual int getPoints() const = 0;
+
 	Direction getDirection() const { return Down; }
 	int getAnimationSpeed() const { return 100; }
 	bool isAlive() const { return health > 0; }

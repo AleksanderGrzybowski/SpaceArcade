@@ -1,13 +1,16 @@
 #include "TextureFlipper.h"
 
+/* Unikamy realokacji, zresztą kto by więcej tekstur chciał? :) */
 TextureFlipper::TextureFlipper() : next(0) {
-	tab.reserve(10); // unikamy realokacji
+	tab.reserve(10);
 }
 
+/* Dodanie pojedynczej tekstury już wczytanej z pliku */
 void TextureFlipper::add(const sf::Texture& t) {
 	tab.push_back(t);
 }
 
+/* Załadowanie tekstur z pliku/plików */
 void TextureFlipper::add(const std::vector<std::string> v) {
 	sf::Texture t;
 
@@ -18,9 +21,10 @@ void TextureFlipper::add(const std::vector<std::string> v) {
 	}
 }
 
+/* Element zwracany przez const referencję, bezpiecznie */
 const sf::Texture& TextureFlipper::getFlip() {
 	const sf::Texture& ret = tab[next];
 	next++;
-	if (next == tab.size()) next = 0; // stos
+	if (next == tab.size()) next = 0; // impl - stos
 	return ret;
 }

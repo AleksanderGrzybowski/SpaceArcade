@@ -19,9 +19,11 @@ public:
 	void draw(sf::RenderWindow& window);
 	void setPosition(int x, int y) { xpos = x; ypos = y; }
 
+	// przesłaniane
 	virtual std::string getString() = 0;
 	virtual int getFontSize() = 0;
 	virtual sf::Color getColor() = 0;
+
 	virtual ~TextObject() {}
 
 protected:

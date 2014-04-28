@@ -10,7 +10,7 @@ może jako FallingObject i RTTI przy ich sprawdzaniu?
 -----getspritesstring do drawable ?
 --------- statek move timer nie w game tylko w ship LOL // nie, za dużo clocków rozproszonych po programie
 przemyśleć czy w każdym ctorze trzeba getspritestring i move itd. // chyba initialize nie przejdzie, bo missile i enemy się różnie initializują
-ship przesuwanie - korzystać z getspeed - co robi 'główny zegar' w loop?
+--------ship przesuwanie - korzystać z getspeed - co robi 'główny zegar' w loop? // działa - nie ruszać
 --------sleep(3) na to z timerem
 -----wywalić wszędzie getspritesstring gdzie niepotrzebne
 -------random czy dobry warunek // kij nieważne

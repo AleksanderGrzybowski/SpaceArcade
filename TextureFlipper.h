@@ -11,18 +11,21 @@
  * proste przełączanie pomiędzy teksturami.
  * Uwaga - nawet, jeśli element ma 1 teksturę to jest
  * wykonywana 'animacja' (bez side effect ofc)
+ * Uwaga 2 - nie można dopuścić do realokacji pamięci
+ * w wektorze - posypią się przypisane już przez
+ * SFML referencje w obiektach Drawable
  */
 class TextureFlipper {
 public:
 	TextureFlipper();
 
-	void add(const sf::Texture& t); // pojedyncza już wczytana wcześniej
-	void add(const std::vector<std::string> v); // wiele, ale może być też 1 element
+	void add(const sf::Texture& t);
+	void add(const std::vector<std::string> v);
 	const sf::Texture& getFlip();
 
 private:
 	std::vector<sf::Texture> tab;
-	unsigned int next;
+	unsigned int next; // wskazuje następny element do wyświetlenia
 };
 
 #endif /* TEXTUREFLIPPER_H_ */
