@@ -26,3 +26,4 @@ powermissile - jakiś licznik ładowania na dole
 game should get harder in time
 static missilepowerfactor - zwiększany przy zbieraniu bonusów?
 nazwy spritów małe-duże, może liczby?
+ustawianie spritów w Drawable, nie wyżej

@@ -16,7 +16,7 @@
  */
 class Enemy : public Moving {
 public:
-	Enemy();
+	Enemy(int xpos, int ypos, std::vector<std::string> spritesString);
 
 	// przesłaniane
 	virtual double getSpeed() const = 0;
@@ -33,7 +33,7 @@ public:
 	virtual ~Enemy() {}
 
 protected:
-	virtual void initialize(int xpos, int ypos);
+	//virtual void initialize(int xpos, int ypos);
 private:
 	int health;
 };

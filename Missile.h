@@ -10,9 +10,9 @@
 
 class Missile : public Moving {
 public:
-	Missile();
+	Missile(int shipx, int shipy, std::vector<std::string> spritesString);
 
-	virtual int getSize() const = 0;
+	//virtual int getSize() const = 0;
 
 	virtual double getSpeed() const = 0;
 	virtual int getDamage() const = 0;
@@ -23,7 +23,7 @@ public:
 
 protected:
 	//virtual std::vector<std::string> getSpritesString() const = 0;
-	void initialize(int shipx, int shipy);
+	//void initialize(int shipx, int shipy);
 };
 
 #endif /* MISSILE_H_ */

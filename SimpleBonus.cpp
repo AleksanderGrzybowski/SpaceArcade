@@ -1,5 +1,5 @@
 #include "SimpleBonus.h"
 
-SimpleBonus::SimpleBonus(double xpos, double ypos) {
-	initialize(xpos, ypos);
-}
+SimpleBonus::SimpleBonus(double xpos, double ypos)
+	: Bonus(xpos, ypos, {"Sprites/SimpleBonus.png"})
+	  {}

@@ -16,7 +16,7 @@
  */
 class Bonus: public Moving {
 public:
-	Bonus() {}
+	Bonus(int xpos, int ypos, std::vector<std::string> spritesString);
 
 	// przesłaniane w potomnych
 	virtual int getPoints() const = 0;
@@ -28,7 +28,7 @@ public:
 
 protected:
 
-	virtual void initialize(int xpos, int ypos);
+	//virtual void initialize(int xpos, int ypos);
 };
 
 #endif /* BONUS_H_ */

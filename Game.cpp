@@ -31,7 +31,7 @@ void Game::addEnemy() {
 
 void Game::addBonus() {
 	Bonus* b = new SimpleBonus(0, 0); // dowolne
-	int xpos = Random::getInt(0, CONF_screenWidth - b->getSize());
+	int xpos = Random::getInt(0, CONF_screenWidth - CONF_bonusSize);
 	int ypos = Random::getInt(0, CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na bonusy też
 	b->setPosition(xpos, ypos);
 	bonuses.push_back(b);
@@ -75,7 +75,7 @@ againMissilesCrash:
 		for (auto e = enemies.begin(); e != enemies.end(); ++e) { // elementy są wskaźnikami
 			sf::Vector2f mpos = (*m)->getPosition();
 			sf::Vector2f epos = (*e)->getPosition();
-			if (isCollision(mpos, epos, (*m)->getSize(), (*e)->getSize())) { // KOLIZJA JUPI
+			if (isCollision(mpos, epos, CONF_missileSize, CONF_enemySize)) { // KOLIZJA JUPI
 				int missileDamage = (*m)->getDamage();
 				delete *m;
 				missiles.erase(m);
@@ -97,7 +97,7 @@ againBonusCatch:
 	sf::Vector2f shipPos = ship.getPosition();
 	for (auto b = bonuses.begin(); b != bonuses.end(); ++b) { // elementy są wskaźnikami
 		sf::Vector2f pos = (*b)->getPosition();
-		if (isCollision(pos, shipPos, (*b)->getSize(), CONF_shipSize)) { // KOLIZJA JUPI
+		if (isCollision(pos, shipPos, CONF_bonusSize, CONF_shipSize)) { // KOLIZJA JUPI
 			pc.add((*b)->getPoints());
 			delete *b;
 			bonuses.erase(b);

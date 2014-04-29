@@ -27,7 +27,7 @@ public:
 	}
 
 	// przesłaniane
-	virtual int getSize() const = 0;
+	//virtual int getSize() const = 0;
 	virtual int getAnimationSpeed() const = 0;
 
 	virtual ~Drawable() {}
@@ -37,7 +37,7 @@ protected: // każdy obiekt ma swoje własne:
 	TextureFlipper tf;
 	sf::Clock animationSpeedClock;
 
-	virtual const std::vector<std::string> getSpritesString() const = 0;
+	//virtual const std::vector<std::string> getSpritesString() const = 0;
 };
 
 #endif /* DRAWABLE_H_ */

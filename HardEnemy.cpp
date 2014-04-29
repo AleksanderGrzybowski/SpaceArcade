@@ -1,5 +1,5 @@
 #include "HardEnemy.h"
 
-HardEnemy::HardEnemy(double xpos, double ypos) {
-	initialize(xpos, ypos);
-}
+HardEnemy::HardEnemy(double xpos, double ypos)
+ : Enemy(xpos, ypos, {"Sprites/HardEnemy_.png"})
+{}

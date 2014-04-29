@@ -1,8 +1,8 @@
 #include "NormalMissile.h"
 
-NormalMissile::NormalMissile(int shipx, int shipy) {
-	initialize(shipx, shipy); // ala wirtualny konstruktor
-}
+NormalMissile::NormalMissile(int shipx, int shipy)
+	: Missile(shipx, shipy, {"Sprites/NormalMissileAA.png", "Sprites/NormalMissileBB.png"})
+{}
 
 bool NormalMissile::canBeSent() {
 	return (NormalMissile::missileLimitClock).getElapsedTime().asMilliseconds() > NormalMissile::timeLimit;

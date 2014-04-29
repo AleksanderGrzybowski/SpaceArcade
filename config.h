@@ -21,7 +21,10 @@ static const int CONF_enemyGenerationChance = 1;
 
 // Bonus
 static const int CONF_bonusGenerationChance = 1;
+static const int CONF_bonusSize = 32;
 // Line
 static const int CONF_lineHeight = 2;
+
+static const int CONF_missileSize = 24;
 
 #endif /* CONFIG_H_ */

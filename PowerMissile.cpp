@@ -1,8 +1,8 @@
 #include "PowerMissile.h"
 
-PowerMissile::PowerMissile(int shipx, int shipy) {
-	initialize(shipx, shipy); // ala wirtualny konstruktor
-}
+PowerMissile::PowerMissile(int shipx, int shipy)
+	: Missile(shipx, shipy, {"Sprites/PowerMissileA.png", "Sprites/PowerMissileB.png"})
+{}
 
 bool PowerMissile::canBeSent() {
 	return (PowerMissile::missileLimitClock).getElapsedTime().asMilliseconds() > PowerMissile::timeLimit;

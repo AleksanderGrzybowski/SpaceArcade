@@ -1,14 +1,13 @@
 #include "Enemy.h"
 
-Enemy::Enemy() : health(0) {}
+Enemy::Enemy(int xpos, int ypos, std::vector<std::string> spritesString) : health(0) {
+	tf.add(spritesString);
+	setTexture(tf.getFlip());
+	setPosition(xpos, ypos);
+	health = 100; // TODO
+}
 
 void Enemy::damage(int damage) {
 	health -= damage*getDamageCoeff();
 }
 
-void Enemy::initialize(int xpos, int ypos) {
-	tf.add(getSpritesString());
-	setTexture(tf.getFlip());
-	setPosition(xpos, ypos);
-	health = getMaxHealth();
-}
