@@ -13,6 +13,9 @@
  */
 class Moving : public Drawable {
 public:
+
+	Moving(std::vector<std::string> spritesString) : Drawable(spritesString) {}
+
 	virtual void moveIterate(sf::Time& t);
 	virtual double getSpeed() const = 0;
 	virtual Direction getDirection() const = 0;

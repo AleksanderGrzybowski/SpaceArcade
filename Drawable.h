@@ -11,6 +11,12 @@
 class Drawable {
 public:
 
+	Drawable(std::vector<std::string> spritesString) {
+		tf.add(spritesString);
+		setTexture(tf.getFlip());
+	}
+	Drawable() {} // Line tego potrzebuje
+
 	virtual void draw(sf::RenderWindow& window);
 
 	virtual const sf::Vector2f& getPosition() const {

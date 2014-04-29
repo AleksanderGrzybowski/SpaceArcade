@@ -11,9 +11,9 @@ public:
 
 	int getSize() const { return 1337; } // nieistotne - a przynajmniej nie powinno być
 	int getAnimationSpeed() const { return 100; } // nieistotne, przynajmniej teraz
-	virtual const std::vector<std::string> getSpritesString() const {
-		return {"Sprites/Line.png"};
-	}
+//	virtual const std::vector<std::string> getSpritesString() const {
+//		return {"Sprites/Line.png"};
+//	}
 };
 
 #endif /* LINE_H_ */

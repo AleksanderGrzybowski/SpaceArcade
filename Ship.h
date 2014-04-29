@@ -22,9 +22,9 @@ public:
 	const double getSpeed() const { return 0.4; }
 
 protected:
-	const std::vector<std::string> getSpritesString() const {
-		return {"Sprites/spaceshipA.png", "Sprites/spaceshipB.png"};
-	}
+//	const std::vector<std::string> getSpritesString() const {
+//		return {"Sprites/spaceshipA.png", "Sprites/spaceshipB.png"};
+//	}
 };
 
 #endif /* SHIP_H_ */
