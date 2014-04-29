@@ -13,7 +13,8 @@ public:
 
 	Drawable(std::vector<std::string> spritesString) {
 		tf.add(spritesString);
-		setTexture(tf.getFlip());
+		//setTexture(tf.getFlip());
+		sprite.setTexture(tf.getFlip());
 	}
 	Drawable() {} // Line tego potrzebuje
 
@@ -28,9 +29,9 @@ public:
 	virtual void move(double x, double y) {
 		sprite.move(x, y);
 	}
-	virtual void setTexture(const sf::Texture& t) {
-		sprite.setTexture(t);
-	}
+//	virtual void setTexture(const sf::Texture& t) {
+//		sprite.setTexture(t);
+//	}
 
 	// przesłaniane
 	//virtual int getSize() const = 0;
