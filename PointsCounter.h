@@ -9,9 +9,6 @@
 
 class PointsCounter : public TextObject {
 public:
-
-	int pointsCount;
-
 	PointsCounter();
 
 	void add(int n) { pointsCount += n; updateString(); }
@@ -19,11 +16,9 @@ public:
 	void updateString() {
 		str = std::string("Punkty: ") + std::to_string(pointsCount);
 	}
-//	int getFontSize() { return 20; }
-//	sf::Color getColor() { return sf::Color::White; }
 
 private:
-	//std::string getString(); // impl
+	int pointsCount;
 };
 
 #endif /* POINTSCOUNTER_H_ */

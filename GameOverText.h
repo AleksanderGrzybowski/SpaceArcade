@@ -13,11 +13,6 @@ public:
 		str = "Cienias";
 	}
 
-//	int getFontSize() { return 40; }
-//	sf::Color getColor() { return sf::Color::Yellow; }
-
-//private:
-//	std::string getString() { return "Cienias"; }
 };
 
 #endif /* GAMEOVERTEXT_H_ */
