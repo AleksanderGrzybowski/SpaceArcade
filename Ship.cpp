@@ -1,10 +1,11 @@
 #include "Ship.h"
 
-Ship::Ship() : Drawable({"Sprites/spaceshipA.png", "Sprites/spaceshipB.png"}) {
+Ship::Ship(double speed) : Drawable(CONF_screenWidth/2.0 - CONF_shipSize/2, CONF_screenHeight-CONF_shipSize,
+		{"Sprites/spaceshipA.png", "Sprites/spaceshipB.png"}, 48, 1337), speed(speed) {
 //	tf.add(getSpritesString());
-//
+
 //	sprite.setTexture(tf.getFlip());
-	sprite.setPosition(CONF_screenWidth/2.0 - CONF_shipSize/2, CONF_screenHeight-CONF_shipSize);
+//	sprite.setPosition(CONF_screenWidth/2.0 - CONF_shipSize/2, CONF_screenHeight-CONF_shipSize);
 }
 
 void Ship::move(Direction b, const sf::Time& t) {
@@ -15,16 +16,16 @@ void Ship::move(Direction b, const sf::Time& t) {
 
 	switch(b) {
 	case Left:
-		xdistance = -getSpeed()*t.asMilliseconds();
+		xdistance = -speed*t.asMilliseconds();
 		break;
 	case Right:
-		xdistance = +getSpeed()*t.asMilliseconds();
+		xdistance = +speed*t.asMilliseconds();
 		break;
 	case Up:
-		ydistance = -getSpeed()*t.asMilliseconds();
+		ydistance = -speed*t.asMilliseconds();
 		break;
 	case Down:
-		ydistance = getSpeed()*t.asMilliseconds();
+		ydistance = +speed*t.asMilliseconds();
 		break;
 	}
 

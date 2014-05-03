@@ -1,7 +1,7 @@
 #include "NormalMissile.h"
 
 NormalMissile::NormalMissile(int shipx, int shipy)
-	: Missile(shipx, shipy, {"Sprites/NormalMissileAA.png", "Sprites/NormalMissileBB.png"})
+	: Missile(shipx, shipy, {"Sprites/NormalMissileAA.png", "Sprites/NormalMissileBB.png"}, 20, 100, 0.5, 5)
 {}
 
 bool NormalMissile::canBeSent() {
@@ -11,7 +11,6 @@ bool NormalMissile::canBeSent() {
 void NormalMissile::restartClock() {
 	missileLimitClock.restart();
 }
-
 
 sf::Clock NormalMissile::missileLimitClock;
 const int NormalMissile::timeLimit = 100; // ms

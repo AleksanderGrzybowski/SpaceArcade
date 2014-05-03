@@ -15,9 +15,9 @@ public:
 	static void restartClock();
 
 	static bool canBeSent();
-	int getDamage() const { return 5; }
-	double getSpeed() const { return 0.5; }
-	int getSize() const { return 20; }
+//	int getDamage() const { return 5; }
+//	double getSpeed() const { return 0.5; }
+//	int getSize() const { return 20; }
 
 private:
 //	const std::vector<std::string> getSpritesString() const {

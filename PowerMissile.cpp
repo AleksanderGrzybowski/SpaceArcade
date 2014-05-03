@@ -1,7 +1,7 @@
 #include "PowerMissile.h"
 
 PowerMissile::PowerMissile(int shipx, int shipy)
-	: Missile(shipx, shipy, {"Sprites/PowerMissileA.png", "Sprites/PowerMissileB.png"})
+	: Missile(shipx, shipy, {"Sprites/PowerMissileA.png", "Sprites/PowerMissileB.png"}, 20, 100, 0.5, 20)
 {}
 
 bool PowerMissile::canBeSent() {

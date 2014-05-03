@@ -1,6 +1,7 @@
 #include "Game.h"
 
-Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CONF_windowTitle) {
+Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CONF_windowTitle),
+	ship(0.4) {
 	window.setFramerateLimit(CONF_frameRateLimit);
 }
 
@@ -25,8 +26,10 @@ void Game::addEnemy() {
 	Enemy* e = EnemyFactory::getRandomEnemy(0, 0); // dowolne
 	int xpos = Random::getInt(0, CONF_screenWidth - e->getSize());
 	int ypos = Random::getInt(0, CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na enemy
+	std::cout << "Tworzę enemy na pozycji" << xpos << " " << ypos << std::endl;
 	e->setPosition(xpos, ypos);
 	enemies.push_back(e);
+
 }
 
 void Game::addBonus() {
@@ -209,6 +212,7 @@ bool Game::loop() {
 //	std::cout << "Limit: " << PowerMissile::timeLimit << std::endl;
 //	std::cout << "Cur: " << PowerMissile::missileLimitClock.getElapsedTime().asMilliseconds() << std::endl;
 
+	//std::cout << "Mamy " << enemies.size() << std::endl;
 
 	return true;
 }

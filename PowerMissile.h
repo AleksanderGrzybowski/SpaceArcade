@@ -13,17 +13,17 @@ public:
 	static bool canBeSent();
 	static void restartClock();
 
-	int getDamage() const { return 20; }
-	double getSpeed() const { return 0.5; }
-	int getSize() const { return 24; }
+//	int getDamage() const { return 20; }
+//	double getSpeed() const { return 0.5; }
+//	int getSize() const { return 24; }
 
 	static const int timeLimit;
 	static sf::Clock missileLimitClock;
 
 private:
-	const std::vector<std::string> getSpritesString() const {
-		return std::vector<std::string> {"Sprites/PowerMissileA.png", "Sprites/PowerMissileB.png"};
-	}
+//	const std::vector<std::string> getSpritesString() const {
+//		return std::vector<std::string> {"Sprites/PowerMissileA.png", "Sprites/PowerMissileB.png"};
+//	}
 };
 
 

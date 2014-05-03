@@ -6,7 +6,7 @@
  * on wyświetlony, a tak jest prościej i niespecjalnie wolniej.
  */
 void Drawable::draw(sf::RenderWindow& window) {
-	if ((animationSpeedClock).getElapsedTime().asMilliseconds() > getAnimationSpeed()) {
+	if ((animationSpeedClock).getElapsedTime().asMilliseconds() > animationSpeed) {
 		sprite.setTexture(tf.getFlip());
 		animationSpeedClock.restart();
 	}

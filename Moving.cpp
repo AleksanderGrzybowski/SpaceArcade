@@ -2,9 +2,10 @@
 
 /* Główna metoda do iteracyjnego poruszania obiektów */
 void Moving::moveIterate(sf::Time& t) {
-	double toMove = getSpeed()*t.asMilliseconds();
+	double toMove = speed*t.asMilliseconds();
 
-	switch (getDirection()) {
+	//std::cout << speed << std::endl;
+	switch (dir) {
 	case Up:
 		move(0, -toMove);
 		break;

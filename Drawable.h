@@ -11,11 +11,15 @@
 class Drawable {
 public:
 
-	Drawable(std::vector<std::string> spritesString) {
+	// może pozycja też tu? albo nie?
+	Drawable(int xpos, int ypos, std::vector<std::string> spritesString, int size, int animationSpeed) : animationSpeed(animationSpeed), size(size) {
 		tf.add(spritesString);
 		sprite.setTexture(tf.getFlip());
+		setPosition(xpos, ypos);
 	}
-	Drawable() {} // Line tego potrzebuje np.
+
+	// ?? zmienić
+	Drawable() : animationSpeed(1337), size(1337) {} // Line tego potrzebuje np.
 
 	virtual void draw(sf::RenderWindow& window);
 
@@ -29,8 +33,12 @@ public:
 		sprite.move(x, y);
 	}
 
+	int getSize() {
+		return size;
+	}
+
 	// przesłaniane
-	virtual int getAnimationSpeed() const = 0;
+	//virtual int getAnimationSpeed() const = 0;
 
 	virtual ~Drawable() {}
 
@@ -38,6 +46,8 @@ protected: // każdy obiekt ma swoje własne:
 	sf::Sprite sprite;
 	TextureFlipper tf;
 	sf::Clock animationSpeedClock;
+	int animationSpeed;
+	int size;
 
 	//virtual const std::vector<std::string> getSpritesString() const = 0;
 };

@@ -16,17 +16,18 @@
  */
 class Enemy : public Moving {
 public:
-	Enemy(int xpos, int ypos, std::vector<std::string> spritesString);
+	Enemy(int xpos, int ypos, std::vector<std::string> spritesString, int size,
+			int animationSpeed, double speed, int health, int pointsReceived);
 
 	// przesłaniane
-	virtual double getSpeed() const = 0;
-	virtual int getSize() const = 0;
-	virtual int getMaxHealth() const = 0;
-	virtual double getDamageCoeff() const = 0;
-	virtual int getPoints() const = 0;
+//	virtual double getSpeed() const = 0;
+//	virtual int getSize() const = 0;
+//	virtual int getMaxHealth() { return maxHealth; }
+//	virtual double getDamageCoeff() const = 0;
+	virtual int getPoints() { return pointsReceived; }
 
-	Direction getDirection() const { return Down; }
-	int getAnimationSpeed() const { return 100; }
+//	Direction getDirection() const { return Down; }
+//	int getAnimationSpeed() const { return 100; }
 	bool isAlive() const { return health > 0; }
 	void damage(int damage);
 
@@ -34,6 +35,9 @@ public:
 
 protected:
 	//virtual void initialize(int xpos, int ypos);
+	Direction dir;
+	int pointsReceived;
+
 private:
 	int health;
 };

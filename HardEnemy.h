@@ -7,11 +7,11 @@ class HardEnemy: public Enemy {
 public:
 	HardEnemy(double xpos, double ypos);
 
-	double getSpeed() const { return 0.1; }
-	int getSize() const { return CONF_enemySize; }
-	int getMaxHealth() const { return 20; }
-	double getDamageCoeff() const { return 0.5; }
-	int getPoints() const { return 5; }
+//	double getSpeed() const { return 0.1; }
+//	int getSize() const { return CONF_enemySize; }
+//	int getMaxHealth() const { return 20; }
+//	double getDamageCoeff() const { return 0.5; }
+//	int getPoints() const { return 5; }
 
 private:
 //	const std::vector<std::string> getSpritesString() const {
