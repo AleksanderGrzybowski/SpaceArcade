@@ -1,12 +1,8 @@
 #include "Ship.h"
 
 Ship::Ship(double speed) : Drawable(CONF_screenWidth/2.0 - CONF_shipSize/2, CONF_screenHeight-CONF_shipSize,
-		{"Sprites/spaceshipA.png", "Sprites/spaceshipB.png"}, 48, 1337), speed(speed) {
-//	tf.add(getSpritesString());
-
-//	sprite.setTexture(tf.getFlip());
-//	sprite.setPosition(CONF_screenWidth/2.0 - CONF_shipSize/2, CONF_screenHeight-CONF_shipSize);
-}
+		{"Sprites/spaceshipA.png", "Sprites/spaceshipB.png"}, 48, 100), speed(speed)
+{}
 
 void Ship::move(Direction b, const sf::Time& t) {
 	sf::Vector2f pos = sprite.getPosition();

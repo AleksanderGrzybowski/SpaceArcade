@@ -6,17 +6,7 @@
 
 class SimpleBonus : public Bonus {
 public:
-
 	SimpleBonus(double xpos, double ypos);
-
-//	double getSpeed() const { return 0.10; }
-//	int getSize() const { return 32; }
-//	int getPoints() const { return 100; }
-
-private:
-//	const std::vector<std::string> getSpritesString() const {
-//		return std::vector<std::string> {"Sprites/SimpleBonus.png"};
-//	}
 };
 
 #endif /* SIMPLEBONUS_H_ */

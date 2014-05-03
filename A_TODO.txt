@@ -27,3 +27,5 @@ game should get harder in time
 static missilepowerfactor - zwiększany przy zbieraniu bonusów?
 nazwy spritów małe-duże, może liczby?
 ustawianie spritów w Drawable, nie wyżej
+confmissilesize wszędzie? czy zostawić w ctorach zahardkodowane liczby?
+sprite dla line przezroczystość

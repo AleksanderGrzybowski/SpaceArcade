@@ -3,10 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "config.h"
 #include "Direction.h"
 #include "TextureFlipper.h"
-#include "Drawable.h"
 #include "Moving.h"
 #include "Direction.h"
 
@@ -17,29 +15,17 @@
 class Enemy : public Moving {
 public:
 	Enemy(int xpos, int ypos, std::vector<std::string> spritesString, int size,
-			int animationSpeed, double speed, int health, int pointsReceived);
+		int animationSpeed, double speed, int health, int pointsReceived);
 
-	// przesłaniane
-//	virtual double getSpeed() const = 0;
-//	virtual int getSize() const = 0;
-//	virtual int getMaxHealth() { return maxHealth; }
-//	virtual double getDamageCoeff() const = 0;
-	virtual int getPoints() { return pointsReceived; }
-
-//	Direction getDirection() const { return Down; }
-//	int getAnimationSpeed() const { return 100; }
+	int getPoints() { return pointsReceived; }
 	bool isAlive() const { return health > 0; }
-	void damage(int damage);
+	void damage(int damage) { health -= damage; }
 
 	virtual ~Enemy() {}
 
 protected:
-	//virtual void initialize(int xpos, int ypos);
-	Direction dir;
-	int pointsReceived;
-
-private:
 	int health;
+	int pointsReceived;
 };
 
 #endif /* ENEMY_H_ */

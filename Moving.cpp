@@ -4,7 +4,6 @@
 void Moving::moveIterate(sf::Time& t) {
 	double toMove = speed*t.asMilliseconds();
 
-	//std::cout << speed << std::endl;
 	switch (dir) {
 	case Up:
 		move(0, -toMove);

@@ -18,19 +18,12 @@ class Bonus: public Moving {
 public:
 	Bonus(int xpos, int ypos, std::vector<std::string> spritesString, int size, int animationSpeed, double speed, int pointsReceived);
 
-	// przesłaniane w potomnych
 	virtual int getPoints() { return pointsReceived; }
-
-//	Direction getDirection() const { return Down; }
-//	int getAnimationSpeed() const { return 100; }
 
 	virtual ~Bonus() {}
 
 protected:
 	int pointsReceived;
-
-
-	//virtual void initialize(int xpos, int ypos);
 };
 
 #endif /* BONUS_H_ */

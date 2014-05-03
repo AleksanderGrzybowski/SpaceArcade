@@ -1,5 +1,13 @@
 #include "Drawable.h"
 
+Drawable::Drawable(int xpos, int ypos, std::vector<std::string> spritesString, int size, int animationSpeed)
+: animationSpeed(animationSpeed), size(size) {
+	tf.add(spritesString);
+	sprite.setTexture(tf.getFlip());
+	setPosition(xpos, ypos);
+}
+
+
 /* Ta metoda jest wykorzystywana wszędzie tam, gdzie wyświetlany jest sprite,
  * czyli nie gdzie tekst czy inne takie! Nie ma opcji tworzenia obiektu bez animacji, bo
  * wymagałoby to wyświetlania go 'raz' i trzymania informacji, czy został
