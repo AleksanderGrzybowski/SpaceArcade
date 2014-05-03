@@ -33,8 +33,7 @@ void Game::addEnemy() {
 void Game::addBonus() {
 	int xpos = Random::getInt(0, CONF_screenWidth - CONF_bonusSize);
 	int ypos = Random::getInt(0, CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na bonusy też
-	Bonus* b = new SimpleBonus(xpos, ypos); // dowolne
-	bonuses.push_back(b);
+	bonuses.push_back(new SimpleBonus(xpos, ypos));
 }
 
 bool Game::isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize) { // pociski są kwadratami!!!
