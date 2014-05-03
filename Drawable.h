@@ -13,10 +13,9 @@ public:
 
 	Drawable(std::vector<std::string> spritesString) {
 		tf.add(spritesString);
-		//setTexture(tf.getFlip());
 		sprite.setTexture(tf.getFlip());
 	}
-	Drawable() {} // Line tego potrzebuje
+	Drawable() {} // Line tego potrzebuje np.
 
 	virtual void draw(sf::RenderWindow& window);
 
@@ -29,12 +28,8 @@ public:
 	virtual void move(double x, double y) {
 		sprite.move(x, y);
 	}
-//	virtual void setTexture(const sf::Texture& t) {
-//		sprite.setTexture(t);
-//	}
 
 	// przesłaniane
-	//virtual int getSize() const = 0;
 	virtual int getAnimationSpeed() const = 0;
 
 	virtual ~Drawable() {}
