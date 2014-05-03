@@ -1,7 +1,7 @@
 #include "Game.h"
 
 Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CONF_windowTitle),
-	ship(0.4) {
+	ship(0.8) {
 	window.setFramerateLimit(CONF_frameRateLimit);
 }
 
@@ -31,10 +31,9 @@ void Game::addEnemy() {
 }
 
 void Game::addBonus() {
-	Bonus* b = new SimpleBonus(0, 0); // dowolne
 	int xpos = Random::getInt(0, CONF_screenWidth - CONF_bonusSize);
 	int ypos = Random::getInt(0, CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na bonusy też
-	b->setPosition(xpos, ypos);
+	Bonus* b = new SimpleBonus(xpos, ypos); // dowolne
 	bonuses.push_back(b);
 }
 
@@ -74,18 +73,14 @@ againMissilesCrash:
 	// sprawdzanie kolizji
 	for (auto m = missiles.begin(); m != missiles.end(); ++m) {
 		for (auto e = enemies.begin(); e != enemies.end(); ++e) { // elementy są wskaźnikami
-			sf::Vector2f mpos = (*m)->getPosition();
-			sf::Vector2f epos = (*e)->getPosition();
-			if (isCollision(mpos, epos, CONF_missileSize, CONF_enemySize)) { // KOLIZJA JUPI
+			if (isCollision((*m)->getPosition(), (*e)->getPosition(), (*m)->getSize(), (*e)->getSize())) { // KOLIZJA JUPI
 				int missileDamage = (*m)->getDamage();
-				delete *m;
-				missiles.erase(m);
+				delete *m; missiles.erase(m);
 				(*e)->damage(missileDamage);
 				if (!((*e)->isAlive())) {
 					pc.add((*e)->getPoints());
 					delete *e;
 					enemies.erase(e);
-
 				}
 				goto againMissilesCrash; // czy to ma sens logiczny? chyba działa
 			}
@@ -97,11 +92,10 @@ againBonusCatch:
 	// sprawdzanie kolizji
 	sf::Vector2f shipPos = ship.getPosition();
 	for (auto b = bonuses.begin(); b != bonuses.end(); ++b) { // elementy są wskaźnikami
-		sf::Vector2f pos = (*b)->getPosition();
-		if (isCollision(pos, shipPos, CONF_bonusSize, CONF_shipSize)) { // KOLIZJA JUPI
+//		sf::Vector2f pos = (*b)->getPosition();
+		if (isCollision((*b)->getPosition(), shipPos, (*b)->getSize(), ship.getSize())) { // KOLIZJA JUPI
 			pc.add((*b)->getPoints());
-			delete *b;
-			bonuses.erase(b);
+			delete *b; bonuses.erase(b);
 			goto againBonusCatch; // czy to ma sens logiczny? chyba działa
 		}
 	}

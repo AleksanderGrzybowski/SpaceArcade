@@ -1,6 +1,6 @@
 #include "Line.h"
 
-Line::Line() {
+Line::Line() { // korzystamy z bezargumentowego ctora Drawable
 	// Musimy tutaj oporządzić teksturę, bo wycinamy z niej prostokąt szeroki jak ekran
 	// Z każdej tekstury w getSpritesString() wycinamy prostokąt
 
@@ -12,4 +12,5 @@ Line::Line() {
 	}
 
 	setPosition(0,  CONF_screenHeight*(1-CONF_shipUpLimit));
+	animationSpeed = 1; // jaka jednostka tu była?
 }
