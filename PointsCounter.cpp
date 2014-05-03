@@ -1,9 +1,9 @@
 #include "PointsCounter.h"
 
-PointsCounter::PointsCounter() : pointsCount(0) {
-	setPosition(0, 0);
+PointsCounter::PointsCounter() : TextObject(0, 0, 20, sf::Color::Red), pointsCount(0) {
+	updateString();
 }
-
-std::string PointsCounter::getString() {
-	return std::string("Punkty: ") + std::to_string(pointsCount);
-}
+//
+//std::string PointsCounter::getString() {
+//	return std::string("Punkty: ") + std::to_string(pointsCount);
+//}

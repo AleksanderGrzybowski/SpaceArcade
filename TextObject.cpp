@@ -3,23 +3,22 @@
 /* Zahardkodowanie nazwy czcionki nie jest problemem,
  * bo po co więcej?
  */
-TextObject::TextObject() {
+TextObject::TextObject(int xpos, int ypos, int fontSize, sf::Color color)
+	: xpos(xpos), ypos(ypos), fontSize(fontSize), color(color) {
 	if (!fileExists("Fonts/Arial.ttf")) throw FileNotFoundException("Fonts/Arial.ttf");
 	font.loadFromFile("Fonts/Arial.ttf");
-
-	xpos = ypos = 0;
+	str = "Wpisz tu cos koles";
 }
 
 /* Za każdym razem tworzenie nowego obiektu sf::Text,
  * można go przenieść do klasy
  */
 void TextObject::draw(sf::RenderWindow& window) {
-	sf::Text text;
 	text.setFont(font);
-	text.setString(getString());
+	text.setString(str);
 	text.setPosition(xpos, ypos);
-	text.setCharacterSize(getFontSize());
-	text.setColor(getColor());
+	text.setCharacterSize(fontSize);
+	text.setColor(color);
 
-	window.draw(text); // nie Drawable::draw() !
+	window.draw(text);
 }

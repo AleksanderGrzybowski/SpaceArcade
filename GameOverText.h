@@ -9,15 +9,15 @@
 class GameOverText : public TextObject {
 public:
 
-	GameOverText() {
-		setPosition(CONF_screenWidth/2, CONF_screenHeight/2);
+	GameOverText() : TextObject(CONF_screenWidth/2, CONF_screenHeight/2, 40, sf::Color::Yellow) {
+		str = "Cienias";
 	}
 
-	int getFontSize() { return 40; }
-	sf::Color getColor() { return sf::Color::Yellow; }
+//	int getFontSize() { return 40; }
+//	sf::Color getColor() { return sf::Color::Yellow; }
 
-private:
-	std::string getString() { return "Cienias"; }
+//private:
+//	std::string getString() { return "Cienias"; }
 };
 
 #endif /* GAMEOVERTEXT_H_ */
