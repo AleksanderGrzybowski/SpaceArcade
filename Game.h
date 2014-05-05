@@ -36,7 +36,9 @@ public:
 
 private:
 	sf::RenderWindow window;
-	sf::Clock clock;
+	sf::Clock gameSpeedClock; // resetowany po każdym przebiegu pętli
+	sf::Clock masterClock; // działa od początku gry
+
 
 	Ship ship;
 	std::vector<Missile*> missiles;
@@ -52,8 +54,7 @@ private:
 	void addBonus();
 	void recalc();
 
-	// może to static?
-	bool isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize); // pociski są kwadratami!!!
+	static bool isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize); // pociski są kwadratami!!!
 
 	void reset();
 	void gameOver();

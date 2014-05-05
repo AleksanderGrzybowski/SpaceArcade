@@ -124,7 +124,7 @@ bool Game::loop() {
 	}
 
 	// Restart głównego zegara
-	sf::Time t = clock.restart();
+	sf::Time t = gameSpeedClock.restart();
 
 	// Poruszanie statkiem
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
@@ -160,7 +160,7 @@ bool Game::loop() {
 		}
 	}
 
-	if (Random::tryChance(CONF_enemyGenerationChance)) addEnemy();
+	if (Random::tryChance(CONF_enemyGenerationChance*(masterClock.getElapsedTime().asMilliseconds()/2000))) addEnemy();
 	if (Random::tryChance(CONF_bonusGenerationChance)) addBonus();
 
 	// Achtung!!! Ważne rzeczy się dzieją właśnie tu
