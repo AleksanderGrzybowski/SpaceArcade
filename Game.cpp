@@ -1,7 +1,7 @@
 #include "Game.h"
 
 Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CONF_windowTitle),
-	ship(0.8) {
+	ship(0.4) {
 	window.setFramerateLimit(CONF_frameRateLimit);
 }
 
@@ -174,6 +174,12 @@ bool Game::loop() {
 	// Rysowanie
 	window.clear();
 
+	line.draw(window);
+	pc.draw(window);
+
+	mind.update();
+	mind.draw(window);
+
 	for (auto& m : missiles) {
 		m->moveIterate(t);
 		m->draw(window);
@@ -190,13 +196,10 @@ bool Game::loop() {
 	}
 
 	ship.draw(window);
-	line.draw(window);
+
 
 	// Napis
-	pc.draw(window);
 
-	mind.update();
-	mind.draw(window);
 
 	window.display();
 
@@ -216,8 +219,6 @@ void Game::gameOver() {
 
 
 Game::~Game() {
-//	for (auto m = missiles.begin(); m != missiles.end(); ++m) delete *m;
-//	for (auto e = enemies.begin(); e != enemies.end(); ++e) delete *e;
-	reset();
+	reset(); // to czyści wektory
 	window.close();
 }
