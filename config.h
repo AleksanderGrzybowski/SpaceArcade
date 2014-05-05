@@ -20,6 +20,7 @@ static const int CONF_enemyGenerationChance = 1;
 // Bonus
 static const int CONF_bonusGenerationChance = 1;
 static const double CONF_bonusDownLimit = 0.3;
+
 // Line
 static const int CONF_lineHeight = 2;
 

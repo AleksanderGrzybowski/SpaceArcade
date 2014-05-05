@@ -139,8 +139,9 @@ bool Game::loop() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
 		ship.move(Down, t);
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) { // deweloperski trik
 		reset();
+		return true;
 	}
 
 
@@ -198,15 +199,15 @@ bool Game::loop() {
 
 	window.display();
 
-	return true;
+	return true; // kontynuacja gry
 }
 
 void Game::gameOver() {
 	GameOverText gt;
 	gt.draw(window);
 	window.display();
-	//sleep(1);
 
+	// czekanie jednej sekundy
 	sf::Clock cl;
 	cl.restart();
 	while (cl.getElapsedTime().asMilliseconds() < 1000);
