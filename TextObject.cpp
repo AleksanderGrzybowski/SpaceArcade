@@ -5,9 +5,10 @@
  */
 TextObject::TextObject(int xpos, int ypos, int fontSize, sf::Color color)
 	: xpos(xpos), ypos(ypos), fontSize(fontSize), color(color) {
+
 	if (!fileExists("Fonts/Arial.ttf")) throw FileNotFoundException("Fonts/Arial.ttf");
 	font.loadFromFile("Fonts/Arial.ttf");
-	str = "---";
+	str = "---"; // niezainicjalizowany łańcuch
 }
 
 
