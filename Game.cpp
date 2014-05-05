@@ -6,34 +6,36 @@ Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CO
 }
 
 void Game::reset() {
-	pc.reset();
-	for (unsigned int i = 0; i < missiles.size(); ++i) delete missiles[i];
-	for (unsigned int i = 0; i < enemies.size(); ++i) delete enemies[i];
-	for (unsigned int i = 0; i < bonuses.size(); ++i) delete bonuses[i];
-	missiles.clear();
-	enemies.clear();
-	bonuses.clear();
+	pc.reset(); // licznik punktów = 0
+	for (unsigned int i = 0; i < missiles.size(); ++i) delete missiles[i]; missiles.clear();
+	for (unsigned int i = 0; i < enemies.size(); ++i) delete enemies[i]; enemies.clear();
+	for (unsigned int i = 0; i < bonuses.size(); ++i) delete bonuses[i]; bonuses.clear();
 	window.clear();
 }
 
 void Game::addMissile() {
 	// znajdź pozycję statku, potrzebną do określenia pozycji pocisku
+	// jest to konieczne, bo pocisk musi się ustawić w odpowiednim miejscu
+	// zależnym od jego wielkości
 	sf::Vector2f shipPos = ship.getPosition();
 	missiles.push_back(MissileFactory::getRandomMissile(shipPos.x, shipPos.y));
 }
 
 void Game::addEnemy() {
-	Enemy* e = EnemyFactory::getRandomEnemy(0, 0); // dowolne
-	int xpos = Random::getInt(0, CONF_screenWidth - e->getSize());
+	// pozycja enemy to lewy górny róg jego prostokąta!
+	Enemy* e = EnemyFactory::getRandomEnemy(0, 0); // dowolne, trzeba tak bo niżej getSize()
+	int xpos = Random::getInt(0, CONF_screenWidth - e->getSize()); // maksimum - prawa krawędź ekranu
 	int ypos = Random::getInt(0, CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na enemy
 	e->setPosition(xpos, ypos);
 	enemies.push_back(e);
 }
 
 void Game::addBonus() {
-	int xpos = Random::getInt(0, CONF_screenWidth - CONF_bonusSize);
-	int ypos = Random::getInt(0, CONF_screenHeight)*CONF_enemyDownLimit; // górna część miejscem na bonusy też
-	bonuses.push_back(new SimpleBonus(xpos, ypos));
+	Bonus* b = new SimpleBonus(0, 0);
+	int xpos = Random::getInt(0, CONF_screenWidth - b->getSize());
+	int ypos = Random::getInt(0, CONF_screenHeight)*CONF_bonusDownLimit; // górna część miejscem na bonusy też
+	b->setPosition(xpos, ypos);
+	bonuses.push_back(b);
 }
 
 bool Game::isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize) { // pociski są kwadratami!!!
@@ -91,7 +93,6 @@ againBonusCatch:
 	// sprawdzanie kolizji
 	sf::Vector2f shipPos = ship.getPosition();
 	for (auto b = bonuses.begin(); b != bonuses.end(); ++b) { // elementy są wskaźnikami
-//		sf::Vector2f pos = (*b)->getPosition();
 		if (isCollision((*b)->getPosition(), shipPos, (*b)->getSize(), ship.getSize())) { // KOLIZJA JUPI
 			pc.add((*b)->getPoints());
 			delete *b; bonuses.erase(b);
@@ -99,12 +100,10 @@ againBonusCatch:
 		}
 	}
 
-
-
 	// Czy przypadkiem gracz nie wtopił
 	for (auto e = enemies.begin(); e != enemies.end(); ++e) {
 		sf::Vector2f epos = (*e)->getPosition();
-		if (epos.y > (CONF_screenHeight*(1-CONF_shipUpLimit) - CONF_enemySize)) {
+		if (epos.y > (CONF_screenHeight*(1-CONF_shipUpLimit) - (*e)->getSize())) {
 			throw GameOverException();
 		}
 	}
@@ -196,10 +195,6 @@ bool Game::loop() {
 	}
 
 	ship.draw(window);
-
-
-	// Napis
-
 
 	window.display();
 
