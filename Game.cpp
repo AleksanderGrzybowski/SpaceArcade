@@ -6,7 +6,7 @@ Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CO
 }
 
 void Game::reset() {
-	pc.reset(); // licznik punktów = 0
+	pc.reset(); // licznik punktów := 0
 	for (unsigned int i = 0; i < missiles.size(); ++i) delete missiles[i]; missiles.clear();
 	for (unsigned int i = 0; i < enemies.size(); ++i) delete enemies[i]; enemies.clear();
 	for (unsigned int i = 0; i < bonuses.size(); ++i) delete bonuses[i]; bonuses.clear();
