@@ -3,6 +3,7 @@
 Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CONF_windowTitle),
 	ship(0.4) {
 	window.setFramerateLimit(CONF_frameRateLimit);
+
 }
 
 void Game::reset() {

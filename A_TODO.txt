@@ -9,15 +9,15 @@ może jako FallingObject i RTTI przy ich sprawdzaniu?
 -----------------wyjątki przekazywane na konsolę (np. że nie ma czcionki czy sprite)
 -----getspritesstring do drawable ?
 --------- statek move timer nie w game tylko w ship LOL // nie, za dużo clocków rozproszonych po programie
-przemyśleć czy w każdym ctorze trzeba getspritestring i move itd. // chyba initialize nie przejdzie, bo missile i enemy się różnie initializują
+-------przemyśleć czy w każdym ctorze trzeba getspritestring i move itd. // chyba initialize nie przejdzie, bo missile i enemy się różnie initializują
 --------ship przesuwanie - korzystać z getspeed - co robi 'główny zegar' w loop? // działa - nie ruszać
 --------sleep(3) na to z timerem
 -----wywalić wszędzie getspritesstring gdzie niepotrzebne
 -------random czy dobry warunek // kij nieważne
 -------------getspritesstring zwraca CONST vector a nie vector
-pododawać consty przy wartościach zwracanych
-missilelimitclock private?
-static normalmissile::timelimit zmienić na metody statyczne, może można je przesłaniać? // nie ma czegoś takiego jak static virtual, ale może inaczej?
+------------pododawać consty przy wartościach zwracanych
+---------missilelimitclock private? // walić to
+-------------static normalmissile::timelimit zmienić na metody statyczne, może można je przesłaniać? // nie ma czegoś takiego jak static virtual, ale może inaczej?
 ------getfont w pochodnych textobject // po co, wystarczy 1 czcionka.
 przyjmowanie wektorów przez const& a nie normalnie
 moving < drawable ----> osobno i dziedziczenie po wielu klasach // czy jest obiekt który jest moving i nie jest drawable?

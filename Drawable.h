@@ -17,6 +17,7 @@ public:
 
 	const sf::Vector2f& getPosition() const {
 		return sprite.getPosition();
+
 	}
 	void setPosition(double x, double y) {
 		sprite.setPosition(x, y);
