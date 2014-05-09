@@ -169,30 +169,35 @@ bool Game::loop() {
 		reset();
 	}
 
-	// Rysowanie
+	// Rysowanie wszelkiego
 	window.clear();
 
+	// Linia
 	line.draw(window);
+	// Licznik punktów
 	pc.draw(window);
+	// Wskaźnik PowerMissile
+	mind.update(); mind.draw(window);
 
-	mind.update();
-	mind.draw(window);
-
+	// Pociski
 	for (auto& m : missiles) {
 		m->moveIterate(t);
 		m->draw(window);
 	}
 
+	// Przeciwnicy
 	for (auto& e : enemies) {
 		e->moveIterate(t);
 		e->draw(window);
 	}
 
+	// Bonusy
 	for (auto& b : bonuses) {
 		b->moveIterate(t);
 		b->draw(window);
 	}
 
+	// Statek
 	ship.draw(window);
 
 	window.display();
