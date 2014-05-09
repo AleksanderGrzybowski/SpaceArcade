@@ -6,6 +6,7 @@ Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CO
 }
 
 void Game::reset() {
+	masterClock.restart();
 	pc.reset(); // licznik punktów := 0
 	for (unsigned int i = 0; i < missiles.size(); ++i) delete missiles[i]; missiles.clear();
 	for (unsigned int i = 0; i < enemies.size(); ++i) delete enemies[i]; enemies.clear();
@@ -52,58 +53,53 @@ void Game::recalc() {
 	// pociski poza ekranem
 againMissilesOff:
 	for (auto m = missiles.begin(); m != missiles.end(); ++m) {
-		sf::Vector2f mpos = (*m)->getPosition();
-		if (mpos.y <= 0) {
-			delete *m;
-			missiles.erase(m);
+		if ((*m)->getPosition().y <= 0) {
+			delete *m; missiles.erase(m);
 			goto againMissilesOff;
 		}
 	}
+
 	// bonusy poza ekranem
 againBonusesOff:
 	for (auto b = bonuses.begin(); b != bonuses.end(); ++b) {
-		sf::Vector2f pos = (*b)->getPosition();
-		if (pos.y >= CONF_screenHeight) {
-			delete *b;
-			bonuses.erase(b);
+		if ((*b)->getPosition().y >= CONF_screenHeight) {
+			delete *b; bonuses.erase(b);
 			goto againBonusesOff;
 		}
 	}
 
-againMissilesCrash:
-	// sprawdzanie kolizji
+againMissilesCrash: // sprawdzanie kolizji
 	for (auto m = missiles.begin(); m != missiles.end(); ++m) {
 		for (auto e = enemies.begin(); e != enemies.end(); ++e) { // elementy są wskaźnikami
 			if (isCollision((*m)->getPosition(), (*e)->getPosition(), (*m)->getSize(), (*e)->getSize())) { // KOLIZJA JUPI
+
 				int missileDamage = (*m)->getDamage();
 				delete *m; missiles.erase(m);
 				(*e)->damage(missileDamage);
-				if (!((*e)->isAlive())) {
+
+				if (!((*e)->isAlive())) { // zestrzelony?
 					pc.add((*e)->getPoints());
 					delete *e;
 					enemies.erase(e);
 				}
-				goto againMissilesCrash; // czy to ma sens logiczny? chyba działa
+				goto againMissilesCrash;
 			}
 		}
 	}
 
 // Pochłanianie bonusów
 againBonusCatch:
-	// sprawdzanie kolizji
-	sf::Vector2f shipPos = ship.getPosition();
 	for (auto b = bonuses.begin(); b != bonuses.end(); ++b) { // elementy są wskaźnikami
-		if (isCollision((*b)->getPosition(), shipPos, (*b)->getSize(), ship.getSize())) { // KOLIZJA JUPI
+		if (isCollision((*b)->getPosition(), ship.getPosition(), (*b)->getSize(), ship.getSize())) { // KOLIZJA JUPI
 			pc.add((*b)->getPoints());
 			delete *b; bonuses.erase(b);
-			goto againBonusCatch; // czy to ma sens logiczny? chyba działa
+			goto againBonusCatch;
 		}
 	}
 
 	// Czy przypadkiem gracz nie wtopił
 	for (auto e = enemies.begin(); e != enemies.end(); ++e) {
-		sf::Vector2f epos = (*e)->getPosition();
-		if (epos.y > (CONF_screenHeight*(1-CONF_shipUpLimit) - (*e)->getSize())) {
+		if ((*e)->getPosition().y > (CONF_screenHeight*(1-CONF_shipUpLimit) - (*e)->getSize())) {
 			throw GameOverException();
 		}
 	}
@@ -113,8 +109,9 @@ againBonusCatch:
 
 bool Game::loop() {
 	sf::Event e;
-	while (window.pollEvent(e)) {
+	while (window.pollEvent(e)) { // nie zatnie się, w końcu jakieś nadejdzie
 		if (e.type == sf::Event::Closed) {
+			window.close();
 			return false;
 		}
 	}
@@ -123,7 +120,7 @@ bool Game::loop() {
 		return false;
 	}
 
-	// Restart głównego zegara
+	// Restart głównego zegara odpowiadającego za szybkość animacyj
 	sf::Time t = gameSpeedClock.restart();
 
 	// Poruszanie statkiem
@@ -139,6 +136,7 @@ bool Game::loop() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
 		ship.move(Down, t);
 	}
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) { // deweloperski trik
 		reset();
 		return true;
@@ -160,7 +158,7 @@ bool Game::loop() {
 		}
 	}
 
-	if (Random::tryChance(CONF_enemyGenerationChance*(masterClock.getElapsedTime().asMilliseconds()/2000))) addEnemy();
+	if (Random::tryChance(CONF_enemyGenerationChance*(masterClock.getElapsedTime().asMilliseconds()/CONF_difficultyLevel))) addEnemy();
 	if (Random::tryChance(CONF_bonusGenerationChance)) addBonus();
 
 	// Achtung!!! Ważne rzeczy się dzieją właśnie tu

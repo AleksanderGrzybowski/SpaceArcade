@@ -8,6 +8,7 @@ static const int CONF_screenWidth = 300;
 static const int CONF_screenHeight = 700;
 static const std::string CONF_windowTitle = "SpaceArcade Alfa";
 static const int CONF_frameRateLimit = 60;
+static const int CONF_difficultyLevel = 2000;
 
 // Statek
 static const int CONF_shipSize = 48; // bok kwadratu
