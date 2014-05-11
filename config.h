@@ -6,7 +6,7 @@
 // Opcje ogólne
 static const int CONF_screenWidth = 300;
 static const int CONF_screenHeight = 700;
-static const std::string CONF_windowTitle = "SpaceArcade Alfa";
+static const std::string CONF_windowTitle = "SpaceArcade 0.1";
 static const int CONF_frameRateLimit = 60;
 static const int CONF_difficultyLevel = 2000;
 
@@ -19,7 +19,7 @@ static const double CONF_enemyDownLimit = 0.3;
 static const int CONF_enemyGenerationChance = 1;
 
 // Bonus
-static const int CONF_bonusGenerationChance = 0.1;
+static const int CONF_bonusGenerationChance = 0.5;
 static const double CONF_bonusDownLimit = 0.3;
 
 // Line

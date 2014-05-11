@@ -17,7 +17,7 @@ public:
 	Enemy(int xpos, int ypos, std::vector<std::string> spritesString, int size,
 		int animationSpeed, double speed, int health, int pointsReceived);
 
-	int getPoints() { return pointsReceived; }
+	int getPoints() const { return pointsReceived; }
 	bool isAlive() const { return health > 0; }
 	void damage(int damage) { health -= damage; }
 

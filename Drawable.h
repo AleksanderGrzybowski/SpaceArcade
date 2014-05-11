@@ -26,7 +26,7 @@ public:
 		sprite.move(x, y);
 	}
 
-	int getSize() { return size; }
+	int getSize() const { return size; }
 
 	virtual ~Drawable() {}
 
