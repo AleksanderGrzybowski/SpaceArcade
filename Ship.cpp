@@ -1,7 +1,7 @@
 #include "Ship.h"
 
 Ship::Ship(double speed) : Drawable(CONF_screenWidth/2.0 - CONF_shipSize/2, CONF_screenHeight-CONF_shipSize,
-		{"Sprites/spaceshipA.png", "Sprites/spaceshipB.png"}, CONF_shipSize, 100), speed(speed)
+		{"Sprites/ShipA.png", "Sprites/ShipB.png"}, CONF_shipSize, 100), speed(speed)
 {}
 
 void Ship::move(Direction b, const sf::Time& t) {

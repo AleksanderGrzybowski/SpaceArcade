@@ -1,7 +1,7 @@
 #include "NormalMissile.h"
 
 NormalMissile::NormalMissile(int shipx, int shipy)
-	: Missile(shipx, shipy, {"Sprites/NormalMissileAA.png", "Sprites/NormalMissileBB.png"}, 20, 100, 0.5, 5)
+	: Missile(shipx, shipy, {"Sprites/NormalMissileA.png", "Sprites/NormalMissileB.png"}, 20, 100, 0.5, 5)
 {}
 
 bool NormalMissile::canBeSent() {

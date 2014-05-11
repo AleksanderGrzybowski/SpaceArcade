@@ -20,10 +20,10 @@ może jako FallingObject i RTTI przy ich sprawdzaniu?
 -------------static normalmissile::timelimit zmienić na metody statyczne, może można je przesłaniać? // nie ma czegoś takiego jak static virtual, ale może inaczej?
 ------getfont w pochodnych textobject // po co, wystarczy 1 czcionka.
 przyjmowanie wektorów przez const& a nie normalnie
-moving < drawable ----> osobno i dziedziczenie po wielu klasach // czy jest obiekt który jest moving i nie jest drawable?
+----------------moving < drawable ----> osobno i dziedziczenie po wielu klasach // czy jest obiekt który jest moving i nie jest drawable?
 const sf::Time'y gdzie nie są resetowane (resety też ostrożnie wywalić - side effect)
-powermissile - jakiś licznik ładowania na dole
-game should get harder in time
+--------------------powermissile - jakiś licznik ładowania na dole
+--------------------game should get harder in time
 static missilepowerfactor - zwiększany przy zbieraniu bonusów?
 nazwy spritów małe-duże, może liczby?
 ustawianie spritów w Drawable, nie wyżej
