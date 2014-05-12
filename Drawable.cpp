@@ -1,6 +1,9 @@
 #include "Drawable.h"
 
-Drawable::Drawable(int xpos, int ypos, std::vector<std::string> spritesString, int size, int animationSpeed)
+/* Podstawowa inicjalizacja obiektu wyświetlanego na ekranie,
+ * przypisanie mu pierwszego z kolejki sprite.
+ */
+Drawable::Drawable(int xpos, int ypos, const std::vector<std::string>& spritesString, int size, int animationSpeed)
 : animationSpeed(animationSpeed), size(size) {
 	tf.add(spritesString);
 	sprite.setTexture(tf.getFlip());

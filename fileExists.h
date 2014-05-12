@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 
-bool fileExists(std::string fname);
+// Sprawdza, czy plik istnieje.
+bool fileExists(const std::string& fname);
 
 #endif /* FILEEXISTS_H_ */

@@ -18,6 +18,8 @@ public:
 		int animationSpeed, double speed, int health, int pointsReceived);
 
 	int getPoints() const { return pointsReceived; }
+
+	// W głównej pętli sprawdzane jest, czy przeciwnik żyje.
 	bool isAlive() const { return health > 0; }
 	void damage(int damage) { health -= damage; }
 
@@ -25,7 +27,7 @@ public:
 
 protected:
 	int health;
-	int pointsReceived;
+	const int pointsReceived;
 };
 
 #endif /* ENEMY_H_ */

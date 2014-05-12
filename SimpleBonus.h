@@ -3,7 +3,7 @@
 
 #include "Bonus.h"
 
-
+/* Prosta implementacja Bonus */
 class SimpleBonus : public Bonus {
 public:
 	SimpleBonus(double xpos, double ypos);

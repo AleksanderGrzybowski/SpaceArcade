@@ -1,7 +1,5 @@
 #include "Random.h"
 
-// Może jest lepszy sposób niż ten z !initialized ??
-
 bool Random::getBool() {
 	if (!initialized) {
 		srand(time(0));
@@ -19,7 +17,7 @@ int Random::getInt(int min, int max) {
 }
 
 bool Random::tryChance(double prob) { // prob <0..100>
-	int l = getInt(0, 100);
+	double l = getInt(0, 10000)/100.0;
 	if (prob > l) return true;
 	else return false;
 }

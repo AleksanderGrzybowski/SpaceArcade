@@ -9,11 +9,11 @@
  */
 class FileNotFoundException {
 public:
-	FileNotFoundException(std::string f) : fileName(f) {}
-	std::string getFileName() { return fileName; }
+	FileNotFoundException(const std::string& f) : fileName(f) {}
+	const std::string& getFileName() { return fileName; }
 
 private:
-	std::string fileName;
+	const std::string fileName;
 };
 
 #endif /* FILENOTFOUNDEXCEPTION_H_ */

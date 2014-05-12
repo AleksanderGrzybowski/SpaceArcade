@@ -11,7 +11,7 @@ void TextureFlipper::add(const sf::Texture& t) {
 }
 
 /* Załadowanie tekstur z pliku/plików */
-void TextureFlipper::add(const std::vector<std::string> v) {
+void TextureFlipper::add(const std::vector<std::string>& v) {
 	sf::Texture t;
 
 	for (const std::string& s : v) {
@@ -25,6 +25,6 @@ void TextureFlipper::add(const std::vector<std::string> v) {
 const sf::Texture& TextureFlipper::getFlip() {
 	const sf::Texture& ret = tab[next];
 	next++;
-	if (next == tab.size()) next = 0; // impl - lista cykliczna
+	if (next == tab.size()) next = 0; // impl - lista cykliczna na tablicy
 	return ret;
 }

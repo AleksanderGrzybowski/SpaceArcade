@@ -1,7 +1,7 @@
 #include "Moving.h"
 
 /* Główna metoda do iteracyjnego poruszania obiektów */
-void Moving::moveIterate(sf::Time& t) {
+void Moving::moveIterate(const sf::Time& t) {
 	double toMove = speed*t.asMilliseconds();
 
 	switch (dir) {

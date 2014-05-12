@@ -3,15 +3,14 @@
 /* Zahardkodowanie nazwy czcionki nie jest problemem,
  * bo po co więcej?
  */
-TextObject::TextObject(int xpos, int ypos, int fontSize, sf::Color color)
-	: xpos(xpos), ypos(ypos), fontSize(fontSize), color(color) {
+TextObject::TextObject(int xpos, int ypos, int fontSize, sf::Color color, const std::string& str)
+	: str(str), xpos(xpos), ypos(ypos), fontSize(fontSize), color(color) {
 
-	if (!fileExists("Fonts/Arial.ttf")) throw FileNotFoundException("Fonts/Arial.ttf");
-	font.loadFromFile("Fonts/Arial.ttf");
-	str = "---"; // niezainicjalizowany łańcuch
+	if (!fileExists(CONF_fontFile)) throw FileNotFoundException(CONF_fontFile);
+	font.loadFromFile(CONF_fontFile);
 }
 
-
+// Każde draw aktualizuje zawartość
 void TextObject::draw(sf::RenderWindow& window) {
 	text.setFont(font);
 	text.setString(str);

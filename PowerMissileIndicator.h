@@ -4,6 +4,10 @@
 #include <SFML/Graphics.hpp>
 #include "PowerMissile.h"
 
+/* Wskaźnik, czy można wysłać Powermissile,
+ * nie dziedziczy z Drawable bo jest
+ * tylko prostokątem z kolorem
+ */
 class PowerMissileIndicator {
 public:
 

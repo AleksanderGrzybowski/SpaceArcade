@@ -8,9 +8,8 @@ Line::Line() { // korzystamy z bezargumentowego ctora Drawable
 		sf::Texture texture;
 		texture.loadFromFile(s, sf::IntRect(0, 0, CONF_screenWidth, CONF_lineHeight));
 		texture.setRepeated(true);
-		tf.add(texture); // uwaga, czy to jest bezpieczne pamięciowo? Ponoć tak - dopisek.
+		tf.add(texture); // przyjmowana jako referencja, potem jest kopiowana oczywiście
 	}
 
-	setPosition(0,  CONF_screenHeight*(1-CONF_shipUpLimit));
-	animationSpeed = 1; // jaka jednostka tu była?
+	setPosition(0, CONF_screenHeight*(1-CONF_shipUpLimit));
 }

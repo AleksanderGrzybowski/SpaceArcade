@@ -4,20 +4,20 @@
 #include "SFML/Graphics.hpp"
 #include "TextureFlipper.h"
 
-/* Klasa określająca właściwości obiektu 'rysowalnego'
- * i nie tylko, obiekt ten POSIADA SPRITE!
+/* Klasa określająca właściwości obiektu 'rysowalnego',
+ * obiekt ten POSIADA SPRITE!
  */
 class Drawable {
 public:
 
-	Drawable(int xpos, int ypos, std::vector<std::string> spritesString, int size, int animationSpeed);
-	Drawable() : animationSpeed(1337), size(1337) {} // Line tego potrzebuje np.
+	Drawable(int xpos, int ypos, const std::vector<std::string>& spritesString, int size, int animationSpeed);
+	Drawable() : animationSpeed(1), size(1337) {} // Kilka klas potrzebuje się zatroszczyć samo o konstrukcję Drawable
 
 	virtual void draw(sf::RenderWindow& window);
 
+	// Delegacje do sprite
 	const sf::Vector2f& getPosition() const {
 		return sprite.getPosition();
-
 	}
 	void setPosition(double x, double y) {
 		sprite.setPosition(x, y);
@@ -32,12 +32,11 @@ public:
 
 protected: // każdy obiekt ma swoje własne:
 	sf::Sprite sprite;
-	TextureFlipper tf;
+	TextureFlipper tf; // do animacji
 
-	sf::Clock animationSpeedClock;
-	int animationSpeed;
-	int size;
-
+	sf::Clock animationSpeedClock; // liczy, kiedy można przerzucić na następną klatkę animacji
+	const int animationSpeed;
+	const int size;
 };
 
 #endif /* DRAWABLE_H_ */

@@ -5,9 +5,6 @@ int main() {
 
 	std::cout << "Startujemy gre" << std::endl;
 
-
-
-
 	try {
 		Game().mainloop();
 	} catch (FileNotFoundException& e) {

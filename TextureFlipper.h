@@ -20,7 +20,7 @@ public:
 	TextureFlipper();
 
 	void add(const sf::Texture& t);
-	void add(const std::vector<std::string> v);
+	void add(const std::vector<std::string>& v);
 	const sf::Texture& getFlip();
 
 private:

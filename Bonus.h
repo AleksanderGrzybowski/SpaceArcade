@@ -11,19 +11,23 @@
 #include "Drawable.h"
 #include "Direction.h"
 
-/* Spadający obiekt, który znika po kontakcie ze statkiem.
- * Kontakt z przeciwnikiem nie ma znaczenia.
+/* Spadający w dół obiekt bonusowy, który znika po kontakcie ze statkiem,
+ * znika także, jeśli wyjdzie poza ekran.
+ * Po kontakcie tym gracz otrzymuje punkty.
+ * Kontakt z przeciwnikiem nie ma znaczenia, nie jest sprawdzany.
+ * Bonus po kontakcie jest usuwany z gry w pętli głównej.
  */
 class Bonus: public Moving {
 public:
-	Bonus(int xpos, int ypos, std::vector<std::string> spritesString, int size, int animationSpeed, double speed, int pointsReceived);
+	Bonus(int xpos, int ypos, const std::vector<std::string>& spritesString, int size, int animationSpeed, double speed, int pointsReceived);
 
-	virtual int getPoints() { return pointsReceived; }
+	// Ile gracz uzyskuje punktów po kontakcie z bonusem
+	virtual int getPoints() const { return pointsReceived; }
 
 	virtual ~Bonus() {}
 
 protected:
-	int pointsReceived;
+	const int pointsReceived; // otrzymywane punkty
 };
 
 #endif /* BONUS_H_ */

@@ -14,7 +14,7 @@
 class TextObject {
 public:
 
-	TextObject(int xpos, int ypos, int fontSize, sf::Color color);
+	TextObject(int xpos, int ypos, int fontSize, sf::Color color, const std::string& str = "");
 
 	void draw(sf::RenderWindow& window);
 	virtual ~TextObject() {}

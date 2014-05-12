@@ -14,17 +14,17 @@
 class Moving : public Drawable {
 public:
 
-	Moving(int xpos, int ypos, std::vector<std::string> spritesString, int size, int animationSpeed, double speed, Direction dir)
+	Moving(int xpos, int ypos, const std::vector<std::string>& spritesString, int size, int animationSpeed, double speed, Direction dir)
 	: Drawable(xpos, ypos, spritesString, size, animationSpeed), speed(speed), dir(dir)
 	{}
 
-	virtual void moveIterate(sf::Time& t);
+	virtual void moveIterate(const sf::Time& t);
 
 	virtual ~Moving() {}
 
 protected:
-	double speed;
-	Direction dir;
+	const double speed;
+	const Direction dir;
 };
 
 #endif /* MOVING_H_ */
