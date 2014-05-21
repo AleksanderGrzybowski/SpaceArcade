@@ -20,7 +20,6 @@ public:
 	void draw(sf::RenderWindow& window) {
 		window.draw(rect);
 	}
-
 	void update();
 
 	virtual ~PowerMissileIndicator() {}

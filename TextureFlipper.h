@@ -13,7 +13,7 @@
  * wykonywana 'animacja' (bez side effect ofc)
  * Uwaga 2 - nie można dopuścić do realokacji pamięci
  * w wektorze - posypią się przypisane już przez
- * SFML referencje w obiektach Drawable
+ * SFML referencje (wskaźniki?) w obiektach Drawable
  */
 class TextureFlipper {
 public:

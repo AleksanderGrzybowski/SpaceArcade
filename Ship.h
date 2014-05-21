@@ -16,7 +16,7 @@ class Ship : public Drawable {
 public:
 	Ship(double speed);
 
-	void move(Direction d, const sf::Time& t); // inne parametry! nie impl. z Drawable
+	void move(Direction d, const sf::Time& t); // inne parametry! nie wersja z Drawable
 
 private:
 	double speed;

@@ -49,7 +49,6 @@ private:
 	PointsCounter pc;
 
 	bool loop();
-	void addMissile();
 	void addEnemy();
 	void addBonus();
 	void recalc();

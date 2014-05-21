@@ -9,6 +9,8 @@ int main() {
 		Game().mainloop();
 	} catch (FileNotFoundException& e) {
 		std::cerr << "Nie mozna znalezc pliku " << e.getFileName() << std::endl;
+	} catch (...) {
+		std::cout << "Wystapil nieznany blad" << std::endl;
 	}
 
 }

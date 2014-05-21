@@ -25,6 +25,6 @@ void TextureFlipper::add(const std::vector<std::string>& v) {
 const sf::Texture& TextureFlipper::getFlip() {
 	const sf::Texture& ret = tab[next];
 	next++;
-	if (next == tab.size()) next = 0; // impl - lista cykliczna na tablicy
+	if (next == tab.size()) next = 0; // implementacja - lista cykliczna na tablicy
 	return ret;
 }

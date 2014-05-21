@@ -2,7 +2,6 @@
 #define POINTSCOUNTER_H_
 
 #include <SFML/Graphics.hpp>
-#include <iostream>
 #include "config.h"
 #include "Drawable.h"
 #include "TextObject.h"

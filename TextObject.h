@@ -2,7 +2,6 @@
 #define TEXTOBJECT_H_
 
 #include <SFML/Graphics.hpp>
-#include <iostream>
 #include "config.h"
 #include "Drawable.h"
 #include "FileNotFoundException.h"

@@ -1,7 +1,7 @@
 #include "Game.h"
 
 Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CONF_windowTitle),
-	ship(0.4) {
+	ship(0.6) {
 	window.setFramerateLimit(CONF_frameRateLimit);
 
 }
@@ -13,14 +13,6 @@ void Game::reset() {
 	for (unsigned int i = 0; i < enemies.size(); ++i) delete enemies[i]; enemies.clear();
 	for (unsigned int i = 0; i < bonuses.size(); ++i) delete bonuses[i]; bonuses.clear();
 	window.clear();
-}
-
-void Game::addMissile() {
-	// znajdź pozycję statku, potrzebną do określenia pozycji pocisku
-	// jest to konieczne, bo pocisk musi się ustawić w odpowiednim miejscu
-	// zależnym od jego wielkości
-	sf::Vector2f shipPos = ship.getPosition();
-	missiles.push_back(MissileFactory::getRandomMissile(shipPos.x, shipPos.y));
 }
 
 void Game::addEnemy() {
@@ -159,7 +151,7 @@ bool Game::loop() {
 		}
 	}
 
-	if (Random::tryChance(CONF_enemyGenerationChance*(masterClock.getElapsedTime().asMilliseconds()/CONF_difficultyLevel))) addEnemy();
+	if (Random::tryChance(CONF_enemyGenerationChance*(log(masterClock.getElapsedTime().asMilliseconds()/CONF_difficultyLevel)))) addEnemy();
 	if (Random::tryChance(CONF_bonusGenerationChance)) addBonus();
 
 	// Achtung!!! Ważne rzeczy się dzieją właśnie tu

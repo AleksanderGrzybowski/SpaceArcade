@@ -25,7 +25,7 @@ void Ship::move(Direction b, const sf::Time& t) {
 		break;
 	}
 
-	// Statek może wyjść na boki max 50%, do góry i dołu 0%
+	// Statek (prostokąt) może wyjść na boki max 50%, do góry i dołu 0%
 	// Uwaga: pozycja statku to lewy górny róg jego prostokąta
 	if (! (( (pos.x + xdistance) <= -getSize()/2) || ((pos.x + xdistance) >= (CONF_screenWidth-getSize()/2))) )
 		sprite.move(xdistance, 0);
