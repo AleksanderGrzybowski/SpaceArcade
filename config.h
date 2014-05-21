@@ -25,7 +25,7 @@ static const double CONF_enemyDownLimit = 0.3; // Jak szerokie jest miejsce, w k
 static const int CONF_enemyGenerationChance = 1;
 
 // Bonus
-static const int CONF_bonusGenerationChance = 0.5;
+static const int CONF_bonusGenerationChance = 1;
 static const double CONF_bonusDownLimit = 0.3; // Jak szerokie jest miejsce, w którym powstają bonusy.
 
 // Line
