@@ -14,7 +14,7 @@ static const int CONF_screenWidth = 700;
 static const int CONF_screenHeight = 700;
 static const std::string CONF_windowTitle = "SpaceArcade 0.1";
 static const int CONF_frameRateLimit = 60;
-static const int CONF_difficultyLevel = 100; // trudność gry
+static const int CONF_difficultyLevel = 1000; // trudność gry
 
 // Statek
 static const int CONF_shipSize = 48; // Potrzebne niestety kilku klasom
