@@ -1,7 +1,7 @@
 #include "Game.h"
 
 Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CONF_windowTitle),
-	ship(0.6) {
+	ship(0.6), pc("highscore.lst") {
 	window.setFramerateLimit(CONF_frameRateLimit);
 
 }
@@ -9,6 +9,7 @@ Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CO
 void Game::reset() {
 	masterClock.restart();
 	pc.reset(); // licznik punktów := 0
+
 	for (unsigned int i = 0; i < missiles.size(); ++i) delete missiles[i]; missiles.clear();
 	for (unsigned int i = 0; i < enemies.size(); ++i) delete enemies[i]; enemies.clear();
 	for (unsigned int i = 0; i < bonuses.size(); ++i) delete bonuses[i]; bonuses.clear();
@@ -200,6 +201,8 @@ bool Game::loop() {
 
 void Game::gameOver() {
 	GameOverText gt;
+	pc.writeHighScore();
+	pc.readHighScore();
 	gt.draw(window);
 	window.display();
 

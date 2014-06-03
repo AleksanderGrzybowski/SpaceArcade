@@ -34,4 +34,6 @@ static const int CONF_lineHeight = 2; // zwykły prostokąt ograniczający
 // TextObject, używana tylko 1 czcionka
 static const std::string CONF_fontFile = "Fonts/Arial.ttf";
 
+
+
 #endif /* CONFIG_H_ */
