@@ -17,5 +17,5 @@ void PowerMissileIndicator::update() {
 	col.g = factor * 0x66;
 	col.b = factor * 0x00;
 
-	rect.setFillColor(sf::Color(col));
+	rect.setFillColor(sf::Color(col)); // wtf I meant here?
 }

@@ -12,7 +12,7 @@
 class GameOverText : public TextObject {
 public:
 
-	GameOverText() : TextObject(CONF_screenWidth/2, CONF_screenHeight/2, 40, sf::Color::Yellow, "Try again")
+	GameOverText() : TextObject(CONF_screenWidth/2-80, CONF_screenHeight/2, 40, sf::Color::Yellow, "Game Over")
 	{ }
 };
 

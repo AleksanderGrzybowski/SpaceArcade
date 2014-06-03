@@ -33,6 +33,8 @@ void Game::addBonus() {
 }
 
 bool Game::isCollision(sf::Vector2f mpos, sf::Vector2f epos, int msize, int esize) { // pociski są kwadratami!!!
+	// nie wiem jak, ale to działa xD
+
 	sf::Vector2f msizes(msize, msize);
 	sf::Vector2f esizes(esize, esize);
 
@@ -97,8 +99,6 @@ againBonusCatch:
 		}
 	}
 }
-
-
 
 bool Game::loop() {
 	sf::Event e;

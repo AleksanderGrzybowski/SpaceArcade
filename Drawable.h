@@ -15,7 +15,8 @@ public:
 
 	virtual void draw(sf::RenderWindow& window);
 
-	// Delegacje do sprite
+	// Delegacje do sprite:
+
 	const sf::Vector2f& getPosition() const {
 		return sprite.getPosition();
 	}

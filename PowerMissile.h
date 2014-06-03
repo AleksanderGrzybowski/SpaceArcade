@@ -5,6 +5,9 @@
 #include "config.h"
 #include "Missile.h"
 
+/* Implementacja Missile, definiuje jej parametry,
+ * takie jak siła rażenia, szybkość itd.
+ */
 class PowerMissile : public Missile {
 public:
 

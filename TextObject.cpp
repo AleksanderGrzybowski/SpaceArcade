@@ -1,8 +1,5 @@
 #include "TextObject.h"
 
-/* Zahardkodowanie nazwy czcionki nie jest problemem,
- * bo po co więcej?
- */
 TextObject::TextObject(int xpos, int ypos, int fontSize, sf::Color color, const std::string& str)
 	: str(str), xpos(xpos), ypos(ypos), fontSize(fontSize), color(color) {
 
