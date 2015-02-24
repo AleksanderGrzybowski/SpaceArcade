@@ -1,7 +1,7 @@
 #include "Game.h"
 
 Game::Game() : window(sf::VideoMode(CONF_screenWidth, CONF_screenHeight, 32), CONF_windowTitle),
-	ship(0.6), pc("highscore.lst") {
+	ship(0.4), pc("highscore.lst") {
 	window.setFramerateLimit(CONF_frameRateLimit);
 
 }
